@@ -186,12 +186,12 @@
 					if ((data.getValue(row, column_estado)).toLowerCase().indexOf('terminado') == -1 && data.getValue(row, column_finfase) < fecha_actual) {
 						stilo = 'cell_warning_style bold_style cell_width_70';
 					} else {
-            if ((data.getValue(row, column_estado)).toLowerCase().indexOf('curso') != -1 && data.getValue(row, column_finfase).getFullYear() == fecha_actual.getFullYear()
-            && data.getValue(row, column_finfase).getMonth() == fecha_actual.getMonth()
-            && (data.getValue(row, column_finfase).getDate() - fecha_actual.getDate())<= 7
-            && data.getValue(row, column_finfase) <= fecha_actual) {
-              stilo = 'cell_warning_info_style bold_style cell_width_70';
-            }
+ 
+            if (data.getValue(row, column_finfase) <= fecha_actual
+                && ((((fecha_actual - data.getValue(row, column_finfase))/1000)/60)/60)/24 <= 7) {
+                  stilo = 'cell_warning_info_style bold_style cell_width_70';
+                }
+   
           }
 					data.setCell(row, column_finfase, data.getValue(row, column_finfase), data.getFormattedValue(row, column_finfase), {'className': stilo});
 					data.setCell(row, column_area, data.getValue(row, column_area), data.getFormattedValue(row, column_area), {'className': 'cell_style cell_width_100'});
