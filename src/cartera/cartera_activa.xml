@@ -188,7 +188,7 @@
 					}
           if ((data.getValue(row, column_estado)).toLowerCase().indexOf('curso') != -1 && data.getValue(row, column_finfase).getFullYear() == fecha_actual.getFullYear()
           && data.getValue(row, column_finfase).getMonth() == fecha_actual.getMonth()
-          && (data.getValue(row, column_finfase).getDate() - fecha_actual.getDate())=< 7
+          && (data.getValue(row, column_finfase).getDate() - fecha_actual.getDate())<= 7
           && data.getValue(row, column_finfase)) <= fecha_actual) {
             stilo = 'cell_warning_info_style bold_style cell_width_70';
           }
