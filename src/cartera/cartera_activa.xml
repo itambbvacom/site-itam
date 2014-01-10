@@ -48,8 +48,8 @@
 			}
       .cell_warning_info_style {
           height: 35px;
-					border-bottom: 1px solid #FFD966;
-					background-color: #dd7e6b;
+					border-bottom: 1px solid #D9D9D9;
+					background-color: #FFD966;
 					text-align: center;	
 					color: #000000;
       }
