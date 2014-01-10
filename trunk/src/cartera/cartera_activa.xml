@@ -187,8 +187,8 @@
 						stilo = 'cell_warning_style bold_style cell_width_70';
 					} else {
  
-            if (data.getValue(row, column_finfase) <= fecha_actual
-                && ((((fecha_actual - data.getValue(row, column_finfase))/1000)/60)/60)/24 <= 7) {
+            if (data.getValue(row, column_finfase) >= fecha_actual
+                && ((((data.getValue(row, column_finfase)-fecha_actual)/1000)/60)/60)/24 <= 7) {
                   stilo = 'cell_warning_info_style bold_style cell_width_70';
                 }
    
