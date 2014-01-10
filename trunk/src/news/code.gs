@@ -4,7 +4,7 @@ function doGet() {
 
 function getAnnouncementsSlidder() {
   
-  var pagina = SitesApp.getPageByUrl("https://sites.google.com/a/bbva.com/it-am-qa/sistemas-am/noticias");
+  var pagina = SitesApp.getPageByUrl("https://sites.google.com/a/bbva.com/it-am/sistemas-am/noticias");
   var announcements = pagina.getAnnouncements({ start: 0, max: 4});
   var noticias = '';
   var contacts = ContactsApp.getContacts();
