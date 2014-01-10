@@ -193,9 +193,9 @@
 
 				google.visualization.events.addListener(table, 'ready',
 					function(event) {
-						if ($("#table").height() >= 500) {
-							$("#headers_table").width($("#headers_table").width() - 3);
-						}
+						//if ($("#table").height() >= 500) {
+							//$("#headers_table").width($("#headers_table").width() - 3);
+						//}
 						
 						$("#table table tbody tr:last-child td").each(function(index){
 							if ($("#w"+(index+1)).val() > $(this).width()) {
