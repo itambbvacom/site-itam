@@ -1,7 +1,7 @@
 function updateNoticias() {
   var spreadsheet = SpreadsheetApp.openByUrl("https://spreadsheet.google.com/a/bbva.com/ccc?key=0AuL8XqqgbAI4dG5xVEdKZnZUY2NSR29mNi1VQm92TXc");
   var sheet = spreadsheet.getSheetByName("Noticias");
-  var page = SitesApp.getPageByUrl("https://sites.google.com/a/bbva.com/it-am-qa/sistemas-am/noticias");
+  var page = SitesApp.getPageByUrl("https://sites.google.com/a/bbva.com/it-am/sistemas-am/noticias");
   var announcements = page.getAnnouncements({ start: 0, max: 4});
   
   var column_fecha = 1;
