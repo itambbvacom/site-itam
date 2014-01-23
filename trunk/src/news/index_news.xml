@@ -133,7 +133,7 @@
                                                                 w = $('.slide').width() - w - 10;
                                                                 $('#slides .next').css('left', w);
 
-                                var query = new google.visualization.Query('https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=0AuL8XqqgbAI4dGZSQVkxNndLY1BLclV1akxMSUtGS3c&usp=drive_web#gid=0');
+                                var query = new google.visualization.Query('https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=0AuL8XqqgbAI4dG5xVEdKZnZUY2NSR29mNi1VQm92TXc&usp=drive_web#gid=0');
                                 query.send(handleQueryResponse);
                         }
                         
