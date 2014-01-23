@@ -86,7 +86,7 @@
                                                                                                                 'ui': {
                                                                                                                                 'labelSeparator' : '',
                                                                                                                                 'label' : '',
-                                                                                                                                'caption' : 'Selecciona un valor',
+                                                                                                                                'caption' : 'Selecciona',
                                                                                                                                 'allowMultiple': true,
                                                                                                                                 'allowTyping': false,
                                                                                                                                 'selectedValuesLayout': 'aside'
@@ -102,7 +102,7 @@
                                                                                                                 'ui': {
                                                                                                                                 'labelSeparator' : '',
                                                                                                                                 'label' : '',
-                                                                                                                                'caption' : 'Selecciona un valor',
+                                                                                                                                'caption' : 'Selecciona',
                                                                                                                                 'allowMultiple': true,
                                                                                                                                 'allowTyping': false,
                                                                                                                                 'selectedValuesLayout': 'aside'
@@ -118,7 +118,7 @@
                                                                                                                 'ui': {
                                                                                                                                 'labelSeparator' : '',
                                                                                                                                 'label' : '',
-                                                                                                                                'caption' : 'Selecciona un valor',
+                                                                                                                                'caption' : 'Selecciona',
                                                                                                                                 'allowMultiple': true,
                                                                                                                                 'allowTyping': false,
                                                                                                                                 'selectedValuesLayout': 'aside'
@@ -133,7 +133,7 @@
                                                                                                                 'ui': {
                                                                                                                                 'labelSeparator' : '',
                                                                                                                                 'label' : '',
-                                                                                                                                'caption' : 'Selecciona un valor',
+                                                                                                                                'caption' : 'Selecciona',
                                                                                                                                 'allowMultiple': true,
                                                                                                                                 'allowTyping': false,
                                                                                                                                 'selectedValuesLayout': 'aside'
@@ -213,10 +213,37 @@
                                 });
                                 
                         }
+                                                function seleccionar(el) {
+                                                        var body = document.body, range, sel;
+                                                        if (document.createRange && window.getSelection) {
+                                                                range = document.createRange();
+                                                                sel = window.getSelection();
+                                                                sel.removeAllRanges();
+                                                                try {
+                                                                        range.selectNodeContents(el);
+                                                                        sel.addRange(range);
+                                                                } catch (e) {
+                                                                        range.selectNode(el);
+                                                                        sel.addRange(range);
+                                                                }
+                                                        } else if (body.createTextRange) {
+                                                                range = body.createTextRange();
+                                                                range.moveToElementText(el);
+                                                                range.select();
+                                                        }
+                                                        var x = 2;
+                                                }
                  
                 </script>
                 <div id="dashboard">
                         <table width="100%">
+                                                                <tr>
+                                        <td colspan="8" style="text-align:right;">
+                                                                                        <a href="#" onclick="seleccionar(document.getElementById('select_table'));">
+                                                                                                        <img src="https://site-itam.googlecode.com/svn/trunk/img/btnSelecciona.png">
+                                                                                        </a>
+                                        </td>
+                                </tr>
                                 <tr>
                                         <td width="5%" height="50px" style="text-align:right;" class="filtros_style">Año:</td>
                                         <td width="13%" height="50px" class="filtros_style"><div id="filtro1"></div></td>
@@ -229,6 +256,7 @@
                                 </tr>
                                 <tr>
                                         <td colspan="8">
+                                                                                                <div id="select_table">
                                                 <table id="headers_table"  width="100%" height="35px" class="filtros_style">
                                                         <tr>
                                                                 <td id="h1" class="header_style"><input id="w1" type="hidden" value="56"/>NOMBRE</td>
@@ -244,16 +272,17 @@
                                                                 <td id="h11" class="header_style"><input id="w11" type="hidden" value="35"/>ÁREA</td>
                                                         </tr>
                                                 </table>
+                                                                                                <div id="contenido_tabla" style="height:500px;overflow:hidden;position:relative;">
+                                                                                                                <table width="100%">
+                                                                                                                                <tr>
+                                                                                                                                                <td><div id="table"></div></td>
+                                                                                                                                </tr>
+                                                                                                                </table>
+                                                                                                </div>
+                                                                                                </div>
                                         </td>
                                 </tr>
                         </table>
-                        <div id="contenido_tabla" style="height:500px;overflow:hidden;position:relative;">
-                                <table width="100%">
-                                        <tr>
-                                                <td><div id="table"></div></td>
-                                        </tr>
-                                </table>
-                        </div>
                 </div>
         ]]>
   </Content> 
