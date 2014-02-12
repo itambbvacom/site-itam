@@ -222,7 +222,7 @@
                                                                 'options': options
                                                         });
                                 
-                                var formatter_link = new google.visualization.PatternFormat('<a class="iframe" href="{12}" title="{1}" >{0}</a>');
+                                var formatter_link = new google.visualization.PatternFormat('<a class="iframe" href="{12}" target="_blank" >{0}</a>');
                                 formatter_link.format(data, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]);
                                 
                                 var formatter_fecha = new google.visualization.DateFormat({pattern: 'dd-MMM-yy'});
@@ -293,7 +293,7 @@
 
                                 google.visualization.events.addListener(table, 'ready',
                                         function(event) {
-                                                $(".iframe").colorbox({iframe:true, width:"90%", height:"90%"});
+                                                $(".iframe").colorbox({iframe:true, width:"100%", height:"95%"});
                                                 $('#contenido_tabla').perfectScrollbar({
 													wheelSpeed: 20,
 													wheelPropagation: false
@@ -320,6 +320,7 @@
 														keysheet = keysheet.substring(0, indexkey);
 													}
 													if ($('#chk_editar').prop('checked')) {
+														$.colorbox.remove();
 														elemento.href = 'https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=' + keysheet +'&usp=drive_web';
 													} else {
 														elemento.href = 'https://spreadsheets.google.com/a/bbva.com/spreadsheet/ccc?chrome=false&key=' + keysheet +'&output=html&pubredirect=true&widget=true';
@@ -360,8 +361,10 @@
 									keysheet = keysheet.substring(0, indexkey);
 								}
 								if ($('#chk_editar').prop('checked')) {
+									$.colorbox.remove();
 									elemento.href = 'https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=' + keysheet +'&usp=drive_web';
 								} else {
+									$(".iframe").colorbox({iframe:true, width:"100%", height:"95%"});
 									elemento.href = 'https://spreadsheets.google.com/a/bbva.com/spreadsheet/ccc?chrome=false&key=' + keysheet +'&output=html&pubredirect=true&widget=true';
 								}
 							});
@@ -370,7 +373,7 @@
                 <div id="dashboard">
 					<table width="100%">
 						<tr>
-							<td colspan="8" style="text-align:right;" class="filtros_style">
+							<td colspan="8" style="text-align:right;padding-right: 5px;" class="filtros_style">
 								<input id="chk_editar" type="checkbox" onclick="cambia_detalle();">Editar</input>
 							</td>
 						</tr>
@@ -381,7 +384,7 @@
 							<td class="filtros_style"><div id="filtro2"></div></td>
 							<td style="text-align:right;" class="filtros_style">Líder:</td>
 							<td class="filtros_style"><div id="filtro3"></div></td>
-							<td colspan="2" style="text-align:right;">
+							<td colspan="2" style="text-align:right;padding-right: 5px;">
 								<a href="#" onclick="seleccionar(document.getElementById('select_table'));">
 									<img src="https://site-itam.googlecode.com/svn/trunk/img/btnSelecciona.png">
 								</a>
@@ -427,7 +430,7 @@
 							</td>
 						</tr>
 						<tr>
-							<td colspan="8" style="text-align:right;">
+							<td colspan="8" style="text-align:right;padding-right: 5px;">
 								<a href="https://docs.google.com/a/bbva.com/spreadsheet/fm?key=0AjOaof4bFUTmdDQ2RlY5a0hOTGZXWXBmMVlNOUVpa1E&fmcmd=420">
 									<img src="https://site-itam.googlecode.com/svn/trunk/img/btnDescarga.png">
 								</a>
