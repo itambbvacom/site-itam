@@ -414,7 +414,7 @@
 										<td id="h7" class="header_style"><input id="w7" type="hidden" value="53"/>ESTADO</td>
 										<td id="h8" class="header_style"><input id="w8" type="hidden" value="49"/>FASE ACTUAL</td>
 										<td id="h9" class="header_style"><input id="w9" type="hidden" value="34"/>FIN FASE</td>
-										<td id="h10" class="header_style"><input id="w10" type="hidden" value="55"/>Ppto EST(usd)</td>
+										<td id="h10" class="header_style"><input id="w10" type="hidden" value="55"/>Ppto EST(Mxp)</td>
 										<td id="h11" class="header_style"><input id="w11" type="hidden" value="70"/>CHAMPION</td>
 										<td id="h12" class="header_style"><input id="w12" type="hidden" value="35"/>ÁREA</td>
 									</tr>
