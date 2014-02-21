@@ -269,10 +269,14 @@
                                         stilo = 'cell_style bold_style cell_width_70';
                                         if ((data.getValue(row, column_estado)).toLowerCase().indexOf('en cartera') == -1
 											&& (data.getValue(row, column_estado)).toLowerCase().indexOf('terminado') == -1
+											&& (data.getValue(row, column_estado)).toLowerCase().indexOf('suspendido') == -1
 											&& data.getValue(row, column_finfase) < fecha_actual) {
 											stilo = 'cell_warning_style bold_style cell_width_70';
                                         } else {
-											if (data.getValue(row, column_finfase) >= fecha_actual && ((((data.getValue(row, column_finfase)-fecha_actual)/1000)/60)/60)/24 <= 7) {
+											if ((data.getValue(row, column_estado)).toLowerCase().indexOf('en cartera') == -1
+												&& (data.getValue(row, column_estado)).toLowerCase().indexOf('terminado') == -1
+												&& (data.getValue(row, column_estado)).toLowerCase().indexOf('suspendido') == -1
+												&& data.getValue(row, column_finfase) >= fecha_actual && ((((data.getValue(row, column_finfase)-fecha_actual)/1000)/60)/60)/24 <= 7) {
 												stilo = 'cell_warning_info_style bold_style cell_width_70';
                                             }
    
@@ -311,6 +315,7 @@
                                                 $("#table table tbody tr:last-child td").each(function(index){
 													$("#h"+(index+1)).width($(this).width());
                                                 });
+
                                                 $(".iframe").each(function(index, elemento){
 													var keysheet = elemento.href;
 													var indexkey = keysheet.indexOf("key=");
@@ -385,6 +390,9 @@
 							<td style="text-align:right;" class="filtros_style">Líder:</td>
 							<td class="filtros_style"><div id="filtro3"></div></td>
 							<td colspan="2" style="text-align:right;padding-right: 5px;">
+								<a class="iframe" href="https://spreadsheets.google.com/a/bbva.com/spreadsheet/ccc?chrome=false&key=0AjOaof4bFUTmdEtmd19KQUdDZnlnNjFBMDNWUm5qWmc&output=html&pubredirect=true&widget=true" >
+									<img src="https://site-itam.googlecode.com/svn/trunk/img/btnGraficos.png">
+								</a>
 								<a href="#" onclick="seleccionar(document.getElementById('select_table'));">
 									<img src="https://site-itam.googlecode.com/svn/trunk/img/btnSelecciona.png">
 								</a>
@@ -414,7 +422,7 @@
 										<td id="h7" class="header_style"><input id="w7" type="hidden" value="53"/>ESTADO</td>
 										<td id="h8" class="header_style"><input id="w8" type="hidden" value="49"/>FASE ACTUAL</td>
 										<td id="h9" class="header_style"><input id="w9" type="hidden" value="34"/>FIN FASE</td>
-										<td id="h10" class="header_style"><input id="w10" type="hidden" value="55"/>Ppto EST(Mxp)</td>
+										<td id="h10" class="header_style"><input id="w10" type="hidden" value="55"/>Ppto EST(MXN)</td>
 										<td id="h11" class="header_style"><input id="w11" type="hidden" value="70"/>CHAMPION</td>
 										<td id="h12" class="header_style"><input id="w12" type="hidden" value="35"/>ÁREA</td>
 									</tr>
