@@ -375,7 +375,23 @@
 															}
                                                         }
                                                     });
-								                                
+								
+								var category_op = new google.visualization.ControlWrapper({
+														'controlType': 'CategoryFilter',
+                                                        'containerId': 'filtro8',
+                                                        'options': {
+															'filterColumnLabel': 'OFICINA DE PROYECTO',
+															'ui': {
+																'labelSeparator' : '',
+                                                                'label' : '',
+                                                                'caption' : 'Selecciona',
+                                                                'allowMultiple': true,
+                                                                'allowTyping': false,
+                                                                'selectedValuesLayout': 'aside'
+															}
+                                                        }
+                                                    });                                
+
                                 var cssClassNames = {
                                         'headerRow': 'header_hide_style',
                                         'tableCell': 'cell_style'
@@ -407,6 +423,7 @@
 								var column_ppto = 9;
 								var column_champion     = 10;   
 								var column_area = 11;
+								var column_op = 13;
 								
 								var stilo;
                                 var fecha_actual = new Date();
@@ -437,12 +454,14 @@
                                         if ((data.getValue(row, column_estado)).toLowerCase().indexOf('en cartera') == -1
 											&& (data.getValue(row, column_estado)).toLowerCase().indexOf('terminado') == -1
 											&& (data.getValue(row, column_estado)).toLowerCase().indexOf('suspendido') == -1
+											&& (data.getValue(row, column_estado)).toLowerCase().indexOf('cancelado') == -1
 											&& data.getValue(row, column_finfase) < fecha_actual) {
 											stilo = 'cell_warning_style bold_style cell_width_70';
                                         } else {
 											if ((data.getValue(row, column_estado)).toLowerCase().indexOf('en cartera') == -1
 												&& (data.getValue(row, column_estado)).toLowerCase().indexOf('terminado') == -1
 												&& (data.getValue(row, column_estado)).toLowerCase().indexOf('suspendido') == -1
+												&& (data.getValue(row, column_estado)).toLowerCase().indexOf('cancelado') == -1
 												&& data.getValue(row, column_finfase) >= fecha_actual && ((((data.getValue(row, column_finfase)-fecha_actual)/1000)/60)/60)/24 <= 7) {
 												stilo = 'cell_warning_info_style bold_style cell_width_70';
                                             }
@@ -452,18 +471,24 @@
                                         data.setCell(row, column_ppto, data.getValue(row, column_ppto), data.getFormattedValue(row, column_ppto), {'className': 'cell_style'});
                                         data.setCell(row, column_champion, data.getValue(row, column_champion), data.getFormattedValue(row, column_champion), {'className': 'cell_style cell_width_100'});
                                         data.setCell(row, column_area, data.getValue(row, column_area), data.getFormattedValue(row, column_area), {'className': 'cell_style cell_width_100'});
-                                                                                
+										
+										cadena_format = data.getValue(row, column_op);
+                                        cadena_format = cadena_format.substring(0, 1);
+                                        cadena_format = cadena_format.trim();
+										data.setCell(row, column_op, data.getValue(row, column_op), cadena_format, {'className': 'cell_style'});
+                                             
                                 }
                                 
                                 var view = new google.visualization.DataView(data);
-                                view.setColumns([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]);
+                                view.setColumns([0, 1, 13, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]);
                                 
                                 new google.visualization.Dashboard(document.getElementById('dashboard')).
-                                                bind([category_codigo, category_champion, category_lider, category_anio, category_estado, category_fase, category_area], table).
+                                                bind([category_codigo, category_champion, category_lider, category_anio, category_estado, category_fase, category_area, category_op], table).
                                                 draw(view);
 
                                 google.visualization.events.addListener(table, 'ready',
                                         function(event) {
+												$(".google-visualization-controls-stringfilter").children().css( "width", "80px" );
                                                 $(".iframe").colorbox({iframe:true, width:"100%", height:"95%"});
                                                 $('#contenido_tabla').perfectScrollbar({
 													wheelSpeed: 20,
@@ -542,21 +567,10 @@
 							});
 						}
                 </script>
-                <div id="dashboard">
-					<table width="100%" >
+				<div id="dashboard">
+					<table width="100%">
 						<tr>
-							<td colspan="8" style="text-align:right;padding-right: 5px;" class="filtros_style">
-								<input id="chk_editar" type="checkbox" onclick="cambia_detalle();">Editar</input>
-							</td>
-						</tr>
-						<tr>
-							<td style="text-align:right;" class="filtros_style">Codigo:</td>
-							<td class="filtros_style"><div id="filtro1"></div></td>
-							<td style="text-align:right;" class="filtros_style">Champion:</td>
-							<td class="filtros_style"><div id="filtro2"></div></td>
-							<td style="text-align:right;" class="filtros_style">Líder:</td>
-							<td class="filtros_style"><div id="filtro3"></div></td>
-							<td colspan = "2">
+							<td colspan="9" style="text-align:right;padding-right: 5px;" class="filtros_style">
 								<table align="right">
 									<tr>
 										<td style="text-align:right;">
@@ -566,40 +580,53 @@
 										</td>
 										<td style="text-align:right;">
 											<a href="#" onclick="seleccionar(document.getElementById('select_table'));">
-												<img src="https://site-itam.googlecode.com/svn/trunk/img/btnSelecciona2.png">
+												<img src="https://site-itam.googlecode.com/svn/branches/img/btnSelecciona2.png">
 											</a>
 										</td>
 									</tr>
 								</table>
+								
 							</td>
 						</tr>
 						<tr>
-							<td width="5%" height="50px" style="text-align:right;" class="filtros_style">Año:</td>
-							<td width="13%" height="50px" class="filtros_style"><div id="filtro4"></div></td>
-							<td width="5%" height="50px" style="text-align:right;" class="filtros_style">Estado:</td>
-							<td width="18%" height="50px" class="filtros_style"><div id="filtro5"></div></td>
-							<td width="8%" height="50px" style="text-align:right;" class="filtros_style">Fase Actual:</td>
-							<td width="22%" height="50px" class="filtros_style"><div id="filtro6"></div></td>
-							<td width="5%" height="50px" style="text-align:right;" class="filtros_style">Area:</td>
-							<td width="24%" height="50px" class="filtros_style"><div id="filtro7"></div></td>
+							<td width="5%" style="text-align:right;" class="filtros_style">Codigo:</td>
+							<td width="8%" class="filtros_style"><div id="filtro1"></div></td>
+							<td width="5%" style="text-align:right;" class="filtros_style">Champion:</td>
+							<td width="18%" class="filtros_style"><div id="filtro2"></div></td>
+							<td width="8%" style="text-align:right;" class="filtros_style">Líder:</td>
+							<td width="20%" class="filtros_style"><div id="filtro3"></div></td>
+							<td width="10%" style="text-align:right;" class="filtros_style">Oficina Proyectos:</td>
+							<td width="21%" class="filtros_style"><div id="filtro8"></div></td>
+							<td width="5%" style="text-align:right;" class="filtros_style"><input id="chk_editar" type="checkbox" onclick="cambia_detalle();">Editar</input></td>
 						</tr>
 						<tr>
-							<td colspan="8">
+							<td height="50px" style="text-align:right;" class="filtros_style">Año:</td>
+							<td height="50px" class="filtros_style"><div id="filtro4"></div></td>
+							<td height="50px" style="text-align:right;" class="filtros_style">Estado:</td>
+							<td height="50px" class="filtros_style"><div id="filtro5"></div></td>
+							<td height="50px" style="text-align:right;" class="filtros_style">Fase Actual:</td>
+							<td height="50px" class="filtros_style"><div id="filtro6"></div></td>
+							<td height="50px" style="text-align:right;" class="filtros_style">Area:</td>
+							<td colspan = "2" height="50px" class="filtros_style"><div id="filtro7"></div></td>
+						</tr>
+						<tr>
+							<td colspan="9">
 								<div id="select_table">
 								<table id="headers_table"  width="100%" height="35px" class="filtros_style">
 									<tr>
 										<td id="h1" class="header_style"><input id="w1" type="hidden" value="60"/>CODIGO</td>
 										<td id="h2" class="header_style"><input id="w2" type="hidden" value="56"/>NOMBRE</td>
-										<td id="h3" class="header_style"><input id="w3" type="hidden" value="31"/>TIPO</td>
-										<td id="h4" class="header_style"><input id="w4" type="hidden" value="28"/>AÑO</td>
-										<td id="h5" class="header_style"><input id="w5" type="hidden" value="71"/>FIN PROYECTO</td>
-										<td id="h6" class="header_style"><input id="w6" type="hidden" value="38"/>LÍDER</td>
-										<td id="h7" class="header_style"><input id="w7" type="hidden" value="53"/>ESTADO</td>
-										<td id="h8" class="header_style"><input id="w8" type="hidden" value="49"/>FASE ACTUAL</td>
-										<td id="h9" class="header_style"><input id="w9" type="hidden" value="34"/>FIN FASE</td>
-										<td id="h10" class="header_style"><input id="w10" type="hidden" value="55"/>Ppto EST(MXN)</td>
-										<td id="h11" class="header_style"><input id="w11" type="hidden" value="70"/>CHAMPION</td>
-										<td id="h12" class="header_style"><input id="w12" type="hidden" value="35"/>ÁREA</td>
+										<td id="h3" class="header_style"><input id="w3" type="hidden" value="5"/>OP</td>
+										<td id="h4" class="header_style"><input id="w4" type="hidden" value="31"/>TIPO</td>
+										<td id="h5" class="header_style"><input id="w5" type="hidden" value="28"/>AÑO</td>
+										<td id="h6" class="header_style"><input id="w6" type="hidden" value="71"/>FIN PROYECTO</td>
+										<td id="h7" class="header_style"><input id="w7" type="hidden" value="38"/>LÍDER</td>
+										<td id="h8" class="header_style"><input id="w8" type="hidden" value="53"/>ESTADO</td>
+										<td id="h9" class="header_style"><input id="w9" type="hidden" value="49"/>FASE ACTUAL</td>
+										<td id="h10" class="header_style"><input id="w10" type="hidden" value="34"/>FIN FASE</td>
+										<td id="h11" class="header_style"><input id="w11" type="hidden" value="55"/>Ppto EST(MXN)</td>
+										<td id="h12" class="header_style"><input id="w12" type="hidden" value="70"/>CHAMPION</td>
+										<td id="h13" class="header_style"><input id="w13" type="hidden" value="35"/>ÁREA</td>
 									</tr>
 								</table>
 								<div id="contenido_tabla" style="height:500px;overflow:hidden;position:relative;">
@@ -613,7 +640,7 @@
 							</td>
 						</tr>
 						<tr>
-							<td colspan="8" style="text-align:right;padding-right: 5px;">
+							<td colspan="9" style="text-align:right;padding-right: 5px;">
 								<a href="https://docs.google.com/a/bbva.com/spreadsheet/fm?key=0AjOaof4bFUTmdDQ2RlY5a0hOTGZXWXBmMVlNOUVpa1E&fmcmd=420">
 									<img src="https://site-itam.googlecode.com/svn/trunk/img/btnDescarga2.png">
 								</a>
