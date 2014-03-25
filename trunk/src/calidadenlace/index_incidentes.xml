@@ -346,8 +346,8 @@
                                                 'options': options
                                                 });
 
-								var formatter_link = new google.visualization.PatternFormat('<a class="inline" href="#inline_content" onclick="getComentario(this);"><input type="hidden" value="{8}"/>{0}</a>');
-                                formatter_link.format(data, [0, 1, 2, 3, 4, 5, 6, 7, 8]);
+								//var formatter_link = new google.visualization.PatternFormat('<a class="inline" href="#inline_content" onclick="getComentario(this);"><input type="hidden" value="{8}"/>{0}</a>');
+                                //formatter_link.format(data, [0, 1, 2, 3, 4, 5, 6, 7, 8]);
 								
                                 var formatter_fecha_reporte = new google.visualization.DateFormat({pattern: 'dd.LLLyy'});
                                 formatter_fecha_reporte.format(data, 3);
@@ -362,7 +362,8 @@
                                 var column_fechacompromiso = 5;
                                 var column_incidencia = 6;
                                 var column_responsable = 7;
-
+								var column_comentario = 8;
+								var comentario;
                                 for (var row = 0; row < data.getNumberOfRows(); row++) {
 									data.setCell(row, column_reporto, data.getValue(row, column_reporto), data.getFormattedValue(row, column_reporto), {'className': 'cell_left_style cell_width_100'});
                                     data.setCell(row, column_aplicativo, data.getValue(row, column_aplicativo), data.getFormattedValue(row, column_aplicativo), {'className': 'cell_style bold_style cell_width_120'});
@@ -376,8 +377,16 @@
 									         
                                     data.setCell(row, column_incidencia, data.getValue(row, column_incidencia), data.getFormattedValue(row, column_incidencia), {'className': 'cell_style_justify'});
                                     data.setCell(row, column_responsable, data.getValue(row, column_responsable), data.getFormattedValue(row, column_responsable), {'className': 'cell_style cell_width_100'});                                                                        
-                                }
+									comentario = data.getValue(row, column_comentario);
+									comentario = comentario.split('>').join('&#62');
+									comentario = comentario.split('<').join('&#60');
+									comentario = comentario.split('"').join('&#34');
+									data.setCell(row, column_comentario, comentario, comentario, {'className': ''});
+								}
                                 
+								var formatter_link = new google.visualization.PatternFormat('<a class="inline" href="#inline_content" onclick="getComentario(this);"><input type="hidden" value="{8}"/>{0}</a>');
+                                formatter_link.format(data, [0, 1, 2, 3, 4, 5, 6, 7, 8]);
+								
                                 var view = new google.visualization.DataView(data);
                                 view.setColumns([0, 1, 2, 3, 4, 5, 6, 7]);
                                 
@@ -387,12 +396,12 @@
 
                                 google.visualization.events.addListener(table, 'ready',
                                         function(event) {
-												 $(".inline").colorbox({inline:true, width:"40%", height:"40%"});
+												$(".inline").colorbox({inline:true, width:"40%", height:"40%"});
                                                 $('#contenido_tabla').perfectScrollbar({
 													wheelSpeed: 20,
 													wheelPropagation: false
                                                 });
-                                                
+
                                                 $("#table table tbody tr:last-child td").each(function(index){
 													if ($("#w"+(index+1)).val() > $(this).width()) {
 														$(this).width($("#w"+(index+1)).val());
