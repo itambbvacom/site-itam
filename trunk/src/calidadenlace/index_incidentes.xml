@@ -143,9 +143,9 @@
 								Change the following styles to modify the appearance of Colorbox.  They are
 								ordered & tabbed in a way that represents the nesting of the generated HTML.
 							*/
-							#cboxOverlay{background:#000;}
+							#cboxOverlay{background:#C3C3C3;}
 							#colorbox{outline:0;}
-							#cboxContent{margin-top:20px;background:#000;}
+							#cboxContent{margin-top:20px;background:#C3C3C3;}
 							.cboxIframe{background:#fff;}
 							#cboxError{padding:50px; border:1px solid #ccc;}
 							#cboxLoadedContent{border:5px solid #000; background:#fff;}
@@ -237,6 +237,9 @@
                         }
                         .cell_width_60 {
 							width: 60px;
+                        }
+						.cell_width_30 {
+							width: 30px;
                         }
                         .bold_style {
 							font-weight: bold;
@@ -2133,21 +2136,23 @@
                                 //formatter_link.format(data, [0, 1, 2, 3, 4, 5, 6, 7, 8]);
 								
                                 var formatter_fecha_reporte = new google.visualization.DateFormat({pattern: 'dd.LLLyy'});
-                                formatter_fecha_reporte.format(data, 3);
+                                formatter_fecha_reporte.format(data, 4);
 								var formatter_fecha_compromiso = new google.visualization.DateFormat({pattern: 'dd.LLLyy'});
-                                formatter_fecha_compromiso.format(data, 5);
+                                formatter_fecha_compromiso.format(data, 6);
                                 
-                                var column_reporto = 0;
-                                var column_aplicativo = 1;
-                                var column_area = 2;
-                                var column_fechareporte = 3;
-                                var column_estatus = 4;
-                                var column_fechacompromiso = 5;
-                                var column_incidencia = 6;
-                                var column_responsable = 7;
-								var column_comentario = 8;
+								var column_id = 0;
+                                var column_reporto = 1;
+                                var column_aplicativo = 2;
+                                var column_area = 3;
+                                var column_fechareporte = 4;
+                                var column_estatus = 5;
+                                var column_fechacompromiso = 6;
+                                var column_incidencia = 7;
+                                var column_responsable = 8;
+								var column_comentario = 9;
 								var comentario;
                                 for (var row = 0; row < data.getNumberOfRows(); row++) {
+									data.setCell(row, column_id, data.getValue(row, column_id), data.getFormattedValue(row, column_id), {'className': 'cell_left_style cell_width_85'});
 									data.setCell(row, column_reporto, data.getValue(row, column_reporto), data.getFormattedValue(row, column_reporto), {'className': 'cell_left_style cell_width_100'});
                                     data.setCell(row, column_aplicativo, data.getValue(row, column_aplicativo), data.getFormattedValue(row, column_aplicativo), {'className': 'cell_style bold_style cell_width_120'});
                                     data.setCell(row, column_area, data.getValue(row, column_area), data.getFormattedValue(row, column_area), {'className': 'cell_style bold_style cell_width_120'});
@@ -2167,11 +2172,11 @@
 									data.setCell(row, column_comentario, comentario, comentario, {'className': ''});
 								}
                                 
-								var formatter_link = new google.visualization.PatternFormat('<a class="inline" href="#inline_content" onclick="getComentario(this);"><input type="hidden" value="{8}"/>{0}</a>');
-                                formatter_link.format(data, [0, 1, 2, 3, 4, 5, 6, 7, 8]);
+								var formatter_link = new google.visualization.PatternFormat('<a class="inline" href="#inline_content" onclick="getComentario(this);"><input type="hidden" value="{9}"/>{0}</a>');
+                                formatter_link.format(data, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
 								
                                 var view = new google.visualization.DataView(data);
-                                view.setColumns([0, 1, 2, 3, 4, 5, 6, 7]);
+                                view.setColumns([0, 1, 2, 3, 4, 5, 6, 7, 8]);
                                 
                                 new google.visualization.Dashboard(document.getElementById('dashboard')).
                                                 bind([category_reporto, category_area, category_aplicativo, category_estatus], table).
@@ -2179,7 +2184,7 @@
 
                                 google.visualization.events.addListener(table, 'ready',
                                         function(event) {
-												$(".inline").colorbox({inline:true, width:"40%", height:"40%"});
+												$(".inline").colorbox({inline:true, width:"60%", height:"50%"});
                                                 $('#contenido_tabla').perfectScrollbar({
 													wheelSpeed: 20,
 													wheelPropagation: false
@@ -2238,7 +2243,7 @@
 						<tr>
 							<td width="5%" height="50px" style="text-align:right;" class="filtros_style">Reportó:</td>
 							<td width="28%" height="50px" class="filtros_style"><div id="filtro1"></div></td>
-							<td width="8%" height="50px" style="text-align:right;" class="filtros_style">Aplicativosq:</td>
+							<td width="8%" height="50px" style="text-align:right;" class="filtros_style">Aplicativo:</td>
 							<td width="13%" height="50px" class="filtros_style"><div id="filtro2"></div></td>
 							<td width="5%" height="50px" style="text-align:right;" class="filtros_style">Área:</td>
 							<td width="18%" height="50px" class="filtros_style"><div id="filtro3"></div></td>
@@ -2250,14 +2255,15 @@
 								<div id="select_table">
 									<table id="headers_table"  width="100%" height="35px" class="filtros_style">
 										<tr>
-											<td id="h1" class="header_style"><input id="w1" type="hidden" value="131"/>Reportó</td>
-											<td id="h2" class="header_style"><input id="w2" type="hidden" value="101"/>Aplicativo</td>
-											<td id="h3" class="header_style"><input id="w3" type="hidden" value="90"/>Área</td>
-											<td id="h4" class="header_style"><input id="w4" type="hidden" value="60"/>Fecha Reporte</td>
-											<td id="h5" class="header_style"><input id="w5" type="hidden" value="55"/>Estatus</td>
-											<td id="h6" class="header_style"><input id="w6" type="hidden" value="60"/>Fecha Compromiso</td>
-											<td id="h7" class="header_style"><input id="w7" type="hidden" value="180"/>Incidencia</td>
-											<td id="h8" class="header_style"><input id="w8" type="hidden" value="131"/>Responsable</td>
+											<td id="h1" class="header_style"><input id="w1" type="hidden" value="60"/>Id Incidente</td>
+											<td id="h2" class="header_style"><input id="w2" type="hidden" value="131"/>Reportó</td>
+											<td id="h3" class="header_style"><input id="w3" type="hidden" value="101"/>Aplicativo</td>
+											<td id="h4" class="header_style"><input id="w4" type="hidden" value="90"/>Área</td>
+											<td id="h5" class="header_style"><input id="w5" type="hidden" value="60"/>Fecha Reporte</td>
+											<td id="h6" class="header_style"><input id="w6" type="hidden" value="55"/>Estatus</td>
+											<td id="h7" class="header_style"><input id="w7" type="hidden" value="60"/>Fecha Compromiso</td>
+											<td id="h8" class="header_style"><input id="w8" type="hidden" value="180"/>Incidencia</td>
+											<td id="h9" class="header_style"><input id="w9" type="hidden" value="131"/>Responsable</td>
 										</tr>
 									</table>
 									<div id="contenido_tabla" style="height:500px;overflow:hidden;position:relative;">
