@@ -2167,10 +2167,13 @@
                                     data.setCell(row, column_incidencia, data.getValue(row, column_incidencia), data.getFormattedValue(row, column_incidencia), {'className': 'cell_style_justify'});
                                     data.setCell(row, column_responsable, data.getValue(row, column_responsable), data.getFormattedValue(row, column_responsable), {'className': 'cell_style cell_width_100'});                                                                        
 									comentario = data.getValue(row, column_comentario);
-									comentario = comentario.split('>').join('&#62');
-									comentario = comentario.split('<').join('&#60');
-									comentario = comentario.split('"').join('&#34');
-									data.setCell(row, column_comentario, comentario, comentario, {'className': ''});
+                          
+                  if (comentario != null) {
+										comentario = comentario.split('>').join('&#62');
+										comentario = comentario.split('<').join('&#60');
+										comentario = comentario.split('"').join('&#34');
+										data.setCell(row, column_comentario, comentario, comentario, {'className': ''});
+									}
 								}
                                 
 								var formatter_link = new google.visualization.PatternFormat('<a class="inline" href="#inline_content" onclick="getComentario(this);"><input type="hidden" value="{9}"/>{0}</a>');
