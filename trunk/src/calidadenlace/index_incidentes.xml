@@ -2241,7 +2241,7 @@
 							</td>
 						</tr>
 						<tr>
-							<td width="5%" height="50px" style="text-align:right;" class="filtros_style">Reportó:</td>
+							<td width="5%" height="50px" style="text-align:right;" class="filtros_style">Reportós:</td>
 							<td width="28%" height="50px" class="filtros_style"><div id="filtro1"></div></td>
 							<td width="8%" height="50px" style="text-align:right;" class="filtros_style">Aplicativo:</td>
 							<td width="13%" height="50px" class="filtros_style"><div id="filtro2"></div></td>
