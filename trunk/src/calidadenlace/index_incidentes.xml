@@ -2043,7 +2043,8 @@
                         google.setOnLoadCallback(draw);
 
                         function draw() {
-							var query = new google.visualization.Query('https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=0AjEF14TbSVXedEpVaXR1YlNkaEZlVVNqN1BoaTJqT1E&usp=drive_web');
+							//var query = new google.visualization.Query('https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=0AjEF14TbSVXedEpVaXR1YlNkaEZlVVNqN1BoaTJqT1E&usp=drive_web');
+                     var query = new google.visualization.Query('https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=1QE_pkbrCfNDpoyLbvid_SvuVckNHVMLoj3I5hygSXb4&usp=drive_web');
                             query.send(handleQueryResponse);
                                 
                         }
@@ -2241,7 +2242,7 @@
 							</td>
 						</tr>
 						<tr>
-							<td width="5%" height="50px" style="text-align:right;" class="filtros_style">Reportós:</td>
+							<td width="5%" height="50px" style="text-align:right;" class="filtros_style">Reportó:</td>
 							<td width="28%" height="50px" class="filtros_style"><div id="filtro1"></div></td>
 							<td width="8%" height="50px" style="text-align:right;" class="filtros_style">Aplicativo:</td>
 							<td width="13%" height="50px" class="filtros_style"><div id="filtro2"></div></td>
