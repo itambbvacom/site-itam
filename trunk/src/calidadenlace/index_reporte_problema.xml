@@ -339,6 +339,8 @@
 								var column_comentario = 11;
 								var comentario;
 								var incidencia;
+								var style_fecha = 'cell_style cell_width_60';
+								var style_fecha_neg = 'cell_style bold_style cell_width_60';
                                 for (var row = 0; row < data.getNumberOfRows(); row++) {
 									data.setCell(row, column_folio, data.getValue(row, column_folio), data.getFormattedValue(row, column_folio), {'className': 'cell_left_style cell_width_70'});
                                     data.setCell(row, column_nombre, data.getValue(row, column_nombre), data.getFormattedValue(row, column_nombre), {'className': 'cell_style bold_style cell_width_180'});
@@ -355,13 +357,20 @@
                                     data.setCell(row, column_fechaalta, data.getValue(row, column_fechaalta), data.getFormattedValue(row, column_fechaalta), {'className': 'cell_style bold_style cell_width_60'});
                                     data.setCell(row, column_solucionador, data.getValue(row, column_solucionador), data.getFormattedValue(row, column_solucionador), {'className': 'cell_style cell_width_75'});
                                     
-									data.setCell(row, column_aplicativo, data.getValue(row, column_aplicativo), data.getFormattedValue(row, column_aplicativo), {'className': 'cell_style bold_style cell_width_60'});
+									data.setCell(row, column_aplicativo, data.getValue(row, column_aplicativo), data.getFormattedValue(row, column_aplicativo), {'className': 'cell_style cell_width_60'});
                                     data.setCell(row, column_estatus, data.getValue(row, column_estatus), data.getFormattedValue(row, column_estatus), {'className': 'cell_style bold_style cell_width_60'});
-									data.setCell(row, column_atendidopor, data.getValue(row, column_atendidopor), data.getFormattedValue(row, column_atendidopor), {'className': 'cell_style bold_style cell_width_75'});
-									data.setCell(row, column_fechacompromiso, data.getValue(row, column_fechacompromiso), data.getFormattedValue(row, column_fechacompromiso), {'className': 'cell_style bold_style cell_width_60'});
-									data.setCell(row, column_fechacierre, data.getValue(row, column_fechacierre), data.getFormattedValue(row, column_fechacierre), {'className': 'cell_style bold_style cell_width_60'});
+									data.setCell(row, column_atendidopor, data.getValue(row, column_atendidopor), data.getFormattedValue(row, column_atendidopor), {'className': 'cell_style cell_width_75'});
 									
-									data.setCell(row, column_severidad, data.getValue(row, column_severidad), data.getFormattedValue(row, column_severidad), {'className': 'cell_style bold_style cell_width_100'});
+									if (data.getValue(row, column_fechacierre) != null) {
+										data.setCell(row, column_fechacompromiso, data.getValue(row, column_fechacompromiso), data.getFormattedValue(row, column_fechacompromiso), {'className': style_fecha});
+										data.setCell(row, column_fechacierre, data.getValue(row, column_fechacierre), data.getFormattedValue(row, column_fechacierre), {'className': style_fecha_neg});
+									} else {
+										data.setCell(row, column_fechacompromiso, data.getValue(row, column_fechacompromiso), data.getFormattedValue(row, column_fechacompromiso), {'className': style_fecha_neg});
+										data.setCell(row, column_fechacierre, data.getValue(row, column_fechacierre), data.getFormattedValue(row, column_fechacierre), {'className': style_fecha});
+									}
+									
+									
+									data.setCell(row, column_severidad, data.getValue(row, column_severidad), data.getFormattedValue(row, column_severidad), {'className': 'cell_style cell_width_100'});
 									
 									comentario = data.getValue(row, column_comentario);
 									if (comentario != null) {
