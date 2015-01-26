@@ -2044,6 +2044,7 @@
 
                         function draw() {
 							//var query = new google.visualization.Query('https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=0AjEF14TbSVXedEpVaXR1YlNkaEZlVVNqN1BoaTJqT1E&usp=drive_web');
+
                      var query = new google.visualization.Query('https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=1QE_pkbrCfNDpoyLbvid_SvuVckNHVMLoj3I5hygSXb4&usp=drive_web');
                             query.send(handleQueryResponse);
                                 
@@ -2060,7 +2061,7 @@
 														'controlType': 'CategoryFilter',
                                                         'containerId': 'filtro1',
                                                         'options': {
-															'filterColumnLabel': 'Reportó',
+															'filterColumnIndex': 1,
 															'ui': {
 																'labelSeparator' : '',
                                                                 'label' : '',
@@ -2076,7 +2077,7 @@
 														'controlType': 'CategoryFilter',
                                                         'containerId': 'filtro3',
                                                         'options': {
-															'filterColumnLabel': 'Área',
+															'filterColumnIndex': 3,
                                                             'ui': {
 																'labelSeparator' : '',
                                                                 'label' : '',
@@ -2092,7 +2093,7 @@
 														'controlType': 'CategoryFilter',
                                                         'containerId': 'filtro2',
                                                         'options': {
-															'filterColumnLabel': 'Aplicativo',
+															'filterColumnIndex': 2,
                                                             'ui': {
 																'labelSeparator' : '',
                                                                 'label' : '',
@@ -2108,7 +2109,7 @@
 														'controlType': 'CategoryFilter',
                                                         'containerId': 'filtro4',
                                                         'options': {
-															'filterColumnLabel': 'Estatus',
+															'filterColumnIndex': 5,
                                                             'ui': {
 																'labelSeparator' : '',
                                                                 'label' : '',
@@ -2119,7 +2120,7 @@
 															}
                                                         }
                                                     });
-                                                                
+                                                         
                                 var cssClassNames = {
 									'headerRow': 'header_hide_style',
                                     'tableCell': 'cell_style'
@@ -2135,7 +2136,8 @@
 
 								//var formatter_link = new google.visualization.PatternFormat('<a class="inline" href="#inline_content" onclick="getComentario(this);"><input type="hidden" value="{8}"/>{0}</a>');
                                 //formatter_link.format(data, [0, 1, 2, 3, 4, 5, 6, 7, 8]);
-								
+								//Remove Headders
+								data.removeRow(0);
                                 var formatter_fecha_reporte = new google.visualization.DateFormat({pattern: 'dd.LLLyy'});
                                 formatter_fecha_reporte.format(data, 4);
 								var formatter_fecha_compromiso = new google.visualization.DateFormat({pattern: 'dd.LLLyy'});
@@ -2182,10 +2184,11 @@
                                 var view = new google.visualization.DataView(data);
                                 view.setColumns([0, 1, 2, 3, 4, 5, 6, 7, 8]);
                                 
-                                new google.visualization.Dashboard(document.getElementById('dashboard')).
+								new google.visualization.Dashboard(document.getElementById('dashboard')).
                                                 bind([category_reporto, category_area, category_aplicativo, category_estatus], table).
                                                 draw(view);
-
+								
+												
                                 google.visualization.events.addListener(table, 'ready',
                                         function(event) {
 												$(".inline").colorbox({inline:true, width:"60%", height:"50%"});
@@ -2245,7 +2248,7 @@
 							</td>
 						</tr>
 						<tr>
-							<td width="5%" height="50px" style="text-align:right;" class="filtros_style">Reportós:</td>
+							<td width="5%" height="50px" style="text-align:right;" class="filtros_style">Reportó:</td>
 							<td width="28%" height="50px" class="filtros_style"><div id="filtro1"></div></td>
 							<td width="8%" height="50px" style="text-align:right;" class="filtros_style">Aplicativo:</td>
 							<td width="13%" height="50px" class="filtros_style"><div id="filtro2"></div></td>
