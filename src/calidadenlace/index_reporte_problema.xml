@@ -317,7 +317,7 @@
                                                 'containerId': 'table',
                                                 'options': options
                                                 });
-
+                                data.removeRow(0);
                                 var formatter_fecha_alta = new google.visualization.DateFormat({pattern: 'dd.LLLyy'});
                                 formatter_fecha_alta.format(data, 3);
 								var formatter_fecha_compromiso = new google.visualization.DateFormat({pattern: 'dd.LLLyy'});
