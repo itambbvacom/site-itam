@@ -1880,7 +1880,7 @@
 							<div id="id_content02">
 								<table width="100%">
 									<tr>
-										<td><h4 style="color:#006EC1;" align="center">Tipología Carteras Gestionadas</h4></td>
+										<td><h4 style="color:#006EC1;" align="center">Tipolog&iacutea Carteras Gestionadas</h4></td>
 										<td><h4 style="color:#006EC1;" align="center">Mercado</h4></td>
 									</tr>
 									<tr>
@@ -1921,7 +1921,7 @@
 									<tr height="20">
 									</tr>
 									<tr>
-										<td><h4 style="color:#006EC1;" align="center">Ambito Negocio</h4></td>
+										<td><h4 style="color:#006EC1;" align="center">&Aacutembito Negocio</h4></td>
 										<td><h4 style="color:#006EC1;" align="center">Principales Procesos y Funcionalidades de Negocio</h4></td>
 									</tr>
 									<tr>
@@ -1962,19 +1962,19 @@
 								</table>
 							</div>
 							
-							<h3 id="id_header03">Caracteristicas T&eacutecnicas</h3>
+							<h3 id="id_header03">Caracter&iacutesticas T&eacutecnicas</h3>
 							<div id="id_content03">
 								<table width="100%">
 									<tr>
 										<td width="20%" style="color:white;background-color:009EE5;font-weight: bold;">Proveedor</td>
 										<td width="30%" class="border_bottom" id="id_proveedor"></td>
-										<td width="20%" style="color:white;background-color:009EE5;font-weight: bold;">Versión Producto</td>
+										<td width="20%" style="color:white;background-color:009EE5;font-weight: bold;">Versi&oacuten Producto</td>
 										<td width="30%" class="border_bottom" id="id_version"></td>
 									</tr>
 									<tr>
 										<td width="20%" style="color:white;background-color:009EE5;font-weight: bold;">Equipo / IP</td>
 										<td width="30%" class="border_bottom" id="id_equipo"></td>
-										<td width="20%" style="color:white;background-color:009EE5;font-weight: bold;">Ubicación Equipo</td>
+										<td width="20%" style="color:white;background-color:009EE5;font-weight: bold;">Ubicaci&oacuten Equipo</td>
 										<td width="30%" class="border_bottom" id="id_ubicacioneq"></td>
 									</tr>
 									<tr>
