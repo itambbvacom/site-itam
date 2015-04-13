@@ -1339,6 +1339,12 @@
 						color: #777;
 					}
 				/*****************************END TABS*****************************************/
+					.cell_style_justify {
+                            background-color: #FFFFFF;
+                            text-align:justify;
+							vertical-align:text-top;
+                            white-space: pre-line;
+                        }
 				</style>
 				<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 				<script src="https://site-itam.googlecode.com/svn/trunk/lib/jquery-1.10.2.min.js"></script>
@@ -1346,38 +1352,53 @@
 				<script src="https://site-itam.googlecode.com/svn/trunk/lib/jquery.multi-accordion-1.5.3.js"></script>
 				<script src="https://site-itam.googlecode.com/svn/trunk/lib/jquery.colorbox.js"></script>
 				<script type="text/javascript">
-					var data, dataManuals, count;
+					var data, dataManuals, dataGAPS, count;
 					//columnas
 					var row_selected;
 					var col_aplicativo = 0;
 					var col_funcionalidad = 1;
-					var col_herramienta = 2;
+					var col_lenguaje = 2;
 					var col_sistema = 3;
 					var col_proveedor = 4;
-					var col_equipo_pr = 5;
-					var col_equipo_qa = 6;
-					var col_basedatos_pr = 7;
-					var col_basedatos_qa = 8;
-					var col_fondosmutuos = 9;
-					var col_porvenir = 10;
-					var col_seguros = 11;
-					var col_terceros = 12;
-					var col_fideicomisos = 13;
-					var col_fija = 14;
-					var col_variable = 15;
-					var col_fondofondos = 16;
-					var col_listados = 17;
-					var col_otc = 18;
-					var col_front = 19;
-					var col_ejecucion = 20;
-					var col_middle = 21;
-					var col_riesgos = 22;
-					var col_back = 23;
-					var col_producto = 24;
-					var col_ics = 25;
-					var col_envia = 26;
-					var col_recibe = 27;
-					var col_conexion = 28;
+					var col_version_qa = 5;
+					var col_version_pr = 6;
+					var col_equipo_pr = 7;
+					var col_equipo_qa = 8;
+					var col_equipovir_pr = 9;
+					var col_equipovir_qa = 10;
+					var col_ubicacioneq_pr = 11;
+					var col_ubicacioneq_qa = 12;
+					var col_basedatos_pr = 13;
+					var col_basedatos_qa = 14;
+					var col_clientebd_pr = 15;
+					var col_clientebd_qa = 16;
+					var col_licenciasw_pr = 17;
+					var col_licenciasw_qa = 18;
+					var col_licenciabd_pr = 19;
+					var col_licenciabd_qa = 20;
+					var col_fondosmutuos = 21;
+					var col_porvenir = 22;
+					var col_seguros = 23;
+					var col_terceros = 24;
+					var col_fideicomisos = 25;
+					var col_fija = 26;
+					var col_variable = 27;
+					var col_fondofondos = 28;
+					var col_listados = 29;
+					var col_otc = 30;
+					var col_front = 31;
+					var col_ejecucion = 32;
+					var col_middle = 33;
+					var col_riesgos = 34;
+					var col_back = 35;
+					var col_producto = 36;
+					var col_ics = 37;
+					var col_envia = 38;
+					var col_recibe = 39;
+					var col_conexion = 40;
+					var col_funcionalidades = 41;
+					var col_mapaintegracion = 42;
+					var html_gp = '';
 					//
 					var myUrl = window.location.href;
 					var myUrlTab = myUrl.substring(myUrl.indexOf("#"));  
@@ -1396,6 +1417,16 @@
 						query.send(handleQueryResponse);
 						var queryManuals = new google.visualization.Query('https://spreadsheets.google.com/a/bbva.com/tq?&tq=&key=0AgN4XxIGPoi8dGVmb21TdGpnS0E4Q2RaN0xOQTN1MGc&gid=48');
 						queryManuals.send(handleQueryResponseManuals);
+						var queryGAPS = new google.visualization.Query('https://spreadsheets.google.com/a/bbva.com/tq?&tq=&key=0AgN4XxIGPoi8dGVmb21TdGpnS0E4Q2RaN0xOQTN1MGc&gid=1441491815');
+						queryGAPS.send(handleQueryResponseGAPS);
+					}
+					function handleQueryResponseGAPS(response) {
+						if (response.isError()) {
+							//alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+							alert('No se tiene permisos al archivo de sistemas');
+							return;
+						}
+						dataGAPS = response.getDataTable();
 					}
 					function handleQueryResponseManuals(response) {
 						if (response.isError()) {
@@ -1503,9 +1534,14 @@
 						
 					}
 					function getData(elemento) {
+						var funcionalidades;
+						html_gp = '';
 						$('#content-tab1').remove();
 						$('#content-tab2').remove();
 						$('#content-tab3').remove();
+						$('#id_content04_mapa').remove();
+						$('#content-tab4-gapf-det').remove();
+						$('#content-tab4-gapt-det').remove();
 						row_selected = null;
 						for (var row = 3; row < data.getNumberOfRows(); row++) {
 							if (elemento.text == data.getValue(row, col_aplicativo)) {
@@ -1535,18 +1571,54 @@
 								data.getValue(row, col_ics) == 'SI' ? $("#id_ics").attr('checked', true) : $("#id_ics").attr('checked', false);
 						
 								//DESCRIPCION TECNICA
-								$("#id_equipo").text(data.getValue(row, col_equipo_qa) != null ? data.getValue(row, col_equipo_qa) : '');
-								$("#id_herramienta").text(data.getValue(row, col_herramienta) != null ? data.getValue(row, col_herramienta) : '');
-								$("#id_basedatos").text(data.getValue(row, col_basedatos_qa) != null ? data.getValue(row, col_basedatos_qa) : '');
-								$("#id_sistema").text(data.getValue(row, col_sistema) != null ? data.getValue(row, col_sistema) : '');
 								$("#id_proveedor").text(data.getValue(row, col_proveedor) != null ? data.getValue(row, col_proveedor) : '');
+								$("#id_version").text(data.getValue(row, col_version_pr) != null ? data.getValue(row, col_version_pr) : '');
+								
+								$("#id_equipo").text(data.getValue(row, col_equipo_pr) != null ? data.getValue(row, col_equipo_pr) : '');
+								$("#id_ubicacioneq").text(data.getValue(row, col_ubicacioneq_pr) != null ? data.getValue(row, col_ubicacioneq_pr) : '');
+								
+								$("#id_sistema").text(data.getValue(row, col_sistema) != null ? data.getValue(row, col_sistema) : '');
+								$("#id_lenguaje").text(data.getValue(row, col_lenguaje) != null ? data.getValue(row, col_lenguaje) : '');
+								
+								$("#id_basedatos").text(data.getValue(row, col_basedatos_pr) != null ? data.getValue(row, col_basedatos_pr) : '');
+								$("#id_clientebd").text(data.getValue(row, col_clientebd_pr) != null ? data.getValue(row, col_clientebd_pr) : '');
+								
+								$("#id_licenciasw").text(data.getValue(row, col_licenciasw_pr) != null ? data.getValue(row, col_licenciasw_pr) : '');
+								$("#id_licenciabd").text(data.getValue(row, col_licenciabd_pr) != null ? data.getValue(row, col_licenciabd_pr) : '');
+								
+								data.getValue(row, col_equipovir_pr) == 'SI' ? $("#id_equipovir").attr('checked', true) : $("#id_equipovir").attr('checked', false);
+								
 						
+								funcionalidades = data.getValue(row, col_funcionalidades);
+								if (funcionalidades != null) {
+									funcionalidades = funcionalidades.split('>').join('&#62');
+									funcionalidades = funcionalidades.split('<').join('&#60');
+									funcionalidades = funcionalidades.split('"').join('&#34');
+									$("#id_funcionalidades").text(funcionalidades);
+								} else {
+									$("#id_funcionalidades").text('');
+								}
+								
 								
 								
 								//INTERACCION DECALOG
 								data.getValue(row, col_conexion) == 'SI' ? $("#id_conexion").attr('checked', true) : $("#id_conexion").attr('checked', false);
 								data.getValue(row, col_envia) == 'SI' ? $("#id_envia").attr('checked', true) : $("#id_envia").attr('checked', false);
 								data.getValue(row, col_recibe) == 'SI' ? $("#id_recibe").attr('checked', true) : $("#id_recibe").attr('checked', false);
+								
+								//MAPA INTEGRACION (PRESENTACION)
+								if (data.getValue(row, col_mapaintegracion) != null) {
+									var heightmapa = 600;
+									var widthmapa = 960;
+									html_gp = '<table id="id_cont_mapa" width="100%"><tr><td>';
+									html_gp = html_gp + '<iframe src="https://docs.google.com/presentation/d/'+ data.getValue(row, col_mapaintegracion) + '/embed?start=false&loop=false&delayms=10000" frameborder="0" width="' + widthmapa + '" height="' + heightmapa + '" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>';
+									html_gp = html_gp + '</td></tr><tr><td>' + '</td></tr></table>';
+								}
+																
+								$('input:checkbox:not(:checked)').each(function() {
+									$("#" + ($(this)[0].id) + "l").css('color','#C3C3C3');
+								});
+								
 							}
 						}
 						
@@ -1558,9 +1630,8 @@
 						var html_mf = '';
 						var html_mt = '';
 						var html_rutas = '';
-						var html_faq = '';
 						
-						var countMF = 1, countMT = 1, countRU = 1, countFAQ = 1;
+						var countMF = 1, countMT = 1, countRU = 1;
 						for (var rowM = 1; rowM < dataManuals.getNumberOfRows(); rowM++) {
 							if (elemento.text == dataManuals.getValue(rowM, col_aplicativoM)) {
 								if (dataManuals.getValue(rowM, col_clasificacionM) == "MF") {
@@ -1582,11 +1653,9 @@
 									countMT++;
 								}
 								if (dataManuals.getValue(rowM, col_clasificacionM) == "R") {
-									html_rutas = html_rutas + '<h3>' + dataManuals.getValue(rowM, col_tituloM) + '</h3><p>' + dataManuals.getValue(rowM, col_datoM) + '</p>';
+									html_rutas = html_rutas + '<h3 style="margin: 0;">' + dataManuals.getValue(rowM, col_tituloM) + '</h3><p>' + dataManuals.getValue(rowM, col_datoM) + '</p>';
 								}
-								if (dataManuals.getValue(rowM, col_clasificacionM) == "FAQ") {
-									html_faq = html_faq + '<h3>' + dataManuals.getValue(rowM, col_tituloM) + '</h3><p>' + dataManuals.getValue(rowM, col_datoM) + '</p>';
-								}
+	
 							}
 						}
 						
@@ -1599,25 +1668,51 @@
 						if (html_rutas.length > 0) {
 							$('#tab3').append('<div id="content-tab3">' + html_rutas + '</div>');
 						}
-						if (html_faq.length > 0) {
-							$('#tab4').append('<div id="content-tab4">' + html_faq + '</div>');
+						
+						var col_aplicativoG = 0;
+						var col_gapG = 1;
+						var col_clasificacionG = 2;
+						
+						var html_gapf = '';
+						var html_gapt = '';
+						
+						for (var rowG = 1; rowG < dataGAPS.getNumberOfRows(); rowG++) {
+							if (elemento.text == dataGAPS.getValue(rowG, col_aplicativoG)) {
+								if (dataGAPS.getValue(rowG, col_clasificacionG) == "GF") {
+									html_gapf = html_gapf + '<input type="checkbox" disabled="disabled"><label>' + dataGAPS.getValue(rowG, col_gapG) + '</label></br>'
+								}
+								if (dataGAPS.getValue(rowG, col_clasificacionG) == "GT") {
+									html_gapt = html_gapt + '<input type="checkbox" disabled="disabled"><label>' + dataGAPS.getValue(rowG, col_gapG) + '</label></br>'
+								}
+	
+							}
+						}
+						
+						if (html_gapf.length > 0) {
+							$('#content-tab4-gapf').append('<div id="content-tab4-gapf-det">' + html_gapf + '</div>');
+						}
+						if (html_gapt.length > 0) {
+							$('#content-tab4-gapt').append('<div id="content-tab4-gapt-det">' + html_gapt + '</div>');
+						}
+
+						if (html_gp.length > 0) {
+							$('#id_content04').append('<div id="id_content04_mapa">' + html_gp + '</div>');
 						}
 						
 						$('#multiAccordion').multiAccordion();
-						
 						resetAccordion();
 						resetTabs();
 						tabs_load();
-						load_data('QA');
+						load_data('PR');
 					}
 					function resetAccordion() {
-						for (var i = 1; i < 6; i++) {
+						for (var i = 1; i < 5; i++) {
 							cadena = $("#id_content0" + i)[0].className;
 							if (cadena.search("ui-accordion-content-active") == -1 ) {
 								$("#id_header0" + i).trigger('click');
 							}
 						}
-						for (var i = 2; i < 6; i++) {
+						for (var i = 2; i < 5; i++) {
 							cadena = $("#id_header0" + i)[0].className;
 							if (cadena.search("ui-state-active") != -1 ) {
 								$("#id_header0" + i).trigger('click');
@@ -1649,7 +1744,7 @@
 					}
 					function mostrarocultar() {
 						var cadena, indplus, indminus, countp = 0, countm = 0;
-						
+
 						for (var j = 0; j < count-1; j++) {
 							cadena = $(".portlet-toggle").eq(j)[0].className;
 							indplus = cadena.search("plusthick");
@@ -1679,28 +1774,40 @@
 					function load_data(tipo_data) {
 						if (tipo_data == 'PR') {
 							$("#id_qa").css("font-weight", "normal");
-							$("#id_qa").css("font-size", "1em");
+							$("#id_qa").css("font-size", "1.4em");
 							$("#id_pr").css("font-weight", "bold");
-							$("#id_pr").css("font-size", "1.2em");
+							$("#id_pr").css("font-size", "1.6em");
 							
+							$("#id_version").text(data.getValue(row_selected, col_version_pr) != null ? data.getValue(row_selected, col_version_pr) : '');
 							$("#id_equipo").text(data.getValue(row_selected, col_equipo_pr) != null ? data.getValue(row_selected, col_equipo_pr) : '');
+							$("#id_ubicacioneq").text(data.getValue(row_selected, col_ubicacioneq_pr) != null ? data.getValue(row_selected, col_ubicacioneq_pr) : '');
 							$("#id_basedatos").text(data.getValue(row_selected, col_basedatos_pr) != null ? data.getValue(row_selected, col_basedatos_pr) : '');
-							
+							$("#id_clientebd").text(data.getValue(row_selected, col_clientebd_pr) != null ? data.getValue(row_selected, col_clientebd_pr) : '');
+							$("#id_licenciasw").text(data.getValue(row_selected, col_licenciasw_pr) != null ? data.getValue(row_selected, col_licenciasw_pr) : '');
+							$("#id_licenciabd").text(data.getValue(row_selected, col_licenciabd_pr) != null ? data.getValue(row_selected, col_licenciabd_pr) : '');
+							data.getValue(row_selected, col_equipovir_pr) == 'SI' ? $("#id_equipovir").attr('checked', true) : $("#id_equipovir").attr('checked', false);
 						} else {
 							$("#id_pr").css("font-weight", "normal");
-							$("#id_pr").css("font-size", "1em");
+							$("#id_pr").css("font-size", "1.4em");
 							$("#id_qa").css("font-weight", "bold");
-							$("#id_qa").css("font-size", "1.2em");
+							$("#id_qa").css("font-size", "1.6em");
 							
+							$("#id_version").text(data.getValue(row_selected, col_version_qa) != null ? data.getValue(row_selected, col_version_qa) : '');
 							$("#id_equipo").text(data.getValue(row_selected, col_equipo_qa) != null ? data.getValue(row_selected, col_equipo_qa) : '');
+							$("#id_ubicacioneq").text(data.getValue(row_selected, col_ubicacioneq_qa) != null ? data.getValue(row_selected, col_ubicacioneq_qa) : '');
 							$("#id_basedatos").text(data.getValue(row_selected, col_basedatos_qa) != null ? data.getValue(row_selected, col_basedatos_qa) : '');
+							$("#id_clientebd").text(data.getValue(row_selected, col_clientebd_qa) != null ? data.getValue(row_selected, col_clientebd_qa) : '');
+							$("#id_licenciasw").text(data.getValue(row_selected, col_licenciasw_qa) != null ? data.getValue(row_selected, col_licenciasw_qa) : '');
+							$("#id_licenciabd").text(data.getValue(row_selected, col_licenciabd_qa) != null ? data.getValue(row_selected, col_licenciabd_qa) : '');
+							data.getValue(row_selected, col_equipovir_qa) == 'SI' ? $("#id_equipovir").attr('checked', true) : $("#id_equipovir").attr('checked', false);
 						}
+						
 					}
 					function mostrarocultardetalle() {
 						var cadena;
 						var count_active = 0;
 						var active_acc = true;
-						for (var i = 1; i < 6; i++) {
+						for (var i = 1; i < 4; i++) {
 							cadena = $("#id_header0" + i)[0].className;
 							if (cadena.search("ui-state-active") != -1) {
 								count_active++;
@@ -1709,7 +1816,7 @@
 						if (count_active >= 3) {
 							active_acc = false;
 						}
-						for (var i = 1; i < 6; i++) {
+						for (var i = 1; i < 4; i++) {
 							cadena = $("#id_header0" + i)[0].className;
 							if (cadena.search("ui-state-active") != -1 && !active_acc) {
 								$("#id_header0" + i).trigger('click');
@@ -1717,6 +1824,10 @@
 							if (cadena.search("ui-state-active") == -1 && active_acc) {
 								$("#id_header0" + i).trigger('click');
 							}
+						}
+						cadena = $("#id_header04")[0].className;
+						if (cadena.search("ui-state-active") != -1) {
+							$("#id_header04").trigger('click');
 						}
 						
 					}
@@ -1737,121 +1848,166 @@
 				
 				<div style="display:none">
 					<div id="inline_content" style="padding:10px; background:#fff;">
-						<div align="right">
-							<a href="#" onclick="mostrarocultardetalle();" id="btn_detalle">
-								<img src="https://site-itam.googlecode.com/svn/trunk/img/btnMostrarOcultar2.png" width="10%">
-							</a>
-						</div>
-						<h1 style="color:#006EC1;" id="id_aplicativo">Titulo</h1>
-						
-						<div align="right" style="color:#006EC1;font-size:1em;">
-							<a href="#" id="id_qa" onclick="load_data('QA')" style="font-weight:bold;font-size:1.2em;">QA</a>
-							<a href="#" id="id_pr" onclick="load_data('PR')" style="font-weight:normal;font-size:1em;">PR</a>
-						</div>
+						<table width="100%">
+							<tr>
+								<td width="50%" style="vertical-align:middle;">
+									<label style="color:#006EC1;font-size:2em;font-weight:bold;" id="id_aplicativo">Titulo</label>
+								</td>
+								<td width="50%">
+								</td>
+							</tr>
+							<tr>
+								<td width="50%" style="align:left;">
+									<a href="#" onclick="mostrarocultardetalle();" id="btn_detalle">
+										<img src="https://site-itam.googlecode.com/svn/trunk/img/btnArrows02.png" height="20%" width="5%">
+									</a>
+								</td>
+								<td width="50%">
+									<div align="right" style="color:#006EC1;">
+										<label style="color:#006EC1;font-size:1.4em;font-weight:bold;">Entorno: </label>
+										<a href="#" id="id_pr" onclick="load_data('PR')" style="font-weight:bold;font-size:1.6em;">PR</a>
+										<a href="#" id="id_qa" onclick="load_data('QA')" style="font-weight:normal;font-size:1.4em;">QA</a>
+									</div>
+								</td>
+							</tr>
+						</table>
 						<div id="multiAccordion">
 							<h3 id="id_header01">Funcionalidad</h3>
 							<div id="id_content01">
 								<p id="id_funcionalidad" style="font-weight:normal;font-size:1.3em;"></p>
 							</div>
-							<h3 id="id_header02">Negocio y Mercado</h3>
+							<h3 id="id_header02">Cobertura Funcional</h3>
 							<div id="id_content02">
 								<table width="100%">
 									<tr>
+										<td><h4 style="color:#006EC1;" align="center">Tipología Carteras Gestionadas</h4></td>
+										<td><h4 style="color:#006EC1;" align="center">Mercado</h4></td>
+									</tr>
+									<tr>
 										<td class="border_right" width="50%">
-											<h4 style="color:#006EC1;" align="center">Negocio</h4>
+											
 											<table width="100%">
 												<tr>
-													<td><input type="checkbox" disabled="disabled" id="id_fondosmutuos">Fondos Mutuos</td>
-													<td><input type="checkbox" disabled="disabled" id="id_terceros">Terceros</td>
+													<td><input type="checkbox" disabled="disabled" id="id_fondosmutuos"><label id="id_fondosmutuosl">Fondos Mutuos</label></td>
+													<td><input type="checkbox" disabled="disabled" id="id_terceros"><label id="id_tercerosl">Terceros</label></td>
 												</tr>
 												<tr>
-													<td><input type="checkbox" disabled="disabled" id="id_porvenir">Porvenir</td>
-													<td><input type="checkbox" disabled="disabled" id="id_fideicomisos">Fideicomisos</td>
+													<td><input type="checkbox" disabled="disabled" id="id_porvenir"><label id="id_porvenirl">Porvenir</label></td>
+													<td><input type="checkbox" disabled="disabled" id="id_fideicomisos"><label id="id_fideicomisosl">Fideicomisos</label></td>
 												</tr>
 												<tr>
-													<td><input type="checkbox" disabled="disabled" id="id_seguros">Seguros</td>
+													<td><input type="checkbox" disabled="disabled" id="id_seguros"><label id="id_segurosl">Seguros</label></td>
 													<td></td>
 												</tr>
 											</table>
 										</td>
 										<td width="50%">
-											<h4 style="color:#006EC1;" align="center">Mercado</h4>
 											<table width="100%">
 												<tr>
-													<td><input type="checkbox" disabled="disabled" id="id_fija">Renta Fija</td>
-													<td><input type="checkbox" disabled="disabled" id="id_listados">Derivados Listados</td>
+													<td><input type="checkbox" disabled="disabled" id="id_fija"><label id="id_fijal">Renta Fija</label></td>
+													<td><input type="checkbox" disabled="disabled" id="id_listados"><label id="id_listadosl">Derivados Listados</label></td>
 												</tr>
 												<tr>
-													<td><input type="checkbox" disabled="disabled" id="id_variable">Renta Variable</td>
-													<td><input type="checkbox" disabled="disabled" id="id_otc">Derivados OTC</td>
+													<td><input type="checkbox" disabled="disabled" id="id_variable"><label id="id_variablel">Renta Variable</label></td>
+													<td><input type="checkbox" disabled="disabled" id="id_otc"><label id="id_otcl">Derivados OTC</label></td>
 												</tr>
 												<tr>
-													<td><input type="checkbox" disabled="disabled" id="id_fondofondos">Fondos de Fondos</td>
+													<td><input type="checkbox" disabled="disabled" id="id_fondofondos"><label id="id_fondofondosl">Fondos de Fondos</label></td>
 													<td></td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+									<tr height="20">
+									</tr>
+									<tr>
+										<td><h4 style="color:#006EC1;" align="center">Ambito Negocio</h4></td>
+										<td><h4 style="color:#006EC1;" align="center">Principales Procesos y Funcionalidades de Negocio</h4></td>
+									</tr>
+									<tr>
+										<td class="border_right" width="50%">
+											<table width="100%">
+												<tr>
+													<td><input type="checkbox" disabled="disabled" id="id_front"><label id="id_frontl">Front Office</label></td>
+												</tr>
+												<tr>
+													<td><input type="checkbox" disabled="disabled" id="id_ejecucion"><label id="id_ejecucionl">Ejecuci&oacuten</label></td>
+												</tr>
+												<tr>
+													<td><input type="checkbox" disabled="disabled" id="id_middle"><label id="id_middlel">Middle Office</label></td>
+												</tr>
+												<tr>
+													<td><input type="checkbox" disabled="disabled" id="id_producto"><label id="id_productol">Producto</label></td>
+												</tr>
+												<tr>
+													<td><input type="checkbox" disabled="disabled" id="id_riesgos"><label id="id_riesgosl">Riesgos</label></td>
+												</tr>
+												<tr>
+													<td><input type="checkbox" disabled="disabled" id="id_ics"><label id="id_icsl">I & CS</label></td>
+												</tr>
+												<tr>
+													<td><input type="checkbox" disabled="disabled" id="id_back"><label id="id_backl">Back Office (COVAF)</label></td>
+													<td></td>
+												</tr>
+											</table>
+										</td>
+										<td width="50%" style="vertical-align:text-top;">
+											<table width="100%">
+												<tr>
+													<td id="id_funcionalidades" class="cell_style_justify"></td>
 												</tr>
 											</table>
 										</td>
 									</tr>
 								</table>
 							</div>
-							<h3 id="id_header03">&Aacutereas Involucradas</h3>
+							
+							<h3 id="id_header03">Caracteristicas T&eacutecnicas</h3>
 							<div id="id_content03">
 								<table width="100%">
 									<tr>
-										<td><input type="checkbox" disabled="disabled" id="id_front">Front Office</td>
-										<td><input type="checkbox" disabled="disabled" id="id_riesgos">Riesgos</td>
+										<td width="20%" style="color:white;background-color:009EE5;font-weight: bold;">Proveedor</td>
+										<td width="30%" class="border_bottom" id="id_proveedor"></td>
+										<td width="20%" style="color:white;background-color:009EE5;font-weight: bold;">Versión Producto</td>
+										<td width="30%" class="border_bottom" id="id_version"></td>
 									</tr>
 									<tr>
-										<td><input type="checkbox" disabled="disabled" id="id_ejecucion">Ejecuci&oacuten</td>
-										<td><input type="checkbox" disabled="disabled" id="id_producto">Producto</td>
+										<td width="20%" style="color:white;background-color:009EE5;font-weight: bold;">Equipo / IP</td>
+										<td width="30%" class="border_bottom" id="id_equipo"></td>
+										<td width="20%" style="color:white;background-color:009EE5;font-weight: bold;">Ubicación Equipo</td>
+										<td width="30%" class="border_bottom" id="id_ubicacioneq"></td>
 									</tr>
 									<tr>
-										<td><input type="checkbox" disabled="disabled" id="id_middle">Middle Office</td>
-										<td><input type="checkbox" disabled="disabled" id="id_ics">I & CS</td>
+										<td width="20%" style="color:white;background-color:009EE5;font-weight: bold;">Sistema Operativo</td>
+										<td width="30%" class="border_bottom" id="id_sistema"></td>
+										<td width="20%" style="color:white;background-color:009EE5;font-weight: bold;">Lenguajes Desarrollo</td>
+										<td width="30%" class="border_bottom" id="id_lenguaje"></br></td>
 									</tr>
 									<tr>
-										<td><input type="checkbox" disabled="disabled" id="id_back">Back Office (COVAF)</td>
-										<td></td>
+										<td width="20%" style="color:white;background-color:009EE5;font-weight: bold;">BBDD</td>
+										<td width="30%" class="border_bottom" id="id_basedatos"></td>
+										<td width="20%" style="color:white;background-color:009EE5;font-weight: bold;">Cliente BBDD</td>
+										<td width="30%" class="border_bottom" id="id_clientebd"></td>
+									</tr>
+									<tr>
+										<td width="20%" style="color:white;background-color:009EE5;font-weight: bold;">Licencia SW</td>
+										<td width="30%" class="border_bottom" id="id_licenciasw"></td>
+										<td width="20%" style="color:white;background-color:009EE5;font-weight: bold;">Licencia BBDD</td>
+										<td width="30%" class="border_bottom" id="id_licenciabd"></td>
 									</tr>
 								</table>
+								</br>
+								<table width="100%">
+									<tr>
+										<td><input type="checkbox" disabled="disabled" id="id_equipovir"><label id="id_equipovirl">Equipo Virtual</label></td>
+									</tr>
+								</table>
+								
 							</div>
-							<h3 id="id_header04">Descripci&oacuten T&eacutecnica</h3>
+							<h3 id="id_header04">Mapa de Integraci&oacuten</h3>
 							<div id="id_content04">
-								<table width="100%">
-									<tr>
-										<td width="30%" style="color:white;background-color:009EE5;font-weight: bold;">Equipo</td>
-										<td class="border_bottom" id="id_equipo"></td>
-									</tr>
-									<tr>
-										<td width="30%" style="color:white;background-color:009EE5;font-weight: bold;">Herramienta Desarrollo</td>
-										<td class="border_bottom" id="id_herramienta"></br></td>
-									</tr>
-									<tr>
-										<td width="30%" style="color:white;background-color:009EE5;font-weight: bold;">Base de Datos</td>
-										<td class="border_bottom" id="id_basedatos"></td>
-									</tr>
-									<tr>
-										<td width="30%" style="color:white;background-color:009EE5;font-weight: bold;">Sistema Operativo</td>
-										<td class="border_bottom" id="id_sistema"></td>
-									</tr>
-									<tr>
-										<td width="30%" style="color:white;background-color:009EE5;font-weight: bold;">Proveedor</td>
-										<td class="border_bottom" id="id_proveedor"></td>
-									</tr>
-								</table>
-							</div>
-							<h3 id="id_header05">Interacci&oacuten con Decalog</h3>
-							<div id="id_content05">
-								<table width="100%">
-									<tr>
-										<td><input type="checkbox" disabled="disabled" id="id_conexion">Extracci&oacuten de Datos</td>
-										<td><input type="checkbox" disabled="disabled" id="id_recibe">Recibe Info</td>
-									</tr>
-									<tr>
-										<td><input type="checkbox" disabled="disabled" id="id_envia">Env&iacutea Info</td>
-										<td></td>
-									</tr>
-								</table>
+								<div id="id_content04_mapa">
+								</div>
 							</div>
 						</div>
 						<table width="100%">
@@ -1863,13 +2019,33 @@
 							<li><a href="#" name="#tab1">Manuales Funcionales</a></li>
 							<li><a href="#" name="#tab2">Manuales T&eacutecnicos</a></li>
 							<li><a href="#" name="#tab3">RUTAS</a></li>
-							<li><a href="#" name="#tab4">FAQ</a></li>
+							<li><a href="#" name="#tab4">GAPS</a></li>
 						</ul>
 						<div id="content">
 							<div id="tab1"><div id="content-tab1"></div></div>
 							<div id="tab2"><div id="content-tab2"></div></div>
 							<div id="tab3"><div id="content-tab3"></div></div>
-							<div id="tab4"><div id="content-tab4"></div></div>
+							<div id="tab4"><div id="content-tab4">
+								<table width="100%">
+									<tr>
+										<td><h4 style="color:#006EC1;" align="center">Funcionales</h4></td>
+										<td><h4 style="color:#006EC1;" align="center">T&eacutecnicos</h4></td>
+									</tr>
+									<tr>
+										<td class="border_right" width="50%" style="vertical-align:text-top;">
+											<div id="content-tab4-gapf">
+												<div id="content-tab4-gapf-det"></div>
+											</div>
+										</td>
+										<td width="50%" style="vertical-align:text-top;">
+											<div id="content-tab4-gapt">
+												<div id="content-tab4-gapt-det"></div>
+											</div>
+										</td>
+									</tr>
+									
+								</table>
+							</div></div>
 						</div>
 					</div>
 				</div>
