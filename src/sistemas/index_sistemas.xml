@@ -1395,8 +1395,10 @@
 					var col_ics = 37;
 					var col_citrix_pr = 38;
 					var col_citrix_qa = 39;
-					var col_funcionalidades = 40;
-					var col_mapaintegracion = 41;
+					var col_prevision = 40;
+					var col_ventas = 41;
+					var col_funcionalidades = 42;
+					var col_mapaintegracion = 43;
 					var html_gp = '';
 					//
 					var myUrl = window.location.href;
@@ -1412,11 +1414,11 @@
 					google.load('visualization', '1.1', {packages: ['controls','table']});
 					
 					function getdata() {
-						var query = new google.visualization.Query('https://spreadsheets.google.com/a/bbva.com/tq?&tq=&key=0AgN4XxIGPoi8dGVmb21TdGpnS0E4Q2RaN0xOQTN1MGc&gid=1');
+						var query = new google.visualization.Query('https://spreadsheets.google.com/a/bbva.com/tq?&tq=&key=1ZwQT7o5AyTIPJV4kG-nuLVqU3xghzKOsiF6xFcURHiM&gid=1');
 						query.send(handleQueryResponse);
-						var queryManuals = new google.visualization.Query('https://spreadsheets.google.com/a/bbva.com/tq?&tq=&key=0AgN4XxIGPoi8dGVmb21TdGpnS0E4Q2RaN0xOQTN1MGc&gid=48');
+						var queryManuals = new google.visualization.Query('https://spreadsheets.google.com/a/bbva.com/tq?&tq=&key=1ZwQT7o5AyTIPJV4kG-nuLVqU3xghzKOsiF6xFcURHiM&gid=48');
 						queryManuals.send(handleQueryResponseManuals);
-						var queryGAPS = new google.visualization.Query('https://spreadsheets.google.com/a/bbva.com/tq?&tq=&key=0AgN4XxIGPoi8dGVmb21TdGpnS0E4Q2RaN0xOQTN1MGc&gid=1441491815');
+						var queryGAPS = new google.visualization.Query('https://spreadsheets.google.com/a/bbva.com/tq?&tq=&key=1ZwQT7o5AyTIPJV4kG-nuLVqU3xghzKOsiF6xFcURHiM&gid=1441491815');
 						queryGAPS.send(handleQueryResponseGAPS);
 					}
 					function handleQueryResponseGAPS(response) {
@@ -1554,6 +1556,7 @@
 								data.getValue(row, col_seguros) == 'SI' ? $("#id_seguros").attr('checked', true) : $("#id_seguros").attr('checked', false);
 								data.getValue(row, col_terceros) == 'SI' ? $("#id_terceros").attr('checked', true) : $("#id_terceros").attr('checked', false);
 								data.getValue(row, col_fideicomisos) == 'SI' ? $("#id_fideicomisos").attr('checked', true) : $("#id_fideicomisos").attr('checked', false);
+								data.getValue(row, col_prevision) == 'SI' ? $("#id_prevision").attr('checked', true) : $("#id_prevision").attr('checked', false);
 								//MERCADO
 								data.getValue(row, col_fija) == 'SI' ? $("#id_fija").attr('checked', true) : $("#id_fija").attr('checked', false);
 								data.getValue(row, col_variable) == 'SI' ? $("#id_variable").attr('checked', true) : $("#id_variable").attr('checked', false);
@@ -1568,7 +1571,8 @@
 								data.getValue(row, col_back) == 'SI' ? $("#id_back").attr('checked', true) : $("#id_back").attr('checked', false);
 								data.getValue(row, col_producto) == 'SI' ? $("#id_producto").attr('checked', true) : $("#id_producto").attr('checked', false);
 								data.getValue(row, col_ics) == 'SI' ? $("#id_ics").attr('checked', true) : $("#id_ics").attr('checked', false);
-						
+								data.getValue(row, col_ventas) == 'SI' ? $("#id_ventas").attr('checked', true) : $("#id_ventas").attr('checked', false);
+								
 								//DESCRIPCION TECNICA
 								$("#id_proveedor").text(data.getValue(row, col_proveedor) != null ? data.getValue(row, col_proveedor) : '');
 								$("#id_version").text(data.getValue(row, col_version_pr) != null ? data.getValue(row, col_version_pr) : '');
@@ -1899,7 +1903,7 @@
 												</tr>
 												<tr>
 													<td><input type="checkbox" disabled="disabled" id="id_seguros"><label id="id_segurosl">Seguros</label></td>
-													<td></td>
+													<td><input type="checkbox" disabled="disabled" id="id_prevision"><label id="id_previsionl">Fondos Previsión Social</label></td>
 												</tr>
 											</table>
 										</td>
@@ -1949,7 +1953,9 @@
 												</tr>
 												<tr>
 													<td><input type="checkbox" disabled="disabled" id="id_back"><label id="id_backl">Back Office (COVAF)</label></td>
-													<td></td>
+												</tr>
+												<tr>
+													<td><input type="checkbox" disabled="disabled" id="id_ventas"><label id="id_ventasl">Ventas</label></td>
 												</tr>
 											</table>
 										</td>
