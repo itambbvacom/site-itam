@@ -1611,7 +1611,7 @@
 									var heightmapa = 600;
 									var widthmapa = 960;
 									html_gp = '<table id="id_cont_mapa" width="100%"><tr><td>';
-									html_gp = html_gp + '<iframe src="https://docs.google.com/presentation/d/'+ data.getValue(row, col_mapaintegracion) + '/embed?start=false&loop=false&delayms=10000" frameborder="0" width="' + widthmapa + '" height="' + heightmapa + '" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>';
+									html_gp = html_gp + '<iframe src="https://docs.google.com/a/bbva.com/presentation/d/'+ data.getValue(row, col_mapaintegracion) + '/embed?start=false&loop=false&delayms=10000" frameborder="0" width="' + widthmapa + '" height="' + heightmapa + '" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>';
 									html_gp = html_gp + '</td></tr><tr><td>' + '</td></tr></table>';
 								}
 																
