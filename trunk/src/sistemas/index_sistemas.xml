@@ -1393,11 +1393,10 @@
 					var col_back = 35;
 					var col_producto = 36;
 					var col_ics = 37;
-					var col_envia = 38;
-					var col_recibe = 39;
-					var col_conexion = 40;
-					var col_funcionalidades = 41;
-					var col_mapaintegracion = 42;
+					var col_citrix_pr = 38;
+					var col_citrix_qa = 39;
+					var col_funcionalidades = 40;
+					var col_mapaintegracion = 41;
 					var html_gp = '';
 					//
 					var myUrl = window.location.href;
@@ -1587,7 +1586,7 @@
 								$("#id_licenciabd").text(data.getValue(row, col_licenciabd_pr) != null ? data.getValue(row, col_licenciabd_pr) : '');
 								
 								data.getValue(row, col_equipovir_pr) == 'SI' ? $("#id_equipovir").attr('checked', true) : $("#id_equipovir").attr('checked', false);
-								
+								data.getValue(row, col_citrix_pr) == 'SI' ? $("#id_citrix").attr('checked', true) : $("#id_citrix").attr('checked', false);
 						
 								funcionalidades = data.getValue(row, col_funcionalidades);
 								if (funcionalidades != null) {
@@ -1602,10 +1601,11 @@
 								
 								
 								//INTERACCION DECALOG
+								/*
 								data.getValue(row, col_conexion) == 'SI' ? $("#id_conexion").attr('checked', true) : $("#id_conexion").attr('checked', false);
 								data.getValue(row, col_envia) == 'SI' ? $("#id_envia").attr('checked', true) : $("#id_envia").attr('checked', false);
 								data.getValue(row, col_recibe) == 'SI' ? $("#id_recibe").attr('checked', true) : $("#id_recibe").attr('checked', false);
-								
+								*/
 								//MAPA INTEGRACION (PRESENTACION)
 								if (data.getValue(row, col_mapaintegracion) != null) {
 									var heightmapa = 600;
@@ -1786,6 +1786,7 @@
 							$("#id_licenciasw").text(data.getValue(row_selected, col_licenciasw_pr) != null ? data.getValue(row_selected, col_licenciasw_pr) : '');
 							$("#id_licenciabd").text(data.getValue(row_selected, col_licenciabd_pr) != null ? data.getValue(row_selected, col_licenciabd_pr) : '');
 							data.getValue(row_selected, col_equipovir_pr) == 'SI' ? $("#id_equipovir").attr('checked', true) : $("#id_equipovir").attr('checked', false);
+							data.getValue(row_selected, col_citrix_pr) == 'SI' ? $("#id_citrix").attr('checked', true) : $("#id_citrix").attr('checked', false);
 						} else {
 							$("#id_pr").css("font-weight", "normal");
 							$("#id_pr").css("font-size", "1.4em");
@@ -1800,6 +1801,7 @@
 							$("#id_licenciasw").text(data.getValue(row_selected, col_licenciasw_qa) != null ? data.getValue(row_selected, col_licenciasw_qa) : '');
 							$("#id_licenciabd").text(data.getValue(row_selected, col_licenciabd_qa) != null ? data.getValue(row_selected, col_licenciabd_qa) : '');
 							data.getValue(row_selected, col_equipovir_qa) == 'SI' ? $("#id_equipovir").attr('checked', true) : $("#id_equipovir").attr('checked', false);
+							data.getValue(row_selected, col_citrix_qa) == 'SI' ? $("#id_citrix").attr('checked', true) : $("#id_citrix").attr('checked', false);
 						}
 						
 					}
@@ -1999,7 +2001,10 @@
 								</br>
 								<table width="100%">
 									<tr>
-										<td><input type="checkbox" disabled="disabled" id="id_equipovir"><label id="id_equipovirl">Equipo Virtual</label></td>
+										<td><input type="checkbox" disabled="disabled" id="id_equipovir"><label>Equipo Virtual</label></td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" disabled="disabled" id="id_citrix"><label>Citrix</label></td>
 									</tr>
 								</table>
 								
