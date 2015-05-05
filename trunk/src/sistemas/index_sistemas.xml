@@ -1357,46 +1357,46 @@
 					var row_selected;
 					var col_aplicativo = 0;
 					var col_funcionalidad = 1;
-					var col_lenguaje = 2;
-					var col_sistema = 3;
-					var col_proveedor = 4;
-					var col_version_qa = 5;
-					var col_version_pr = 6;
-					var col_equipo_pr = 7;
-					var col_equipo_qa = 8;
-					var col_equipovir_pr = 9;
-					var col_equipovir_qa = 10;
-					var col_ubicacioneq_pr = 11;
-					var col_ubicacioneq_qa = 12;
-					var col_basedatos_pr = 13;
-					var col_basedatos_qa = 14;
-					var col_clientebd_pr = 15;
-					var col_clientebd_qa = 16;
-					var col_licenciasw_pr = 17;
-					var col_licenciasw_qa = 18;
-					var col_licenciabd_pr = 19;
-					var col_licenciabd_qa = 20;
-					var col_fondosmutuos = 21;
-					var col_porvenir = 22;
-					var col_seguros = 23;
-					var col_terceros = 24;
-					var col_fideicomisos = 25;
-					var col_fija = 26;
-					var col_variable = 27;
-					var col_fondofondos = 28;
-					var col_listados = 29;
-					var col_otc = 30;
-					var col_front = 31;
-					var col_ejecucion = 32;
-					var col_middle = 33;
-					var col_riesgos = 34;
-					var col_back = 35;
-					var col_producto = 36;
-					var col_ics = 37;
-					var col_citrix_pr = 38;
-					var col_citrix_qa = 39;
-					var col_prevision = 40;
-					var col_ventas = 41;
+					var col_proveedor = 2;
+					var col_version_qa = 3;
+					var col_version_pr = 4;
+					var col_equipo_pr = 5;
+					var col_equipo_qa = 6;
+					var col_ubicacioneq_pr = 7;
+					var col_ubicacioneq_qa = 8;
+					var col_sistema = 9;
+					var col_lenguaje = 10;
+					var col_basedatos_pr = 11;
+					var col_basedatos_qa = 12;
+					var col_clientebd_pr = 13;
+					var col_clientebd_qa = 14;
+					var col_licenciasw_pr = 15;
+					var col_licenciasw_qa = 16;
+					var col_licenciabd_pr = 17;
+					var col_licenciabd_qa = 18;
+					var col_equipovir_pr = 19;
+					var col_equipovir_qa = 20;
+					var col_citrix_pr = 21;
+					var col_citrix_qa = 22;
+					var col_fondosmutuos = 23;
+					var col_porvenir = 24;
+					var col_seguros = 25;
+					var col_terceros = 26;
+					var col_fideicomisos = 27;
+					var col_prevision = 28;
+					var col_fija = 29;
+					var col_variable = 30;
+					var col_fondofondos = 31;
+					var col_listados = 32;
+					var col_otc = 33;
+					var col_front = 34;
+					var col_ejecucion = 35;
+					var col_middle = 36;
+					var col_producto = 37;
+					var col_riesgos = 38;
+					var col_ics = 39;
+					var col_back = 40;
+					var col_control = 41;
 					var col_funcionalidades = 42;
 					var col_mapaintegracion = 43;
 					var html_gp = '';
@@ -1571,7 +1571,7 @@
 								data.getValue(row, col_back) == 'SI' ? $("#id_back").attr('checked', true) : $("#id_back").attr('checked', false);
 								data.getValue(row, col_producto) == 'SI' ? $("#id_producto").attr('checked', true) : $("#id_producto").attr('checked', false);
 								data.getValue(row, col_ics) == 'SI' ? $("#id_ics").attr('checked', true) : $("#id_ics").attr('checked', false);
-								data.getValue(row, col_ventas) == 'SI' ? $("#id_ventas").attr('checked', true) : $("#id_ventas").attr('checked', false);
+								data.getValue(row, col_control) == 'SI' ? $("#id_control").attr('checked', true) : $("#id_control").attr('checked', false);
 								
 								//DESCRIPCION TECNICA
 								$("#id_proveedor").text(data.getValue(row, col_proveedor) != null ? data.getValue(row, col_proveedor) : '');
@@ -1949,13 +1949,13 @@
 													<td><input type="checkbox" disabled="disabled" id="id_riesgos"><label id="id_riesgosl">Riesgos</label></td>
 												</tr>
 												<tr>
-													<td><input type="checkbox" disabled="disabled" id="id_ics"><label id="id_icsl">I & CS</label></td>
+													<td><input type="checkbox" disabled="disabled" id="id_ics"><label id="id_icsl">I & C Sales</label></td>
 												</tr>
 												<tr>
 													<td><input type="checkbox" disabled="disabled" id="id_back"><label id="id_backl">Back Office (COVAF)</label></td>
 												</tr>
 												<tr>
-													<td><input type="checkbox" disabled="disabled" id="id_ventas"><label id="id_ventasl">Ventas</label></td>
+													<td><input type="checkbox" disabled="disabled" id="id_control"><label id="id_controll">Control de Gesti&oacuten</label></td>
 												</tr>
 											</table>
 										</td>
