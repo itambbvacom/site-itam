@@ -317,7 +317,7 @@
                                                 'containerId': 'table',
                                                 'options': options
                                                 });
-                                data.removeRow(0);
+                                // data.removeRow(0); // <j.schroeder> 201505061510 Se comenta porque no aparece el renglón 1 dentro de la página del site
                                 var formatter_fecha_alta = new google.visualization.DateFormat({pattern: 'dd.LLLyy'});
                                 formatter_fecha_alta.format(data, 3);
 								var formatter_fecha_compromiso = new google.visualization.DateFormat({pattern: 'dd.LLLyy'});
