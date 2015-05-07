@@ -572,7 +572,7 @@
 						height: 100%;
 					}
 					.ui-progressbar .ui-progressbar-overlay {
-						background: url("https://site-itam.googlecode.com/svn/trunk/img/animated-overlay.gif");
+						background: url("https://site-itam.googlecode.com/svn/branches/img/animated-overlay.gif");
 						height: 100%;
 						filter: alpha(opacity=25);
 						opacity: 0.25;
@@ -842,7 +842,7 @@
 					}
 					.ui-widget-content {
 						border: 1px solid #FFFFFF;
-						background: #FFFFFF url(https://site-itam.googlecode.com/svn/trunk/img/ui-bg_flat_75_ffffff_40x100.png) 50% 50% repeat-x;
+						background: #FFFFFF url(https://site-itam.googlecode.com/svn/branches/img/ui-bg_flat_75_ffffff_40x100.png) 50% 50% repeat-x;
 						color: #000000;
 						font-family: Arial, sans-serif;
 						font-size: 1.2em;
@@ -853,7 +853,7 @@
 					}
 					.ui-widget-header {
 						border: 1px solid #006EC1;
-						background: #006EC1 url(https://site-itam.googlecode.com/svn/trunk/img/ui-bg_highlight-soft_75_cccccc_1x100_2.png) 50% 50% repeat-x;
+						background: #006EC1 url(https://site-itam.googlecode.com/svn/branches/img/ui-bg_highlight-soft_75_cccccc_1x100_2.png) 50% 50% repeat-x;
 						color: #FFFFFF;
 						font-weight: bold;
 						font-size: 1.5em;
@@ -868,7 +868,7 @@
 					.ui-widget-content .ui-state-default,
 					.ui-widget-header .ui-state-default {
 						border: 1px solid #d3d3d3;
-						background: #e6e6e6 url(https://site-itam.googlecode.com/svn/trunk/img/ui-bg_glass_75_e6e6e6_1x400.png) 50% 50% repeat-x;
+						background: #e6e6e6 url(https://site-itam.googlecode.com/svn/branches/img/ui-bg_glass_75_e6e6e6_1x400.png) 50% 50% repeat-x;
 						font-weight: normal;
 						color: #555555;
 					}
@@ -885,7 +885,7 @@
 					.ui-widget-content .ui-state-focus,
 					.ui-widget-header .ui-state-focus {
 						border: 1px solid #999999;
-						background: #dadada url(https://site-itam.googlecode.com/svn/trunk/img/ui-bg_glass_75_dadada_1x400.png) 50% 50% repeat-x;
+						background: #dadada url(https://site-itam.googlecode.com/svn/branches/img/ui-bg_glass_75_dadada_1x400.png) 50% 50% repeat-x;
 						font-weight: normal;
 						color: #212121;
 					}
@@ -904,7 +904,7 @@
 					.ui-widget-content .ui-state-active,
 					.ui-widget-header .ui-state-active {
 						border: 1px solid #006EC1;
-						background: #ffffff url(https://site-itam.googlecode.com/svn/trunk/img/ui-bg_glass_65_ffffff_1x400_2.png) 50% 50% repeat-x;
+						background: #ffffff url(https://site-itam.googlecode.com/svn/branches/img/ui-bg_glass_65_ffffff_1x400_2.png) 50% 50% repeat-x;
 						font-weight: bold;
 						font-size: 1.5em;
 						color: #FFFFFF;
@@ -922,7 +922,7 @@
 					.ui-widget-content .ui-state-highlight,
 					.ui-widget-header .ui-state-highlight {
 						border: 1px solid #fcefa1;
-						background: #fbf9ee url(https://site-itam.googlecode.com/svn/trunk/img/ui-bg_glass_55_fbf9ee_1x400.png) 50% 50% repeat-x;
+						background: #fbf9ee url(https://site-itam.googlecode.com/svn/branches/img/ui-bg_glass_55_fbf9ee_1x400.png) 50% 50% repeat-x;
 						color: #363636;
 					}
 					.ui-state-highlight a,
@@ -934,7 +934,7 @@
 					.ui-widget-content .ui-state-error,
 					.ui-widget-header .ui-state-error {
 						border: 1px solid #cd0a0a;
-						background: #fef1ec url(https://site-itam.googlecode.com/svn/trunk/img/ui-bg_glass_95_fef1ec_1x400.png) 50% 50% repeat-x;
+						background: #fef1ec url(https://site-itam.googlecode.com/svn/branches/img/ui-bg_glass_95_fef1ec_1x400.png) 50% 50% repeat-x;
 						color: #cd0a0a;
 					}
 					.ui-state-error a,
@@ -980,27 +980,27 @@
 					}
 					.ui-icon,
 					.ui-widget-content .ui-icon {
-						background-image: url(https://site-itam.googlecode.com/svn/trunk/img/ui-icons_222222_256x240_2.png);
+						background-image: url(https://site-itam.googlecode.com/svn/branches/img/ui-icons_222222_256x240_2.png);
 					}
 					.ui-widget-header .ui-icon {
-						background-image: url(https://site-itam.googlecode.com/svn/trunk/img/ui-icons_222222_256x240_2.png);
+						background-image: url(https://site-itam.googlecode.com/svn/branches/img/ui-icons_222222_256x240_2.png);
 					}
 					.ui-state-default .ui-icon {
-						background-image: url(https://site-itam.googlecode.com/svn/trunk/img/ui-icons_888888_256x240.png);
+						background-image: url(https://site-itam.googlecode.com/svn/branches/img/ui-icons_888888_256x240.png);
 					}
 					.ui-state-hover .ui-icon,
 					.ui-state-focus .ui-icon {
-						background-image: url(https://site-itam.googlecode.com/svn/trunk/img/ui-icons_454545_256x240_2.png);
+						background-image: url(https://site-itam.googlecode.com/svn/branches/img/ui-icons_454545_256x240_2.png);
 					}
 					.ui-state-active .ui-icon {
-						background-image: url(https://site-itam.googlecode.com/svn/trunk/img/ui-icons_454545_256x240_2.png);
+						background-image: url(https://site-itam.googlecode.com/svn/branches/img/ui-icons_454545_256x240_2.png);
 					}
 					.ui-state-highlight .ui-icon {
-						background-image: url(https://site-itam.googlecode.com/svn/trunk/img/ui-icons_2e83ff_256x240.png);
+						background-image: url(https://site-itam.googlecode.com/svn/branches/img/ui-icons_2e83ff_256x240.png);
 					}
 					.ui-state-error .ui-icon,
 					.ui-state-error-text .ui-icon {
-						background-image: url(https://site-itam.googlecode.com/svn/trunk/img/ui-icons_cd0a0a_256x240.png);
+						background-image: url(https://site-itam.googlecode.com/svn/branches/img/ui-icons_cd0a0a_256x240.png);
 					}
 
 					/* positioning */
@@ -1213,14 +1213,14 @@
 
 					/* Overlays */
 					.ui-widget-overlay {
-						background: #aaaaaa url(https://site-itam.googlecode.com/svn/trunk/img/ui-bg_flat_0_aaaaaa_40x100.png) 50% 50% repeat-x;
+						background: #aaaaaa url(https://site-itam.googlecode.com/svn/branches/img/ui-bg_flat_0_aaaaaa_40x100.png) 50% 50% repeat-x;
 						opacity: .3;
 						filter: Alpha(Opacity=30);
 					}
 					.ui-widget-shadow {
 						margin: -8px 0 0 -8px;
 						padding: 8px;
-						background: #aaaaaa url(https://site-itam.googlecode.com/svn/trunk/img/ui-bg_flat_0_aaaaaa_40x100.png) 50% 50% repeat-x;
+						background: #aaaaaa url(https://site-itam.googlecode.com/svn/branches/img/ui-bg_flat_0_aaaaaa_40x100.png) 50% 50% repeat-x;
 						opacity: .3;
 						filter: Alpha(Opacity=30);
 						border-radius: 8px;
@@ -1257,7 +1257,7 @@
 					#cboxLoadedContent{border:5px solid #fff; background:#fff;}
 					#cboxTitle{position:absolute; top:-20px; left:0; color:#ccc;}
 					#cboxCurrent{position:absolute; top:-20px; right:0px; color:#ccc;}
-					#cboxLoadingGraphic{background:url('https://site-itam.googlecode.com/svn/trunk/img/loadingcbx.gif') no-repeat center center;}
+					#cboxLoadingGraphic{background:url('https://site-itam.googlecode.com/svn/branches/img/loadingcbx.gif') no-repeat center center;}
 
 					/* these elements are buttons, and may need to have additional styles reset to avoid unwanted base styles */
 					#cboxPrevious, #cboxNext, #cboxSlideshow, #cboxClose {border:0; padding:0; margin:0; overflow:visible; width:auto; background:none; }
@@ -1266,11 +1266,11 @@
 					#cboxPrevious:active, #cboxNext:active, #cboxSlideshow:active, #cboxClose:active {outline:0;}
 					
 					#cboxSlideshow{position:absolute; top:-20px; right:90px; color:#fff;}
-					#cboxPrevious{position:absolute; top:50%; left:5px; margin-top:-32px; background:url('https://site-itam.googlecode.com/svn/trunk/img/controlscbx.png') no-repeat top left; width:28px; height:65px; text-indent:-9999px;}
+					#cboxPrevious{position:absolute; top:50%; left:5px; margin-top:-32px; background:url('https://site-itam.googlecode.com/svn/branches/img/controlscbx.png') no-repeat top left; width:28px; height:65px; text-indent:-9999px;}
 					#cboxPrevious:hover{background-position:bottom left;}
-					#cboxNext{position:absolute; top:50%; right:5px; margin-top:-32px; background:url('https://site-itam.googlecode.com/svn/trunk/img/controlscbx.png') no-repeat top right; width:28px; height:65px; text-indent:-9999px;}
+					#cboxNext{position:absolute; top:50%; right:5px; margin-top:-32px; background:url('https://site-itam.googlecode.com/svn/branches/img/controlscbx.png') no-repeat top right; width:28px; height:65px; text-indent:-9999px;}
 					#cboxNext:hover{background-position:bottom right;}
-					#cboxClose{position:absolute; top:0px; right:96%; display:block; background:url('https://site-itam.googlecode.com/svn/trunk/img/controlscbx.png') no-repeat top center; width:38px; height:19px; text-indent:-9999px;}
+					#cboxClose{position:absolute; top:0px; right:96%; display:block; background:url('https://site-itam.googlecode.com/svn/branches/img/controlscbx.png') no-repeat top center; width:38px; height:19px; text-indent:-9999px;}
 					#cboxClose:hover{background-position:bottom center;}
 				/*****************************END COLORBOX*****************************************/
 				/*****************************TABS*****************************************/
@@ -1347,10 +1347,10 @@
                         }
 				</style>
 				<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-				<script src="https://site-itam.googlecode.com/svn/trunk/lib/jquery-1.10.2.min.js"></script>
-				<script src="https://site-itam.googlecode.com/svn/trunk/lib/jquery-ui.js"></script>
-				<script src="https://site-itam.googlecode.com/svn/trunk/lib/jquery.multi-accordion-1.5.3.js"></script>
-				<script src="https://site-itam.googlecode.com/svn/trunk/lib/jquery.colorbox.js"></script>
+				<script src="https://site-itam.googlecode.com/svn/branches/lib/jquery-1.10.2.min.js"></script>
+				<script src="https://site-itam.googlecode.com/svn/branches/lib/jquery-ui.js"></script>
+				<script src="https://site-itam.googlecode.com/svn/branches/lib/jquery.multi-accordion-1.5.3.js"></script>
+				<script src="https://site-itam.googlecode.com/svn/branches/lib/jquery.colorbox.js"></script>
 				<script type="text/javascript">
 					var data, dataManuals, dataGAPS, count;
 					//columnas
@@ -1414,6 +1414,7 @@
 					google.load('visualization', '1.1', {packages: ['controls','table']});
 					
 					function getdata() {
+
 						var query = new google.visualization.Query('https://spreadsheets.google.com/a/bbva.com/tq?&tq=&key=1ZwQT7o5AyTIPJV4kG-nuLVqU3xghzKOsiF6xFcURHiM&gid=1');
 						query.send(handleQueryResponse);
 						var queryManuals = new google.visualization.Query('https://spreadsheets.google.com/a/bbva.com/tq?&tq=&key=1ZwQT7o5AyTIPJV4kG-nuLVqU3xghzKOsiF6xFcURHiM&gid=48');
@@ -1551,27 +1552,28 @@
 								$("#id_funcionalidad").text(data.getValue(row, col_funcionalidad));
 								
 								//NEGOCIO
-								data.getValue(row, col_fondosmutuos) == 'SI' ? $("#id_fondosmutuos").attr('checked', true) : $("#id_fondosmutuos").attr('checked', false);
-								data.getValue(row, col_porvenir) == 'SI' ? $("#id_porvenir").attr('checked', true) : $("#id_porvenir").attr('checked', false);
-								data.getValue(row, col_seguros) == 'SI' ? $("#id_seguros").attr('checked', true) : $("#id_seguros").attr('checked', false);
-								data.getValue(row, col_terceros) == 'SI' ? $("#id_terceros").attr('checked', true) : $("#id_terceros").attr('checked', false);
-								data.getValue(row, col_fideicomisos) == 'SI' ? $("#id_fideicomisos").attr('checked', true) : $("#id_fideicomisos").attr('checked', false);
-								data.getValue(row, col_prevision) == 'SI' ? $("#id_prevision").attr('checked', true) : $("#id_prevision").attr('checked', false);
+								data.getValue(row, col_fondosmutuos) == 'SI' ? $("#id_fondosmutuos").prop('checked', true) : $("#id_fondosmutuos").prop('checked', false);
+								data.getValue(row, col_porvenir) == 'SI' ? $("#id_porvenir").prop('checked', true) : $("#id_porvenir").prop('checked', false);
+								data.getValue(row, col_seguros) == 'SI' ? $("#id_seguros").prop('checked', true) : $("#id_seguros").prop('checked', false);
+								data.getValue(row, col_terceros) == 'SI' ? $("#id_terceros").prop('checked', true) : $("#id_terceros").prop('checked', false);
+								data.getValue(row, col_fideicomisos) == 'SI' ? $("#id_fideicomisos").prop('checked', true) : $("#id_fideicomisos").prop('checked', false);
+								data.getValue(row, col_prevision) == 'SI' ? $("#id_prevision").prop('checked', true) : $("#id_prevision").prop('checked', false);
 								//MERCADO
-								data.getValue(row, col_fija) == 'SI' ? $("#id_fija").attr('checked', true) : $("#id_fija").attr('checked', false);
-								data.getValue(row, col_variable) == 'SI' ? $("#id_variable").attr('checked', true) : $("#id_variable").attr('checked', false);
-								data.getValue(row, col_fondofondos) == 'SI' ? $("#id_fondofondos").attr('checked', true) : $("#id_fondofondos").attr('checked', false);
-								data.getValue(row, col_listados) == 'SI' ? $("#id_listados").attr('checked', true) : $("#id_listados").attr('checked', false);
-								data.getValue(row, col_otc) == 'SI' ? $("#id_otc").attr('checked', true) : $("#id_otc").attr('checked', false);
+								data.getValue(row, col_fija) == 'SI' ? $("#id_fija").prop('checked', true) : $("#id_fija").prop('checked', false);
+								data.getValue(row, col_variable) == 'SI' ? $("#id_variable").prop('checked', true) : $("#id_variable").prop('checked', false);
+								data.getValue(row, col_fondofondos) == 'SI' ? $("#id_fondofondos").prop('checked', true) : $("#id_fondofondos").prop('checked', false);
+								data.getValue(row, col_listados) == 'SI' ? $("#id_listados").prop('checked', true) : $("#id_listados").prop('checked', false);
+								data.getValue(row, col_otc) == 'SI' ? $("#id_otc").prop('checked', true) : $("#id_otc").prop('checked', false);
 								//AREAS
-								data.getValue(row, col_front) == 'SI' ? $("#id_front").attr('checked', true) : $("#id_front").attr('checked', false);
-								data.getValue(row, col_ejecucion) == 'SI' ? $("#id_ejecucion").attr('checked', true) : $("#id_ejecucion").attr('checked', false);
-								data.getValue(row, col_middle) == 'SI' ? $("#id_middle").attr('checked', true) : $("#id_middle").attr('checked', false);
-								data.getValue(row, col_riesgos) == 'SI' ? $("#id_riesgos").attr('checked', true) : $("#id_riesgos").attr('checked', false);
-								data.getValue(row, col_back) == 'SI' ? $("#id_back").attr('checked', true) : $("#id_back").attr('checked', false);
-								data.getValue(row, col_producto) == 'SI' ? $("#id_producto").attr('checked', true) : $("#id_producto").attr('checked', false);
-								data.getValue(row, col_ics) == 'SI' ? $("#id_ics").attr('checked', true) : $("#id_ics").attr('checked', false);
-								data.getValue(row, col_control) == 'SI' ? $("#id_control").attr('checked', true) : $("#id_control").attr('checked', false);
+								
+								data.getValue(row, col_front) == 'SI' ? $("#id_front").prop('checked', true) : $("#id_front").prop('checked', false);
+								data.getValue(row, col_ejecucion) == 'SI' ? $("#id_ejecucion").prop('checked', true) : $("#id_ejecucion").prop('checked', false);
+								data.getValue(row, col_middle) == 'SI' ? $("#id_middle").prop('checked', true) : $("#id_middle").prop('checked', false);
+								data.getValue(row, col_riesgos) == 'SI' ? $("#id_riesgos").prop('checked', true) : $("#id_riesgos").prop('checked', false);
+								data.getValue(row, col_back) == 'SI' ? $("#id_back").prop('checked', true) : $("#id_back").prop('checked', false);
+								data.getValue(row, col_producto) == 'SI' ? $("#id_producto").prop('checked', true) : $("#id_producto").prop('checked', false);
+								data.getValue(row, col_ics) == 'SI' ? $("#id_ics").prop('checked', true) : $("#id_ics").prop('checked', false);
+								data.getValue(row, col_control) == 'SI' ? $("#id_control").prop('checked', true) : $("#id_control").prop('checked', false);
 								
 								//DESCRIPCION TECNICA
 								$("#id_proveedor").text(data.getValue(row, col_proveedor) != null ? data.getValue(row, col_proveedor) : '');
@@ -1589,8 +1591,8 @@
 								$("#id_licenciasw").text(data.getValue(row, col_licenciasw_pr) != null ? data.getValue(row, col_licenciasw_pr) : '');
 								$("#id_licenciabd").text(data.getValue(row, col_licenciabd_pr) != null ? data.getValue(row, col_licenciabd_pr) : '');
 								
-								data.getValue(row, col_equipovir_pr) == 'SI' ? $("#id_equipovir").attr('checked', true) : $("#id_equipovir").attr('checked', false);
-								data.getValue(row, col_citrix_pr) == 'SI' ? $("#id_citrix").attr('checked', true) : $("#id_citrix").attr('checked', false);
+								data.getValue(row, col_equipovir_pr) == 'SI' ? $("#id_equipovir").prop('checked', true) : $("#id_equipovir").prop('checked', false);
+								data.getValue(row, col_citrix_pr) == 'SI' ? $("#id_citrix").prop('checked', true) : $("#id_citrix").prop('checked', false);
 						
 								funcionalidades = data.getValue(row, col_funcionalidades);
 								if (funcionalidades != null) {
@@ -1606,9 +1608,9 @@
 								
 								//INTERACCION DECALOG
 								/*
-								data.getValue(row, col_conexion) == 'SI' ? $("#id_conexion").attr('checked', true) : $("#id_conexion").attr('checked', false);
-								data.getValue(row, col_envia) == 'SI' ? $("#id_envia").attr('checked', true) : $("#id_envia").attr('checked', false);
-								data.getValue(row, col_recibe) == 'SI' ? $("#id_recibe").attr('checked', true) : $("#id_recibe").attr('checked', false);
+								data.getValue(row, col_conexion) == 'SI' ? $("#id_conexion").prop('checked', true) : $("#id_conexion").prop('checked', false);
+								data.getValue(row, col_envia) == 'SI' ? $("#id_envia").prop('checked', true) : $("#id_envia").prop('checked', false);
+								data.getValue(row, col_recibe) == 'SI' ? $("#id_recibe").prop('checked', true) : $("#id_recibe").prop('checked', false);
 								*/
 								//MAPA INTEGRACION (PRESENTACION)
 								if (data.getValue(row, col_mapaintegracion) != null) {
@@ -1618,10 +1620,6 @@
 									html_gp = html_gp + '<iframe src="https://docs.google.com/a/bbva.com/presentation/d/'+ data.getValue(row, col_mapaintegracion) + '/embed?start=false&loop=false&delayms=10000" frameborder="0" width="' + widthmapa + '" height="' + heightmapa + '" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>';
 									html_gp = html_gp + '</td></tr><tr><td>' + '</td></tr></table>';
 								}
-																
-								$('input:checkbox:not(:checked)').each(function() {
-									$("#" + ($(this)[0].id) + "l").css('color','#C3C3C3');
-								});
 								
 							}
 						}
@@ -1683,10 +1681,10 @@
 						for (var rowG = 1; rowG < dataGAPS.getNumberOfRows(); rowG++) {
 							if (elemento.text == dataGAPS.getValue(rowG, col_aplicativoG)) {
 								if (dataGAPS.getValue(rowG, col_clasificacionG) == "GF") {
-									html_gapf = html_gapf + '<input type="checkbox" disabled="disabled"><label>' + dataGAPS.getValue(rowG, col_gapG) + '</label></br>'
+									html_gapf = html_gapf + '<input type="checkbox" disabled><label>' + dataGAPS.getValue(rowG, col_gapG) + '</label></br>'
 								}
 								if (dataGAPS.getValue(rowG, col_clasificacionG) == "GT") {
-									html_gapt = html_gapt + '<input type="checkbox" disabled="disabled"><label>' + dataGAPS.getValue(rowG, col_gapG) + '</label></br>'
+									html_gapt = html_gapt + '<input type="checkbox" disabled><label>' + dataGAPS.getValue(rowG, col_gapG) + '</label></br>'
 								}
 	
 							}
@@ -1708,6 +1706,12 @@
 						resetTabs();
 						tabs_load();
 						load_data('PR');
+						$('input:checkbox(:checked)').each(function() {
+							$("#" + ($(this)[0].id) + "l").css('color','#000000');
+						});
+						$('input:checkbox:not(:checked)').each(function() {
+							$("#" + ($(this)[0].id) + "l").css('color','#C3C3C3');
+						});
 					}
 					function resetAccordion() {
 						for (var i = 1; i < 5; i++) {
@@ -1789,8 +1793,8 @@
 							$("#id_clientebd").text(data.getValue(row_selected, col_clientebd_pr) != null ? data.getValue(row_selected, col_clientebd_pr) : '');
 							$("#id_licenciasw").text(data.getValue(row_selected, col_licenciasw_pr) != null ? data.getValue(row_selected, col_licenciasw_pr) : '');
 							$("#id_licenciabd").text(data.getValue(row_selected, col_licenciabd_pr) != null ? data.getValue(row_selected, col_licenciabd_pr) : '');
-							data.getValue(row_selected, col_equipovir_pr) == 'SI' ? $("#id_equipovir").attr('checked', true) : $("#id_equipovir").attr('checked', false);
-							data.getValue(row_selected, col_citrix_pr) == 'SI' ? $("#id_citrix").attr('checked', true) : $("#id_citrix").attr('checked', false);
+							data.getValue(row_selected, col_equipovir_pr) == 'SI' ? $("#id_equipovir").prop('checked', true) : $("#id_equipovir").prop('checked', false);
+							data.getValue(row_selected, col_citrix_pr) == 'SI' ? $("#id_citrix").prop('checked', true) : $("#id_citrix").prop('checked', false);
 						} else {
 							$("#id_pr").css("font-weight", "normal");
 							$("#id_pr").css("font-size", "1.4em");
@@ -1804,8 +1808,8 @@
 							$("#id_clientebd").text(data.getValue(row_selected, col_clientebd_qa) != null ? data.getValue(row_selected, col_clientebd_qa) : '');
 							$("#id_licenciasw").text(data.getValue(row_selected, col_licenciasw_qa) != null ? data.getValue(row_selected, col_licenciasw_qa) : '');
 							$("#id_licenciabd").text(data.getValue(row_selected, col_licenciabd_qa) != null ? data.getValue(row_selected, col_licenciabd_qa) : '');
-							data.getValue(row_selected, col_equipovir_qa) == 'SI' ? $("#id_equipovir").attr('checked', true) : $("#id_equipovir").attr('checked', false);
-							data.getValue(row_selected, col_citrix_qa) == 'SI' ? $("#id_citrix").attr('checked', true) : $("#id_citrix").attr('checked', false);
+							data.getValue(row_selected, col_equipovir_qa) == 'SI' ? $("#id_equipovir").prop('checked', true) : $("#id_equipovir").prop('checked', false);
+							data.getValue(row_selected, col_citrix_qa) == 'SI' ? $("#id_citrix").prop('checked', true) : $("#id_citrix").prop('checked', false);
 						}
 						
 					}
@@ -1842,7 +1846,7 @@
 					<tr>
 						<td style="text-align:right;padding-right: 5px;">
 							<a href="#" onclick="mostrarocultar();">
-								<img src="https://site-itam.googlecode.com/svn/trunk/img/btnMostrarOcultar2.png" width="10%">
+								<img src="https://site-itam.googlecode.com/svn/branches/img/btnMostrarOcultar2.png" width="10%">
 							</a>
 						</td>
 					</tr>
@@ -1865,7 +1869,7 @@
 							<tr>
 								<td width="50%" style="align:left;">
 									<a href="#" onclick="mostrarocultardetalle();" id="btn_detalle">
-										<img src="https://site-itam.googlecode.com/svn/trunk/img/btnArrows02.png" height="20%" width="5%">
+										<img src="https://site-itam.googlecode.com/svn/branches/img/btnArrows02.png" height="20%" width="5%">
 									</a>
 								</td>
 								<td width="50%">
@@ -1894,31 +1898,31 @@
 											
 											<table width="100%">
 												<tr>
-													<td><input type="checkbox" disabled="disabled" id="id_fondosmutuos"><label id="id_fondosmutuosl">Fondos Mutuos</label></td>
-													<td><input type="checkbox" disabled="disabled" id="id_terceros"><label id="id_tercerosl">Terceros</label></td>
+													<td><input type="checkbox" disabled id="id_fondosmutuos"><label id="id_fondosmutuosl">Fondos Mutuos</label></td>
+													<td><input type="checkbox" disabled id="id_terceros"><label id="id_tercerosl">Terceros</label></td>
 												</tr>
 												<tr>
-													<td><input type="checkbox" disabled="disabled" id="id_porvenir"><label id="id_porvenirl">Porvenir</label></td>
-													<td><input type="checkbox" disabled="disabled" id="id_fideicomisos"><label id="id_fideicomisosl">Fideicomisos</label></td>
+													<td><input type="checkbox" disabled id="id_porvenir"><label id="id_porvenirl">Porvenir</label></td>
+													<td><input type="checkbox" disabled id="id_fideicomisos"><label id="id_fideicomisosl">Fideicomisos</label></td>
 												</tr>
 												<tr>
-													<td><input type="checkbox" disabled="disabled" id="id_seguros"><label id="id_segurosl">Seguros</label></td>
-													<td><input type="checkbox" disabled="disabled" id="id_prevision"><label id="id_previsionl">Fondos Previsión Social</label></td>
+													<td><input type="checkbox" disabled id="id_seguros"><label id="id_segurosl">Seguros</label></td>
+													<td><input type="checkbox" disabled id="id_prevision"><label id="id_previsionl">Fondos PrevisiÃ³n Social</label></td>
 												</tr>
 											</table>
 										</td>
 										<td width="50%">
 											<table width="100%">
 												<tr>
-													<td><input type="checkbox" disabled="disabled" id="id_fija"><label id="id_fijal">Renta Fija</label></td>
-													<td><input type="checkbox" disabled="disabled" id="id_listados"><label id="id_listadosl">Derivados Listados</label></td>
+													<td><input type="checkbox" disabled id="id_fija"><label id="id_fijal">Renta Fija</label></td>
+													<td><input type="checkbox" disabled id="id_listados"><label id="id_listadosl">Derivados Listados</label></td>
 												</tr>
 												<tr>
-													<td><input type="checkbox" disabled="disabled" id="id_variable"><label id="id_variablel">Renta Variable</label></td>
-													<td><input type="checkbox" disabled="disabled" id="id_otc"><label id="id_otcl">Derivados OTC</label></td>
+													<td><input type="checkbox" disabled id="id_variable"><label id="id_variablel">Renta Variable</label></td>
+													<td><input type="checkbox" disabled id="id_otc"><label id="id_otcl">Derivados OTC</label></td>
 												</tr>
 												<tr>
-													<td><input type="checkbox" disabled="disabled" id="id_fondofondos"><label id="id_fondofondosl">Fondos de Fondos</label></td>
+													<td><input type="checkbox" disabled id="id_fondofondos"><label id="id_fondofondosl">Fondos de Fondos</label></td>
 													<td></td>
 												</tr>
 											</table>
@@ -1934,28 +1938,28 @@
 										<td class="border_right" width="50%">
 											<table width="100%">
 												<tr>
-													<td><input type="checkbox" disabled="disabled" id="id_front"><label id="id_frontl">Front Office</label></td>
+													<td><input type="checkbox" disabled id="id_front"><label id="id_frontl">Front Office</label></td>
 												</tr>
 												<tr>
-													<td><input type="checkbox" disabled="disabled" id="id_ejecucion"><label id="id_ejecucionl">Ejecuci&oacuten</label></td>
+													<td><input type="checkbox" disabled id="id_ejecucion"><label id="id_ejecucionl">Ejecuci&oacuten</label></td>
 												</tr>
 												<tr>
-													<td><input type="checkbox" disabled="disabled" id="id_middle"><label id="id_middlel">Middle Office</label></td>
+													<td><input type="checkbox" disabled id="id_middle"><label id="id_middlel">Middle Office</label></td>
 												</tr>
 												<tr>
-													<td><input type="checkbox" disabled="disabled" id="id_producto"><label id="id_productol">Producto</label></td>
+													<td><input type="checkbox" disabled id="id_producto"><label id="id_productol">Producto</label></td>
 												</tr>
 												<tr>
-													<td><input type="checkbox" disabled="disabled" id="id_riesgos"><label id="id_riesgosl">Riesgos</label></td>
+													<td><input type="checkbox" disabled id="id_riesgos"><label id="id_riesgosl">Riesgos</label></td>
 												</tr>
 												<tr>
-													<td><input type="checkbox" disabled="disabled" id="id_ics"><label id="id_icsl">I & C Sales</label></td>
+													<td><input type="checkbox" disabled id="id_ics"><label id="id_icsl">I & C Sales</label></td>
 												</tr>
 												<tr>
-													<td><input type="checkbox" disabled="disabled" id="id_back"><label id="id_backl">Back Office (COVAF)</label></td>
+													<td><input type="checkbox" disabled id="id_back"><label id="id_backl">Back Office (COVAF)</label></td>
 												</tr>
 												<tr>
-													<td><input type="checkbox" disabled="disabled" id="id_control"><label id="id_controll">Control de Gesti&oacuten</label></td>
+													<td><input type="checkbox" disabled id="id_control"><label id="id_controll">Control de Gesti&oacuten</label></td>
 												</tr>
 											</table>
 										</td>
@@ -2007,10 +2011,10 @@
 								</br>
 								<table width="100%">
 									<tr>
-										<td><input type="checkbox" disabled="disabled" id="id_equipovir"><label>Equipo Virtual</label></td>
+										<td><input type="checkbox" disabled id="id_equipovir"><label id="id_equipovirl">Equipo Virtual</label></td>
 									</tr>
 									<tr>
-										<td><input type="checkbox" disabled="disabled" id="id_citrix"><label>Citrix</label></td>
+										<td><input type="checkbox" disabled id="id_citrix"><label id="id_citrixl">Citrix</label></td>
 									</tr>
 								</table>
 								
@@ -2063,3 +2067,5 @@
 				]]>
 	</Content> 
 </Module>
+
+
