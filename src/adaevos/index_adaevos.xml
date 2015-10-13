@@ -4,583 +4,34 @@
 	<Content type="html">
         <![CDATA[
                 <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-                <style>
-					/**********************PERFECT SCROLLBAR**************************/
-							.ps-container .ps-scrollbar-x-rail {
-								position: absolute; /* please don't change 'position' */
-								bottom: 3px; /* there must be 'bottom' for ps-scrollbar-x-rail */
-								height: 8px;
-								-webkit-border-radius: 4px;
-								-moz-border-radius: 4px;
-								border-radius: 4px;
-								opacity: 0;
-								filter: alpha(opacity = 0);
-								-o-transition: background-color .2s linear, opacity .2s linear;
-								-webkit-transition: background-color.2s linear, opacity .2s linear;
-								-moz-transition: background-color .2s linear, opacity .2s linear;
-								transition: background-color .2s linear, opacity .2s linear;
-							}
-
-							.ps-container:hover .ps-scrollbar-x-rail,
-							.ps-container.hover .ps-scrollbar-x-rail {
-								opacity: 0.6;
-								filter: alpha(opacity = 60);
-							}
-
-							.ps-container .ps-scrollbar-x-rail:hover,
-							.ps-container .ps-scrollbar-x-rail.hover {
-								background-color: #eee;
-								opacity: 0.9;
-								filter: alpha(opacity = 90);
-							}
-
-							.ps-container .ps-scrollbar-x-rail.in-scrolling {
-								opacity: 0.9;
-								filter: alpha(opacity = 90);
-							}
-
-							.ps-container .ps-scrollbar-y-rail {
-								position: absolute; /* please don't change 'position' */
-								right: 3px; /* there must be 'right' for ps-scrollbar-y-rail */
-								width: 8px;
-								-webkit-border-radius: 4px;
-								-moz-border-radius: 4px;
-								border-radius: 4px;
-								opacity: 1;
-								filter: alpha(opacity = 100);
-								-o-transition: background-color .2s linear, opacity .2s linear;
-								-webkit-transition: background-color.2s linear, opacity .2s linear;
-								-moz-transition: background-color .2s linear, opacity .2s linear;
-								transition: background-color .2s linear, opacity .2s linear;
-							}
-
-							.ps-container:hover .ps-scrollbar-y-rail,
-							.ps-container.hover .ps-scrollbar-y-rail {
-								opacity: 1;
-								filter: alpha(opacity = 100);
-							}
-
-							.ps-container .ps-scrollbar-y-rail:hover,
-							.ps-container .ps-scrollbar-y-rail.hover {
-								background-color: #eee;
-								opacity: 1;
-								filter: alpha(opacity = 100);
-							}
-
-							.ps-container .ps-scrollbar-y-rail.in-scrolling {
-								opacity: 0.9;
-								filter: alpha(opacity = 90);
-							}
-
-							.ps-container .ps-scrollbar-x {
-								position: absolute; /* please don't change 'position' */
-								bottom: 0; /* there must be 'bottom' for ps-scrollbar-x */
-								height: 8px;
-								background-color: #aaa;
-								-webkit-border-radius: 4px;
-								-moz-border-radius: 4px;
-								border-radius: 4px;
-								-o-transition: background-color .2s linear;
-								-webkit-transition: background-color.2s linear;
-								-moz-transition: background-color .2s linear;
-								transition: background-color .2s linear;
-							}
-
-							.ps-container.ie6 .ps-scrollbar-x {
-								font-size: 0; /* fixed scrollbar height in xp sp3 ie6 */
-							}
-
-							.ps-container .ps-scrollbar-x-rail:hover .ps-scrollbar-x,
-							.ps-container .ps-scrollbar-x-rail.hover .ps-scrollbar-x {
-								background-color: #999;
-							}
-
-							.ps-container .ps-scrollbar-y {
-								position: absolute; /* please don't change 'position' */
-								right: 0; /* there must be 'right' for ps-scrollbar-y */
-								width: 8px;
-								background-color: #aaa;
-								-webkit-border-radius: 4px;
-								-moz-border-radius: 4px;
-								border-radius: 4px;
-								-o-transition: background-color .2s linear;
-								-webkit-transition: background-color.2s linear;
-								-moz-transition: background-color .2s linear;
-								transition: background-color .2s linear;
-							}
-
-							.ps-container.ie .ps-scrollbar-y {
-								font-size: 0; /* fixed scrollbar height in xp sp3 ie6 */
-							}
-
-							.ps-container .ps-scrollbar-y-rail:hover .ps-scrollbar-y,
-							.ps-container .ps-scrollbar-y-rail.hover .ps-scrollbar-y {
-								background-color: #999;
-							}
-
-						/*****************************************************************/
-						
-						/**********************COLORBOX************************************/
-							/*
-							Colorbox Core Style:
-							The following CSS is consistent between example themes and should not be altered.
-							*/
-							#colorbox, #cboxOverlay, #cboxWrapper{position:absolute; top:0; left:0; z-index:9999; overflow:hidden;}
-							#cboxWrapper {max-width:none;}
-							#cboxOverlay{position:fixed; width:100%; height:100%;}
-							#cboxMiddleLeft, #cboxBottomLeft{clear:left;}
-							#cboxContent{position:relative;}
-							#cboxLoadedContent{overflow:auto; -webkit-overflow-scrolling: touch;}
-							#cboxTitle{margin:0;}
-							#cboxLoadingOverlay, #cboxLoadingGraphic{position:absolute; top:0; left:0; width:100%; height:100%;}
-							#cboxPrevious, #cboxNext, #cboxClose, #cboxSlideshow{cursor:pointer;}
-							.cboxPhoto{float:left; margin:auto; border:0; display:block; max-width:none; -ms-interpolation-mode:bicubic;}
-							.cboxIframe{width:100%; height:100%; display:block; border:0;}
-							#colorbox, #cboxContent, #cboxLoadedContent{box-sizing:content-box; -moz-box-sizing:content-box; -webkit-box-sizing:content-box;}
-
-							/* 
-								User Style:
-								Change the following styles to modify the appearance of Colorbox.  They are
-								ordered & tabbed in a way that represents the nesting of the generated HTML.
-							*/
-							#cboxOverlay{background:#000;}
-							#colorbox{outline:0;}
-							#cboxContent{margin-top:20px;background:#000;}
-							.cboxIframe{background:#fff;}
-							#cboxError{padding:50px; border:1px solid #ccc;}
-							#cboxLoadedContent{border:5px solid #000; background:#fff;}
-							#cboxTitle{position:absolute; top:-20px; left:0; color:#ccc;}
-							#cboxCurrent{position:absolute; top:-20px; right:0px; color:#ccc;}
-							#cboxLoadingGraphic{background:url('https://site-itam.googlecode.com/svn/trunk/img/loadingcbx.gif') no-repeat center center;}
-
-							/* these elements are buttons, and may need to have additional styles reset to avoid unwanted base styles */
-							#cboxPrevious, #cboxNext, #cboxSlideshow, #cboxClose {border:0; padding:0; margin:0; overflow:visible; width:auto; background:none; }
-							
-							/* avoid outlines on :active (mouseclick), but preserve outlines on :focus (tabbed navigating) */
-							#cboxPrevious:active, #cboxNext:active, #cboxSlideshow:active, #cboxClose:active {outline:0;}
-							
-							#cboxSlideshow{position:absolute; top:-20px; right:90px; color:#fff;}
-							#cboxPrevious{position:absolute; top:50%; left:5px; margin-top:-32px; background:url('https://site-itam.googlecode.com/svn/trunk/img/controlscbx.png') no-repeat top left; width:28px; height:65px; text-indent:-9999px;}
-							#cboxPrevious:hover{background-position:bottom left;}
-							#cboxNext{position:absolute; top:50%; right:5px; margin-top:-32px; background:url('https://site-itam.googlecode.com/svn/trunk/img/controlscbx.png') no-repeat top right; width:28px; height:65px; text-indent:-9999px;}
-							#cboxNext:hover{background-position:bottom right;}
-							#cboxClose{position:absolute; top:5px; right:5px; display:block; background:url('https://site-itam.googlecode.com/svn/trunk/img/controlscbx.png') no-repeat top center; width:38px; height:19px; text-indent:-9999px;}
-							#cboxClose:hover{background-position:bottom center;}
-						/*****************************************************************/
-						
-                        .header_hide_style {
-							display: none;
-                        }
-                        .header_style {
-							height: 35px;
-                            background-color: #009EE5;
-                            border-right: 0.5px solid #FFFFFF;
-							color: white;
-                            font-weight: bold;
-                            text-align: center;
-                        }
-                        .filtros_style {
-							color: #094FA4;
-                            font-family: Arial, sans-serif;
-                            font-weight: bold;
-                            font-size: 13px;
-                        }
-                        .cell_style {
-							height: 35px;
-                            border-bottom: 1px solid #D9D9D9;
-                            background-color: #FFFFFF;
-                            text-align: center;
-                        }
-                        .cell_left_style {
-							height: 35px;
-							border-bottom: 1px solid #D9D9D9;
-                            background-color: #FFFFFF;
-							text-align: left;
-                        }
-                        .cell_warning_style {
-							height: 35px;
-                            border-bottom: 1px solid #D9D9D9;
-                            background-color: #dd7e6b;
-                            text-align: center;     
-                            color: #000000;
-                        }
-                        .cell_warning_info_style {
-							height: 35px;
-                            border-bottom: 1px solid #D9D9D9;
-                            background-color: #FFD966;
-                            text-align: center;     
-                            color: #000000;
-                        }
-                        .cell_width_200 {
-							width: 200px;
-                        }
-                        .cell_width_180 {
-							width: 200px;
-                        }
-                        .cell_width_120 {
-							width: 120px;
-                        }
-                        .cell_width_100 {
-							width: 100px;
-                        }
-                        .cell_width_85 {
-							width: 85px;
-                        }
-                        .cell_width_70 {
-							width: 70px;
-                        }
-                        .cell_width_60 {
-							width: 60px;
-                        }
-                        .bold_style {
-							font-weight: bold;
-                        }
-                </style>
+                <link href="https://rawgit.com/itambbvacom/site-itam/master/lib/perfect-scrollbar.css" rel="stylesheet">
+                <link href="https://rawgit.com/itambbvacom/site-itam/master/lib/colorbox.css" rel="stylesheet">
+                <link href="https://rawgit.com/itambbvacom/site-itam/master/lib/index_adaevos.css" rel="stylesheet">
                 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-                <script src="https://site-itam.googlecode.com/svn/trunk/lib/jquery-1.10.2.min.js"></script>
-                <link href="https://site-itam.googlecode.com/svn/trunk/lib/perfect-scrollbar.css" rel="stylesheet">
-                <script src="https://site-itam.googlecode.com/svn/trunk/lib/jquery.mousewheel.js"></script>
-                <script src="https://site-itam.googlecode.com/svn/trunk/lib/perfect-scrollbar.js"></script>
-                <link href="https://site-itam.googlecode.com/svn/trunk/lib/colorbox.css" rel="stylesheet" />
-                <script src="https://site-itam.googlecode.com/svn/trunk/lib/jquery.colorbox.js"></script>
-                <script type="text/javascript">
-                        if(typeof String.prototype.trim !== 'function') {
-						  String.prototype.trim = function() {
-							return this.replace(/^\s+|\s+$/g, ''); 
-						  }
-						}                          
-                        google.load('visualization', '1.1', {packages: ['controls','table']});
-                        google.setOnLoadCallback(draw);
-
-                        function draw() {
-                  
-                                var query = new google.visualization.Query('https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=0AjOaof4bFUTmdDQ2RlY5a0hOTGZXWXBmMVlNOUVpa1E&usp=drive_web');
-
-                                query.send(handleQueryResponse);
-                                
-                        }
-                        
-                        function handleQueryResponse(response) {
-                                if (response.isError()) {
-                                        alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-                                        return;
-                                }
-                                var data = response.getDataTable();
-                                                                
-                                var category_codigo = new google.visualization.ControlWrapper({
-														'controlType': 'StringFilter',
-                                                        'containerId': 'filtro1',
-                                                        'options': {
-															'filterColumnLabel': 'CODIGO',
-															'ui': {
-																'labelSeparator' : '',
-                                                                'label' : '',
-                                                                'cssClass' : ''
-                                                            }
-                                                        }
-                                                    });
-								
-								var category_champion = new google.visualization.ControlWrapper({
-														'controlType': 'CategoryFilter',
-                                                        'containerId': 'filtro2',
-                                                        'options': {
-															'filterColumnLabel': 'CHAMPION',
-															'ui': {
-																'labelSeparator' : '',
-                                                                'label' : '',
-                                                                'caption' : 'Todos',
-                                                                'allowMultiple': false,
-                                                                'allowTyping': false,
-                                                                'selectedValuesLayout': 'aside'
-                                                            }
-                                                        }
-                                                    });
-								
-								var category_lider = new google.visualization.ControlWrapper({
-														'controlType': 'CategoryFilter',
-                                                        'containerId': 'filtro3',
-                                                        'options': {
-															'filterColumnLabel': 'LÍDER',
-															'ui': {
-																'labelSeparator' : '',
-                                                                'label' : '',
-                                                                'caption' : 'Todos',
-                                                                'allowMultiple': false,
-                                                                'allowTyping': false,
-                                                                'selectedValuesLayout': 'aside'
-                                                            }
-                                                        }
-                                                    });
-													
-                                var category_anio = new google.visualization.ControlWrapper({
-														'controlType': 'CategoryFilter',
-                                                        'containerId': 'filtro4',
-                                                        'options': {
-															'filterColumnLabel': 'AÑO',
-															'ui': {
-																'labelSeparator' : '',
-                                                                'label' : '',
-                                                                'caption' : 'Selecciona',
-                                                                'allowMultiple': true,
-                                                                'allowTyping': false,
-                                                                'selectedValuesLayout': 'aside'
-                                                            }
-                                                        }
-                                                    });
-													
-								var category_estado = new google.visualization.ControlWrapper({
-														'controlType': 'CategoryFilter',
-                                                        'containerId': 'filtro5',
-                                                        'options': {
-															'filterColumnLabel': 'ESTADO',
-															'ui': {
-																'labelSeparator' : '',
-                                                                'label' : '',
-                                                                'caption' : 'Selecciona',
-                                                                'allowMultiple': true,
-                                                                'allowTyping': false,
-                                                                'selectedValuesLayout': 'aside'
-															}
-                                                        }
-                                                    });
-								
-								var category_fase = new google.visualization.ControlWrapper({
-														'controlType': 'CategoryFilter',
-                                                        'containerId': 'filtro6',
-                                                        'options': {
-															'filterColumnLabel': 'FASE ACTUAL',
-															'ui': {
-																'labelSeparator' : '',
-                                                                'label' : '',
-                                                                'caption' : 'Selecciona',
-                                                                'allowMultiple': true,
-                                                                'allowTyping': false,
-                                                                'selectedValuesLayout': 'aside'
-															}
-                                                        }
-                                                    });
-								
-								var category_area = new google.visualization.ControlWrapper({
-														'controlType': 'CategoryFilter',
-                                                        'containerId': 'filtro7',
-                                                        'options': {
-															'filterColumnLabel': 'ÁREA',
-															'ui': {
-																'labelSeparator' : '',
-                                                                'label' : '',
-                                                                'caption' : 'Selecciona',
-                                                                'allowMultiple': true,
-                                                                'allowTyping': false,
-                                                                'selectedValuesLayout': 'aside'
-															}
-                                                        }
-                                                    });
-								
-								var category_op = new google.visualization.ControlWrapper({
-														'controlType': 'CategoryFilter',
-                                                        'containerId': 'filtro8',
-                                                        'options': {
-															'filterColumnLabel': 'OFICINA DE PROYECTO',
-															'ui': {
-																'labelSeparator' : '',
-                                                                'label' : '',
-                                                                'caption' : 'Selecciona',
-                                                                'allowMultiple': true,
-                                                                'allowTyping': false,
-                                                                'selectedValuesLayout': 'aside'
-															}
-                                                        }
-                                                    });                                
-
-                                var cssClassNames = {
-                                        'headerRow': 'header_hide_style',
-                                        'tableCell': 'cell_style'
-                                };
-                                
-                                var options = {'allowHtml': true, 'cssClassNames': cssClassNames, 'sort': 'disable', 'height': '100%', 'width': '100%'};
-                                
-                                var table = new google.visualization.ChartWrapper({
-                                                                'chartType': 'Table',
-                                                                'containerId': 'table',
-                                                                'options': options
-                                                        });
-                                
-                                var formatter_link = new google.visualization.PatternFormat('<a class="iframe" href="{12}" target="_blank" >{0}</a>');
-                                formatter_link.format(data, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]);
-                                
-                                var formatter_fecha = new google.visualization.DateFormat({pattern: 'dd.LLLyy'});
-                                formatter_fecha.format(data, 8);
-                                
-								var column_codigo = 0;
-								var column_nombre = 1;
-								var column_tipo = 2;
-								var column_anio = 3;
-								var column_finproyecto = 4;
-								var column_lider = 5;
-								var column_estado = 6;
-								var column_fase = 7;
-								var column_finfase = 8;
-								var column_ppto = 9;
-								var column_champion     = 10;   
-								var column_area = 11;
-								var column_op = 13;
-								
-								var stilo;
-                                var fecha_actual = new Date();
-                                fecha_actual = new Date(fecha_actual.getFullYear(), fecha_actual.getMonth(), fecha_actual.getDate());                                           
-                                var cadena_format;
-                                
-                                
-                                for (var row = 0; row < data.getNumberOfRows(); row++) {
-                                        data.setCell(row, column_codigo, data.getValue(row, column_codigo), data.getFormattedValue(row, column_codigo), {'className': 'cell_left_style bold_style cell_width_85'});
-										data.setCell(row, column_nombre, data.getValue(row, column_nombre), data.getFormattedValue(row, column_nombre), {'className': 'cell_left_style cell_width_180'});
-										data.setCell(row, column_tipo, data.getValue(row, column_tipo), data.getFormattedValue(row, column_tipo), {'className': 'cell_style'});
-										data.setCell(row, column_anio, data.getValue(row, column_anio), data.getFormattedValue(row, column_anio), {'className': 'cell_style bold_style cell_width_60'});
-										data.setCell(row, column_finproyecto, data.getValue(row, column_finproyecto), data.getFormattedValue(row, column_finproyecto), {'className': 'cell_style'});
-										data.setCell(row, column_lider, data.getValue(row, column_lider), data.getFormattedValue(row, column_lider), {'className': 'cell_style cell_width_100'});
-                                                                                
-                                        cadena_format = data.getValue(row, column_estado);
-                                        cadena_format = cadena_format.substring(2);
-                                        cadena_format = cadena_format.trim();
-                                        data.setCell(row, column_estado, data.getValue(row, column_estado), cadena_format, {'className': 'cell_style bold_style cell_width_100'});
-                                                                                
-                                        cadena_format = data.getValue(row, column_fase);
-                                        cadena_format = cadena_format.substring(2);
-                                        cadena_format = cadena_format.trim();
-                                        data.setCell(row, column_fase, data.getValue(row, column_fase), cadena_format, {'className': 'cell_style bold_style cell_width_120'});
-                                        
-                                                                                
-                                        stilo = 'cell_style bold_style cell_width_70';
-                                        if ((data.getValue(row, column_estado)).toLowerCase().indexOf('en cartera') == -1
-											&& (data.getValue(row, column_estado)).toLowerCase().indexOf('terminado') == -1
-											&& (data.getValue(row, column_estado)).toLowerCase().indexOf('suspendido') == -1
-											&& (data.getValue(row, column_estado)).toLowerCase().indexOf('cancelado') == -1
-											&& data.getValue(row, column_finfase) < fecha_actual) {
-											stilo = 'cell_warning_style bold_style cell_width_70';
-                                        } else {
-											if ((data.getValue(row, column_estado)).toLowerCase().indexOf('en cartera') == -1
-												&& (data.getValue(row, column_estado)).toLowerCase().indexOf('terminado') == -1
-												&& (data.getValue(row, column_estado)).toLowerCase().indexOf('suspendido') == -1
-												&& (data.getValue(row, column_estado)).toLowerCase().indexOf('cancelado') == -1
-												&& data.getValue(row, column_finfase) >= fecha_actual && ((((data.getValue(row, column_finfase)-fecha_actual)/1000)/60)/60)/24 <= 7) {
-												stilo = 'cell_warning_info_style bold_style cell_width_70';
-                                            }
-   
-                                        }
-                                        data.setCell(row, column_finfase, data.getValue(row, column_finfase), data.getFormattedValue(row, column_finfase), {'className': stilo});
-                                        data.setCell(row, column_ppto, data.getValue(row, column_ppto), data.getFormattedValue(row, column_ppto), {'className': 'cell_style'});
-                                        data.setCell(row, column_champion, data.getValue(row, column_champion), data.getFormattedValue(row, column_champion), {'className': 'cell_style cell_width_100'});
-                                        data.setCell(row, column_area, data.getValue(row, column_area), data.getFormattedValue(row, column_area), {'className': 'cell_style cell_width_100'});
-										
-										cadena_format = data.getValue(row, column_op);
-                                        cadena_format = cadena_format.substring(0, 1);
-                                        cadena_format = cadena_format.trim();
-										data.setCell(row, column_op, data.getValue(row, column_op), cadena_format, {'className': 'cell_style'});
-                                             
-                                }
-                                
-                                var view = new google.visualization.DataView(data);
-                                view.setColumns([0, 1, 13, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]);
-                                
-                                new google.visualization.Dashboard(document.getElementById('dashboard')).
-                                                bind([category_codigo, category_champion, category_lider, category_anio, category_estado, category_fase, category_area, category_op], table).
-                                                draw(view);
-
-                                google.visualization.events.addListener(table, 'ready',
-                                        function(event) {
-												$(".google-visualization-controls-stringfilter").children().css( "width", "80px" );
-                                                $(".iframe").colorbox({iframe:true, width:"100%", height:"95%"});
-                                                $('#contenido_tabla').perfectScrollbar({
-													wheelSpeed: 20,
-													wheelPropagation: false
-                                                });
-                                                
-                                                $("#table table tbody tr:last-child td").each(function(index){
-													if ($("#w"+(index+1)).val() > $(this).width()) {
-														$(this).width($("#w"+(index+1)).val());
-														$("#h"+(index+1)).width($("#w"+(index+1)).val());
-													} else {
-														$("#h"+(index+1)).width($(this).width());
-													}
-
-                                                });
-                                                $("#table table tbody tr:last-child td").each(function(index){
-													$("#h"+(index+1)).width($(this).width());
-                                                });
-
-                                                $(".iframe").each(function(index, elemento){
-													var keysheet = elemento.href;
-													var indexkey = keysheet.indexOf("key=");
-													keysheet = keysheet.substring(indexkey + 4, keysheet.length);
-													indexkey = keysheet.indexOf("&");
-													if (indexkey != -1) {
-														keysheet = keysheet.substring(0, indexkey);
-													}
-													if ($('#chk_editar').prop('checked')) {
-														$.colorbox.remove();
-														elemento.href = 'https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=' + keysheet +'&usp=drive_web';
-													} else {
-														elemento.href = 'https://spreadsheets.google.com/a/bbva.com/spreadsheet/ccc?chrome=false&key=' + keysheet +'&output=html&pubredirect=true&widget=true';
-													}
-												});
-                                                
-                                                
-                                });
-                                
-                        }
-                        function seleccionar(el) {
-							var body = document.body, range, sel;
-                            if (document.createRange && window.getSelection) {
-								range = document.createRange();
-                                sel = window.getSelection();
-                                sel.removeAllRanges();
-                                try {
-									range.selectNodeContents(el);
-                                    sel.addRange(range);
-                                    range.execCommand('copy');
-                                } catch (e) {
-									range.selectNode(el);
-                                    sel.addRange(range);
-                                }
-                            } else if (body.createTextRange) {
-								range = body.createTextRange();
-                                range.moveToElementText(el);
-                                range.select();
-                            }
-                        }
-						function cambia_detalle() {
-							$(".iframe").each(function(index, elemento){
-								var keysheet = elemento.href;
-								var indexkey = keysheet.indexOf("key=");
-								keysheet = keysheet.substring(indexkey + 4, keysheet.length);
-								indexkey = keysheet.indexOf("&");
-								if (indexkey != -1) {
-									keysheet = keysheet.substring(0, indexkey);
-								}
-								if ($('#chk_editar').prop('checked')) {
-									$.colorbox.remove();
-									elemento.href = 'https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=' + keysheet +'&usp=drive_web';
-								} else {
-									$(".iframe").colorbox({iframe:true, width:"100%", height:"95%"});
-									elemento.href = 'https://spreadsheets.google.com/a/bbva.com/spreadsheet/ccc?chrome=false&key=' + keysheet +'&output=html&pubredirect=true&widget=true';
-								}
-							});
-						}
-                </script>
-				<div id="dashboard">
+                <script src="https://rawgit.com/itambbvacom/site-itam/master/lib/index_adaevos.js"></script>
+                <script src="https://rawgit.com/itambbvacom/site-itam/master/lib/jquery-1.10.2.min.js"></script>
+                <script src="https://rawgit.com/itambbvacom/site-itam/master/lib/jquery.mousewheel.js"></script>
+                <script src="https://rawgit.com/itambbvacom/site-itam/master/lib/perfect-scrollbar.js"></script>
+                <script src="https://rawgit.com/itambbvacom/site-itam/master/lib/jquery.colorbox.js"></script>
+                <div id="dashboard">
 					<table width="100%">
 						<tr>
 							<td colspan="9" style="text-align:right;padding-right: 5px;" class="filtros_style">
 								<table align="right">
 									<tr>
 										<td style="text-align:right;">
-											<a class="iframe" href="https://spreadsheets.google.com/a/bbva.com/spreadsheet/ccc?chrome=false&key=0AjOaof4bFUTmdEtmd19KQUdDZnlnNjFBMDNWUm5qWmc&output=html&pubredirect=true&widget=true" >
-												<img src="https://site-itam.googlecode.com/svn/trunk/img/btnGraficos2.png">
+											<!-- ASí está en QA
+											<a class = "iframe" href="https://spreadsheets.google.com/a/bbva.com/spreadsheet/ccc?chrome=false&key=0AuL8XqqgbAI4dGxXZnk3djR5WGtGbGhvdnlwQ1VHYUE&output=html&pubredirect=true&widget=true" >
+												<img src="https://rawgit.com/itambbvacom/site-itam/master/img/btnGraficos2.png">
+											</a>
+											-->
+											<a class = "iframe" href="https://spreadsheets.google.com/a/bbva.com/spreadsheet/ccc?chrome=false&key=0AjOaof4bFUTmdEtmd19KQUdDZnlnNjFBMDNWUm5qWmc&output=html&pubredirect=true&widget=true" >
+												<img src="https://rawgit.com/itambbvacom/site-itam/master/img/btnGraficos2.png">
 											</a>
 										</td>
 										<td style="text-align:right;">
 											<a href="#" onclick="seleccionar(document.getElementById('select_table'));">
-												<img src="https://site-itam.googlecode.com/svn/branches/img/btnSelecciona2.png">
+												<img src="https://rawgit.com/itambbvacom/site-itam/master/img/btnSelecciona2.png">
 											</a>
 										</td>
 									</tr>
@@ -589,24 +40,24 @@
 							</td>
 						</tr>
 						<tr>
-							<td width="5%" style="text-align:right;" class="filtros_style">Codigo:</td>
+							<td width="5%" style="text-align:right;" class="filtros_style">C&oacutedigo:</td>
 							<td width="8%" class="filtros_style"><div id="filtro1"></div></td>
 							<td width="5%" style="text-align:right;" class="filtros_style">Champion:</td>
 							<td width="18%" class="filtros_style"><div id="filtro2"></div></td>
-							<td width="8%" style="text-align:right;" class="filtros_style">Líder:</td>
+							<td width="8%" style="text-align:right;" class="filtros_style">L&iacuteder:</td>
 							<td width="20%" class="filtros_style"><div id="filtro3"></div></td>
 							<td width="10%" style="text-align:right;" class="filtros_style">Oficina Proyectos:</td>
 							<td width="21%" class="filtros_style"><div id="filtro8"></div></td>
 							<td width="5%" style="text-align:right;" class="filtros_style"><input id="chk_editar" type="checkbox" onclick="cambia_detalle();">Editar</input></td>
 						</tr>
 						<tr>
-							<td height="50px" style="text-align:right;" class="filtros_style">Año:</td>
+							<td height="50px" style="text-align:right;" class="filtros_style">A&ntildeo:</td>
 							<td height="50px" class="filtros_style"><div id="filtro4"></div></td>
 							<td height="50px" style="text-align:right;" class="filtros_style">Estado:</td>
 							<td height="50px" class="filtros_style"><div id="filtro5"></div></td>
 							<td height="50px" style="text-align:right;" class="filtros_style">Fase Actual:</td>
 							<td height="50px" class="filtros_style"><div id="filtro6"></div></td>
-							<td height="50px" style="text-align:right;" class="filtros_style">Area:</td>
+							<td height="50px" style="text-align:right;" class="filtros_style">&Aacuterea:</td>
 							<td colspan = "2" height="50px" class="filtros_style"><div id="filtro7"></div></td>
 						</tr>
 						<tr>
@@ -614,19 +65,19 @@
 								<div id="select_table">
 								<table id="headers_table"  width="100%" height="35px" class="filtros_style">
 									<tr>
-										<td id="h1" class="header_style"><input id="w1" type="hidden" value="60"/>CODIGO</td>
+										<td id="h1" class="header_style"><input id="w1" type="hidden" value="60"/>C&OacuteDIGO</td>
 										<td id="h2" class="header_style"><input id="w2" type="hidden" value="56"/>NOMBRE</td>
 										<td id="h3" class="header_style"><input id="w3" type="hidden" value="5"/>OP</td>
 										<td id="h4" class="header_style"><input id="w4" type="hidden" value="31"/>TIPO</td>
-										<td id="h5" class="header_style"><input id="w5" type="hidden" value="28"/>AÑO</td>
-										<td id="h6" class="header_style"><input id="w6" type="hidden" value="71"/>FIN PROYECTO</td>
-										<td id="h7" class="header_style"><input id="w7" type="hidden" value="38"/>LÍDER</td>
+										<td id="h5" class="header_style"><input id="w5" type="hidden" value="28"/>A&NtildeO</td>
+										<td id="h6" class="header_style"><input id="w6" type="hidden" value="71"/>FIN TRIM</td>
+										<td id="h7" class="header_style"><input id="w7" type="hidden" value="38"/>L&IacuteDER</td>
 										<td id="h8" class="header_style"><input id="w8" type="hidden" value="53"/>ESTADO</td>
 										<td id="h9" class="header_style"><input id="w9" type="hidden" value="49"/>FASE ACTUAL</td>
 										<td id="h10" class="header_style"><input id="w10" type="hidden" value="34"/>FIN FASE</td>
 										<td id="h11" class="header_style"><input id="w11" type="hidden" value="55"/>Ppto EST(MXN)</td>
 										<td id="h12" class="header_style"><input id="w12" type="hidden" value="70"/>CHAMPION</td>
-										<td id="h13" class="header_style"><input id="w13" type="hidden" value="35"/>ÁREA</td>
+										<td id="h13" class="header_style"><input id="w13" type="hidden" value="35"/>&AacuteREA</td>
 									</tr>
 								</table>
 								<div id="contenido_tabla" style="height:500px;overflow:hidden;position:relative;">
@@ -641,8 +92,13 @@
 						</tr>
 						<tr>
 							<td colspan="9" style="text-align:right;padding-right: 5px;">
+							    <!-- Así está en QA
+								<a href="https://docs.google.com/a/bbva.com/spreadsheet/fm?key=0AuL8XqqgbAI4dERuUkR4dkQxTHFzaWYtaXpMNFJjVEE&fmcmd=420">
+									<img src="https://rawgit.com/itambbvacom/site-itam/master/img/btnDescarga2.png">
+								</a>
+								-->
 								<a href="https://docs.google.com/a/bbva.com/spreadsheet/fm?key=0AjOaof4bFUTmdDQ2RlY5a0hOTGZXWXBmMVlNOUVpa1E&fmcmd=420">
-									<img src="https://site-itam.googlecode.com/svn/trunk/img/btnDescarga2.png">
+									<img src="https://rawgit.com/itambbvacom/site-itam/master/img/btnDescarga2.png">
 								</a>
 							</td>
 						</tr>
@@ -650,5 +106,5 @@
                                         
                 </div>
         ]]>
-	</Content>  
+	</Content> 
 </Module>
