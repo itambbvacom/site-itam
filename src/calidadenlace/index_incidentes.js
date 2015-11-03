@@ -7,14 +7,22 @@ google.load('visualization', '1.1', {packages: ['controls','table']});
 google.setOnLoadCallback(draw);
 
 function draw() {
-	// HOJA de QA  https://drive.google.com/open?id=1IfSrp3VdCwssPKiolfza-1X1TGlPaiWIIR_JIF_qRlk
-	// var query = new google.visualization.Query('https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=1IfSrp3VdCwssPKiolfza-1X1TGlPaiWIIR_JIF_qRlk&usp=drive_web');
+	/* HOJA de LAB 
+	https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=16f2lOWJmoU1VlF2QLUNRusEcbS-gzmZSHryPdylKQm4
+	var query = new google.visualization.Query('https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=16f2lOWJmoU1VlF2QLUNRusEcbS-gzmZSHryPdylKQm4&usp=drive_web');
+	*/
 
-	// HOJA de LAB 
-	// var query = new google.visualization.Query('https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=16f2lOWJmoU1VlF2QLUNRusEcbS-gzmZSHryPdylKQm4&usp=drive_web');
 
-	// HOJA DE PRODUCCION 	
+	/* HOJA de QA  
+	https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=1IfSrp3VdCwssPKiolfza-1X1TGlPaiWIIR_JIF_qRlk
+	*/
+	var query = new google.visualization.Query('https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=1IfSrp3VdCwssPKiolfza-1X1TGlPaiWIIR_JIF_qRlk&usp=drive_web');
+	
+
+	/* HOJA DE PRODUCCION 	
+	https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=1QE_pkbrCfNDpoyLbvid_SvuVckNHVMLoj3I5hygSXb4
 	var query = new google.visualization.Query('https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=1QE_pkbrCfNDpoyLbvid_SvuVckNHVMLoj3I5hygSXb4&usp=drive_web');
+	*/
     
 
 
@@ -225,4 +233,5 @@ function seleccionar(el) {
 		range.moveToElementText(el);
 		range.select();
 	}
-} 
+}
+
