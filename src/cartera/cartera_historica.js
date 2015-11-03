@@ -5,7 +5,7 @@ if(typeof String.prototype.trim !== 'function') {
 }
 google.load('visualization', '1.1', {packages: ['controls','table']});
 google.setOnLoadCallback(draw);
-
+	
 function draw() {
 	/* Hoja de LAB
 	https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=1V-9EoXkLu8wCSKSUtSNyi_3BZHBtcMV7aK0g02fh3n4&usp=drive_web#gid=0
