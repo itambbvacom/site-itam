@@ -245,4 +245,4 @@ function seleccionar(el) {
 			range.moveToElementText(el);
 			range.select();
 	}
-}
+} 
