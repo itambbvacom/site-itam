@@ -338,4 +338,3 @@ function cambia_detalle() {
 		}
 	});
 }
- 
