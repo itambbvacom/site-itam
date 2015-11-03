@@ -15,14 +15,14 @@ function draw() {
 
 	/* HOJA de QA  
 	https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=1IfSrp3VdCwssPKiolfza-1X1TGlPaiWIIR_JIF_qRlk
-	*/
 	var query = new google.visualization.Query('https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=1IfSrp3VdCwssPKiolfza-1X1TGlPaiWIIR_JIF_qRlk&usp=drive_web');
+	*/
 	
 
 	/* HOJA DE PRODUCCION 	
 	https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=1QE_pkbrCfNDpoyLbvid_SvuVckNHVMLoj3I5hygSXb4
-	var query = new google.visualization.Query('https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=1QE_pkbrCfNDpoyLbvid_SvuVckNHVMLoj3I5hygSXb4&usp=drive_web');
 	*/
+	var query = new google.visualization.Query('https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=1QE_pkbrCfNDpoyLbvid_SvuVckNHVMLoj3I5hygSXb4&usp=drive_web');
     
 
 
@@ -234,4 +234,3 @@ function seleccionar(el) {
 		range.select();
 	}
 }
-
