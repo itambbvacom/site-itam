@@ -26,7 +26,9 @@ function draw() {
 		var query = new google.visualization.Query('https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=1TR0_1uMrad39DAqMZXjhXfKqJncllAnQVtr7bwkWCA4&usp=drive_web#gid=9');
 		*/
 		
-		/* PROD */
+		/* PROD 
+		https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=0AjOaof4bFUTmdDQ2RlY5a0hOTGZXWXBmMVlNOUVpa1E&usp=drive_web#gid=9
+		*/
 		var query = new google.visualization.Query('https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=0AjOaof4bFUTmdDQ2RlY5a0hOTGZXWXBmMVlNOUVpa1E&usp=drive_web#gid=9');
 
 		query.send(handleQueryResponse);
@@ -333,6 +335,7 @@ function cambia_detalle() {
 		} else {
 			$(".iframe").colorbox({iframe:true, width:"100%", height:"95%"});
 			elemento.href = 'https://spreadsheets.google.com/a/bbva.com/spreadsheet/ccc?chrome=false&key=' + keysheet +'&output=html&pubredirect=true&widget=true';
-		} 
+		}
 	});
 }
+ 
