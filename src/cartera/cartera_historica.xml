@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" ?> 
 <Module>
-	<ModulePrefs title="cartera_activa.xml" /> 
+	<ModulePrefs title="cartera_historica.xml" /> 
 	<Content type="html">
         <![CDATA[
 			<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-			<link href="https://raw.githubusercontent.com/itambbvacom/site-itam/master/lib/perfect-scrollbar.css" rel="stylesheet">
 			<link href="https://raw.githubusercontent.com/itambbvacom/site-itam/master/lib/colorbox.css" rel="stylesheet">
+			<link href="https://raw.githubusercontent.com/itambbvacom/site-itam/master/lib/perfect-scrollbar.css" rel="stylesheet">
 			<link href="https://raw.githubusercontent.com/itambbvacom/site-itam/master/lib/common_styles.css" rel="stylesheet">
 			<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 			<link href="https://raw.githubusercontent.com/itambbvacom/site-itam/master/lib/index_gral_itam.css" rel="stylesheet">
 			<script src="https://raw.githubusercontent.com/itambbvacom/site-itam/master/lib/jquery-1.10.2.min.js"></script>
 			<script src="https://raw.githubusercontent.com/itambbvacom/site-itam/master/lib/jquery.mousewheel.js"></script>
 			<script src="https://raw.githubusercontent.com/itambbvacom/site-itam/master/lib/perfect-scrollbar.js"></script>
-			<script src="https://raw.githubusercontent.com/itambbvacom/site-itam/master/src/cartera/cartera_activa.js"></script>
+			<script src="https://raw.githubusercontent.com/itambbvacom/site-itam/master/src/cartera/cartera_historica.js"></script>
 			<div id="dashboard">
 				<table width="100%">
 					<tr>
@@ -31,7 +31,7 @@
 						<td width="17%" height="50px" class="filtros_style"><div id="filtro3"></div></td>
 						<td width="5%" height="50px" style="text-align:right;" class="filtros_style">Estado:</td>
 						<td width="18%" height="50px" class="filtros_style"><div id="filtro4"></div></td>
-						<td width="8%" height="50px" style="text-align:right;" class="filtros_style">Fase Actual:</td>
+						<td width="8%" height="50px" style="text-align:right;" class="filtros_style">&Uacute;ltima Fase:</td>
 						<td width="22%" height="50px" class="filtros_style"><div id="filtro5"></div></td>
 						<td width="5%" height="50px" style="text-align:right;" class="filtros_style">&Aacute;rea:</td>
 						<td width="20%" height="50px" class="filtros_style"><div id="filtro6"></div></td>
@@ -40,19 +40,19 @@
 						<td colspan="8">
 							<div id="select_table">
 								<table id="headers_table"  width="100%" height="35px" class="filtros_style">
-									<tr>
-										<td id="h1" class="header_style"><input id="w1" type="hidden" value="56"/>NOMBRE</td>
-										<td id="h2" class="header_style"><input id="w2" type="hidden" value="31"/>TIPO</td>
-										<td id="h3" class="header_style"><input id="w3" type="hidden" value="28"/>A&Ntilde;O</td>
-										<td id="h4" class="header_style"><input id="w4" type="hidden" value="71"/>FIN PROYECTO</td>
-										<td id="h5" class="header_style"><input id="w5" type="hidden" value="38"/>L&Iacute;DER</td>
-										<td id="h6" class="header_style"><input id="w6" type="hidden" value="53"/>ESTADO</td>
-										<td id="h7" class="header_style"><input id="w7" type="hidden" value="49"/>FASE ACTUAL</td>
-										<td id="h8" class="header_style"><input id="w8" type="hidden" value="34"/>FIN FASE</td>
-										<td id="h9" class="header_style"><input id="w9" type="hidden" value="55"/>Ppto EST(usd)</td>
-										<td id="h10" class="header_style"><input id="w10" type="hidden" value="70"/>CHAMPION</td>
-										<td id="h11" class="header_style"><input id="w11" type="hidden" value="35"/>&Aacute;REA</td>
-									</tr>
+										<tr>
+											<td id="h1" class="header_style"><input id="w1" type="hidden" value="56"/>NOMBRE</td>
+											<td id="h2" class="header_style"><input id="w2" type="hidden" value="31"/>TIPO</td>
+											<td id="h3" class="header_style"><input id="w3" type="hidden" value="28"/>A&Ntilde;O</td>
+											<td id="h4" class="header_style"><input id="w4" type="hidden" value="71"/>FIN PROYECTO</td>
+											<td id="h5" class="header_style"><input id="w5" type="hidden" value="38"/>L&Iacute;DER</td>
+											<td id="h6" class="header_style"><input id="w6" type="hidden" value="53"/>ESTADO</td>
+											<td id="h7" class="header_style"><input id="w7" type="hidden" value="49"/>&Uacute;LTIMA FASE</td>
+											<td id="h8" class="header_style"><input id="w8" type="hidden" value="34"/>FIN FASE</td>
+											<td id="h9" class="header_style"><input id="w9" type="hidden" value="55"/>Ppto EST(usd)</td>
+											<td id="h10" class="header_style"><input id="w10" type="hidden" value="70"/>CHAMPION</td>
+											<td id="h11" class="header_style"><input id="w11" type="hidden" value="35"/>&Aacute;REA</td>
+										</tr>
 								</table>
 								<div id="contenido_tabla" style="height:500px;overflow:hidden;position:relative;">
 									<table width="100%">
