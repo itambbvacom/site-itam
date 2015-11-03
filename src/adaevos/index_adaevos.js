@@ -31,7 +31,7 @@ function draw() {
 		var query = new google.visualization.Query('https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=0AjOaof4bFUTmdDQ2RlY5a0hOTGZXWXBmMVlNOUVpa1E&usp=drive_web#gid=9');
 		*/
 
-		var query = new google.visualization.Query('https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=1eYPplhzkxh6LWS-JotUXIHx5YJGJZfEuIgeFD5JTZSY&usp=drive_web#gid=9');
+		var query = new google.visualization.Query('https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=1eYPplhzkxh6LWS-JotUXIHx5YJGJZfEuIgeFD5JTZSY&usp=drive_web#gid=0');
 
 		query.send(handleQueryResponse);
 		
