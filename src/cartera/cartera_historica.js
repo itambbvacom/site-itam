@@ -218,5 +218,5 @@ function seleccionar(el) {
 				range.moveToElementText(el);
 				range.select();
 		}
-		var x = 2; 
+		var x = 2;
 }
