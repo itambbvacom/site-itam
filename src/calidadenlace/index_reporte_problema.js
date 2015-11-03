@@ -10,24 +10,22 @@ function draw() {
 
 	/* LAB 
 	var query = new google.visualization.Query('https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=1RpmpKCiIsaE9Kyk6xHfIyPDARlMHiHvpPXtLCwu3qXQ&usp=drive_web#gid=1871223754');
-	query.send(handleQueryResponse);
     */
 
     /* QA 
 	https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=1LTct6rLx3TPu0G3FoNsV5ToGxvkKk42BgTmvHVgEBrA&usp=drive_web#gid=1871223754
-	*/
-	
 	var query = new google.visualization.Query('https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=1LTct6rLx3TPu0G3FoNsV5ToGxvkKk42BgTmvHVgEBrA&usp=drive_web#gid=1871223754');
-	query.send(handleQueryResponse);
+	*/
 	
 	
     /* PRODUCCIÓN 
 	https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=1jU7ujdEKlJLgwlM1pHyyB093ZXCr5yqbYG94EF7N8iU&usp=drive_web#gid=1871223754
+	*/
 	
 	var query = new google.visualization.Query('https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=1jU7ujdEKlJLgwlM1pHyyB093ZXCr5yqbYG94EF7N8iU&usp=drive_web#gid=1871223754');
-	query.send(handleQueryResponse);
-	*/
 		
+	query.send(handleQueryResponse);
+
 }
 
 function handleQueryResponse(response) {
