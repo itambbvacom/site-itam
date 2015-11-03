@@ -337,5 +337,5 @@ function cambia_detalle() {
 			$(".iframe").colorbox({iframe:true, width:"100%", height:"95%"});
 			elemento.href = 'https://spreadsheets.google.com/a/bbva.com/spreadsheet/ccc?chrome=false&key=' + keysheet +'&output=html&pubredirect=true&widget=true';
 		}
-	});
+	}); 
 }
