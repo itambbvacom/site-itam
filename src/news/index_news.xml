@@ -4,9 +4,9 @@
   <Content type="html">
         <![CDATA[
 			<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-			<link href="https://rawgit.com/itambbvacom/site-itam/master/lib/index_news.css" rel="stylesheet">
+			<link href="https://rawgit.com/itambbvacom/site-itam/master/src/news/index_news.css" rel="stylesheet">
 			<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-			<script src="https://rawgit.com/itambbvacom/site-itam/master/lib/index_news.js"></script>
+			<script src="https://rawgit.com/itambbvacom/site-itam/master/src/news/index_news.js"></script>
 			<script src="https://rawgit.com/itambbvacom/site-itam/master/lib/jquery-1.10.2.min.js"></script>
 			<script src="https://rawgit.com/itambbvacom/site-itam/master/lib/slides.min.jquery.js"></script>
 			<div id="slides">
