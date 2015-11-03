@@ -3,75 +3,75 @@
 	<ModulePrefs title="index_reporte_problema.xml" /> 
 	<Content type="html">
 		<![CDATA[
-				<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-				<link href="https://rawgit.com/itambbvacom/site-itam/master/lib/perfect-scrollbar.css" rel="stylesheet">
-				<link href="https://rawgit.com/itambbvacom/site-itam/master/lib/colorbox.css" rel="stylesheet">
-				<link href="https://rawgit.com/itambbvacom/site-itam/master/lib/common_styles.css" rel="stylesheet">
-                <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-                <script src="https://rawgit.com/itambbvacom/site-itam/master/lib/jquery-1.10.2.min.js"></script>
-				<script src="https://rawgit.com/itambbvacom/site-itam/master/lib/jquery.mousewheel.js"></script>
-				<script src="https://rawgit.com/itambbvacom/site-itam/master/lib/perfect-scrollbar.js"></script>
-				<script src="https://rawgit.com/itambbvacom/site-itam/master/lib/jquery.colorbox.js"></script>
-				<script src="https://raw.githubusercontent.com/itambbvacom/site-itam/master/src/calidadenlace/index_reporte_problema.js"></script>
-                <div id="dashboard">
-					<table width="100%">
-						<tr>
-							<td colspan="8" style="text-align:right;">
-								<a href="#" onclick="seleccionar(document.getElementById('select_table'));">
-									<img src="https://rawgit.com/itambbvacom/site-itam/master/img/btnSelecciona2.png">
-								</a>
-							</td>
-						</tr>
-						<tr>
-							<td width="25%" height="50px" style="text-align:right;" class="filtros_style">Aplicativo:</td>
-							<td width="25%" height="50px" class="filtros_style"><div id="filtro1"></div></td>
-							<td width="25%" height="50px" style="text-align:right;" class="filtros_style">Estatus:</td>
-							<td width="25%" height="50px" class="filtros_style"><div id="filtro2"></div></td>
-						</tr>
-						<tr>
-							<td colspan="8">
-								<div id="select_table">
-									<table id="headers_table"  width="100%" height="35px" class="filtros_style">
+			<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+			<link href="https://rawgit.com/itambbvacom/site-itam/master/lib/perfect-scrollbar.css" rel="stylesheet">
+			<link href="https://rawgit.com/itambbvacom/site-itam/master/lib/colorbox.css" rel="stylesheet">
+			<link href="https://rawgit.com/itambbvacom/site-itam/master/lib/common_styles.css" rel="stylesheet">
+			<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+			<script src="https://rawgit.com/itambbvacom/site-itam/master/lib/jquery-1.10.2.min.js"></script>
+			<script src="https://rawgit.com/itambbvacom/site-itam/master/lib/jquery.mousewheel.js"></script>
+			<script src="https://rawgit.com/itambbvacom/site-itam/master/lib/perfect-scrollbar.js"></script>
+			<script src="https://rawgit.com/itambbvacom/site-itam/master/lib/jquery.colorbox.js"></script>
+			<script src="https://rawgit.com/itambbvacom/site-itam/master/src/calidadenlace/index_reporte_problema.js"></script>
+			<div id="dashboard">
+				<table width="100%">
+					<tr>
+						<td colspan="8" style="text-align:right;">
+							<a href="#" onclick="seleccionar(document.getElementById('select_table'));">
+								<img src="https://rawgit.com/itambbvacom/site-itam/master/img/btnSelecciona2.png">
+							</a>
+						</td>
+					</tr>
+					<tr>
+						<td width="25%" height="50px" style="text-align:right;" class="filtros_style">Aplicativo:</td>
+						<td width="25%" height="50px" class="filtros_style"><div id="filtro1"></div></td>
+						<td width="25%" height="50px" style="text-align:right;" class="filtros_style">Estatus:</td>
+						<td width="25%" height="50px" class="filtros_style"><div id="filtro2"></div></td>
+					</tr>
+					<tr>
+						<td colspan="8">
+							<div id="select_table">
+								<table id="headers_table"  width="100%" height="35px" class="filtros_style">
+									<tr>
+										<td id="h1" class="header_style"><input id="w1" type="hidden" value="50"/>Folio</td>
+										<td id="h2" class="header_style"><input id="w2" type="hidden" value="60"/>Nombre</td>
+										<td id="h3" class="header_style"><input id="w3" type="hidden" value="80"/>Incidencias</td>
+										<td id="h4" class="header_style"><input id="w4" type="hidden" value="80"/>Fecha Alta</td>
+										<td id="h5" class="header_style"><input id="w5" type="hidden" value="80"/>Solucionador</td>
+										<td id="h6" class="header_style"><input id="w6" type="hidden" value="80"/>Aplicativo</td>
+										<td id="h7" class="header_style"><input id="w7" type="hidden" value="60"/>Estatus</td>
+										<td id="h8" class="header_style"><input id="w8" type="hidden" value="80"/>Atendido Por</td>
+										<td id="h9" class="header_style"><input id="w9" type="hidden" value="80"/>Fecha Compromiso</td>
+										<td id="h10" class="header_style"><input id="w10" type="hidden" value="80"/>Fecha Cierre</td>
+										<td id="h11" class="header_style"><input id="w11" type="hidden" value="70"/>Severidad</td>
+									</tr>
+								</table>
+								<div id="contenido_tabla" style="height:500px;overflow:hidden;position:relative;">
+									<table width="100%">
 										<tr>
-											<td id="h1" class="header_style"><input id="w1" type="hidden" value="50"/>Folio</td>
-											<td id="h2" class="header_style"><input id="w2" type="hidden" value="60"/>Nombre</td>
-											<td id="h3" class="header_style"><input id="w3" type="hidden" value="80"/>Incidencias</td>
-											<td id="h4" class="header_style"><input id="w4" type="hidden" value="80"/>Fecha Alta</td>
-											<td id="h5" class="header_style"><input id="w5" type="hidden" value="80"/>Solucionador</td>
-											<td id="h6" class="header_style"><input id="w6" type="hidden" value="80"/>Aplicativo</td>
-											<td id="h7" class="header_style"><input id="w7" type="hidden" value="60"/>Estatus</td>
-											<td id="h8" class="header_style"><input id="w8" type="hidden" value="80"/>Atendido Por</td>
-											<td id="h9" class="header_style"><input id="w9" type="hidden" value="80"/>Fecha Compromiso</td>
-											<td id="h10" class="header_style"><input id="w10" type="hidden" value="80"/>Fecha Cierre</td>
-											<td id="h11" class="header_style"><input id="w11" type="hidden" value="70"/>Severidad</td>
+											<td><div id="table"></div></td>
 										</tr>
 									</table>
-									<div id="contenido_tabla" style="height:500px;overflow:hidden;position:relative;">
-										<table width="100%">
-											<tr>
-												<td><div id="table"></div></td>
-											</tr>
-										</table>
-									</div>
 								</div>
-							</td>
+							</div>
+						</td>
+					</tr>
+				</table>
+				
+			</div>
+			<div style="display:none">
+				<div id="inline_content" style="padding:10px; background:#fff;">
+					<table width="100%" height="92%"  class="filtros_style">
+						<tr>
+							<td class="header_style">Comentarios</td>
+						</tr>
+						<tr>
+							<td id="comentario_text" class="cell_style_justify"></td>
 						</tr>
 					</table>
 					
-                </div>
-				<div style="display:none">
-					<div id="inline_content" style="padding:10px; background:#fff;">
-						<table width="100%" height="92%"  class="filtros_style">
-							<tr>
-								<td class="header_style">Comentarios</td>
-							</tr>
-							<tr>
-								<td id="comentario_text" class="cell_style_justify"></td>
-							</tr>
-						</table>
-						
-					</div>
 				</div>
+			</div>
 		]]>
 	</Content> 
-</Module> 
+</Module>
