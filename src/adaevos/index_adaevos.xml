@@ -9,7 +9,6 @@
                 <link href="https://rawgit.com/itambbvacom/site-itam/master/lib/index_gral_itam.css" rel="stylesheet">
                 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
                 <script src="https://rawgit.com/itambbvacom/site-itam/master/src/adaevos/index_adaevos.js"></script>
-                <!--script src="https://rawgit.com/itambbvacom/site-itam/master/lib/index_adaevos.js"></script-->
                 <script src="https://rawgit.com/itambbvacom/site-itam/master/lib/jquery-1.10.2.min.js"></script>
                 <script src="https://rawgit.com/itambbvacom/site-itam/master/lib/jquery.mousewheel.js"></script>
                 <script src="https://rawgit.com/itambbvacom/site-itam/master/lib/perfect-scrollbar.js"></script>
@@ -29,7 +28,11 @@
 											<a class = "iframe" href="https://spreadsheets.google.com/a/bbva.com/spreadsheet/ccc?chrome=false&key=0AjOaof4bFUTmdEtmd19KQUdDZnlnNjFBMDNWUm5qWmc&output=html&pubredirect=true&widget=true" >
 												<img src="https://rawgit.com/itambbvacom/site-itam/master/img/btnGraficos2.png">
 											</a>
-										</td>
+											<a href="https://docs.google.com/a/bbva.com/spreadsheet/fm?key=0AjOaof4bFUTmdDQ2RlY5a0hOTGZXWXBmMVlNOUVpa1E&fmcmd=420">
+												<img src="https://rawgit.com/itambbvacom/site-itam/master/img/btnDescarga2.png">
+											</a>
+
+								</td>
 										<td style="text-align:right;">
 											<a href="#" onclick="seleccionar(document.getElementById('select_table'));">
 												<img src="https://rawgit.com/itambbvacom/site-itam/master/img/btnSelecciona2.png">
