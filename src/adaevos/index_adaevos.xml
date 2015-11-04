@@ -8,7 +8,7 @@
                 <link href="https://rawgit.com/itambbvacom/site-itam/master/lib/colorbox.css" rel="stylesheet">
                 <link href="https://rawgit.com/itambbvacom/site-itam/master/lib/index_gral_itam.css" rel="stylesheet">
                 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-                <script src="https://rawgit.com/itambbvacom/site-itam/master/src/adaevoss/index_adaevos.js"></script>
+                <script src="https://rawgit.com/itambbvacom/site-itam/master/src/adaevos/index_adaevos.js"></script>
                 <script src="https://rawgit.com/itambbvacom/site-itam/master/lib/jquery-1.10.2.min.js"></script>
                 <script src="https://rawgit.com/itambbvacom/site-itam/master/lib/jquery.mousewheel.js"></script>
                 <script src="https://rawgit.com/itambbvacom/site-itam/master/lib/perfect-scrollbar.js"></script>
