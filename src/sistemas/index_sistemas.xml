@@ -1907,7 +1907,7 @@
 												</tr>
 												<tr>
 													<td><input type="checkbox" disabled id="id_seguros"><label id="id_segurosl">Seguros</label></td>
-													<td><input type="checkbox" disabled id="id_prevision"><label id="id_previsionl">Fondos PrevisiÃ³n Social</label></td>
+													<td><input type="checkbox" disabled id="id_prevision"><label id="id_previsionl">Fondos Previsión Social</label></td>
 												</tr>
 											</table>
 										</td>
