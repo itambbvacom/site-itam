@@ -483,7 +483,7 @@ function mostrarocultardetalle() {
 	}
 	cadena = $("#id_header04")[0].className;
 	if (cadena.search("ui-state-active") != -1) {
-		$("#id_header04").trigger('click');
+		$("#id_header04").trigger('click'); 
 	}
 	
 }
