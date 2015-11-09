@@ -5,7 +5,7 @@
         <![CDATA[				
 			<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
 			<link href="https://rawgit.com/itambbvacom/site-itam/master/lib/colorbox.css" rel="stylesheet">
-			<link href="https://rawgit.com/itambbvacom/site-itam/master/lib/index_sistemas.css" rel="stylesheet">
+			<link href="https://rawgit.com/itambbvacom/site-itam/master/src/sistemas/index_sistemas.css" rel="stylesheet">
 			<link href="https://rawgit.com/itambbvacom/site-itam/master/lib/jquery-ui.css" rel="stylesheet">
 			<link href="https://rawgit.com/itambbvacom/site-itam/master/lib/tabs.css" rel="stylesheet">
 			<script type="text/javascript" src="https://www.google.com/jsapi"></script>
