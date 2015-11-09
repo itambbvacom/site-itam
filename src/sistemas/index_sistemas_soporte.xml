@@ -4,21 +4,21 @@
 	<Content type="html">
         <![CDATA[
 			<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-			<link href="https://cdn.rawgit.com/itambbvacom/site-itam-qa/master/lib/colorbox_index_sistemas.css" rel="stylesheet">
-			<link href="https://cdn.rawgit.com/itambbvacom/site-itam-qa/master/lib/index_sistemas.css" rel="stylesheet">
-			<link href="https://cdn.rawgit.com/itambbvacom/site-itam-qa/master/lib/jquery-ui.css" rel="stylesheet">
-			<link href="https://cdn.rawgit.com/itambbvacom/site-itam-qa/master/lib/tabs.css" rel="stylesheet">
+			<link href="https://rawgit.com/itambbvacom/site-itam/master/lib/colorbox.css" rel="stylesheet">
+			<link href="https://rawgit.com/itambbvacom/site-itam/master/src/sistemas/index_sistemas.css" rel="stylesheet">
+			<link href="https://rawgit.com/itambbvacom/site-itam/master/lib/jquery-ui.css" rel="stylesheet">
+			<link href="https://rawgit.com/itambbvacom/site-itam/master/lib/tabs.css" rel="stylesheet">
 			<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-			<script src="https://cdn.rawgit.com/itambbvacom/site-itam-qa/master/lib/index_sistemas.js"></script>
-			<script src="https://cdn.rawgit.com/itambbvacom/site-itam-qa/master/lib/jquery-1.10.2.min.js"></script>
-			<script src="https://cdn.rawgit.com/itambbvacom/site-itam-qa/master/lib/jquery-ui.js"></script>
-			<script src="https://cdn.rawgit.com/itambbvacom/site-itam-qa/master/lib/jquery.multi-accordion-1.5.3.js"></script>
-			<script src="https://cdn.rawgit.com/itambbvacom/site-itam-qa/master/lib/jquery.colorbox.js"></script>
+			<script src="https://rawgit.com/itambbvacom/site-itam/master/src/sistemas/index_sistemas.js"></script>
+			<script src="https://rawgit.com/itambbvacom/site-itam/master/lib/jquery-1.10.2.min.js"></script>
+			<script src="https://rawgit.com/itambbvacom/site-itam/master/lib/jquery-ui.js"></script>
+			<script src="https://rawgit.com/itambbvacom/site-itam/master/lib/jquery.multi-accordion-1.5.3.js"></script>
+			<script src="https://rawgit.com/itambbvacom/site-itam/master/lib/jquery.colorbox.js"></script>
 			<table width="100%">
 				<tr>
 					<td style="text-align:right;padding-right: 5px;">
 						<a href="#" onclick="mostrarocultar();">
-							<img src="https://cdn.rawgit.com/itambbvacom/site-itam-qa/master/img/btnMostrarOcultar2.png" width="10%">
+							<img src="https://rawgit.com/itambbvacom/site-itam/master/img/btnMostrarOcultar2.png" width="10%">
 						</a>
 					</td>
 				</tr>
@@ -41,7 +41,7 @@
 						<tr>
 							<td width="50%" style="align:left;">
 								<a href="#" onclick="mostrarocultardetalle();" id="btn_detalle">
-									<img src="https://cdn.rawgit.com/itambbvacom/site-itam-qa/master/img/btnArrows02.png" height="20%" width="5%">
+									<img src="https://rawgit.com/itambbvacom/site-itam/master/img/btnArrows02.png" height="20%" width="5%">
 								</a>
 							</td>
 							<td width="50%">
@@ -176,7 +176,7 @@
 								<tr>
 									<td width="20%" style="color:white;background-color:009EE5;font-weight: bold;">Licencia SW</td>
 									<td width="30%" class="border_bottom" id="id_licenciasw"></td>
-									<td width="20%" style="color:white;background-color:009EE5;font-weight: bold;">LLLLicencia BBDD</td>
+									<td width="20%" style="color:white;background-color:009EE5;font-weight: bold;">Licencia BBDD</td>
 									<td width="30%" class="border_bottom" id="id_licenciabd"></td>
 								</tr>
 							</table>
