@@ -60,13 +60,52 @@ google.setOnLoadCallback(getdata);
 google.load('visualization', '1.1', {packages: ['controls','table']});
 
 function getdata() {
-
+    
+	/* Hojas de LAB
+	https://docs.google.com/spreadsheets/d/1b3BqWUqIuTnu3miX-o9yQZjZg6bnhxAtbNMf2FCbC9Y/edit#gid=1
+	var query = new google.visualization.Query('https://spreadsheets.google.com/a/bbva.com/tq?&tq=&key=1b3BqWUqIuTnu3miX-o9yQZjZg6bnhxAtbNMf2FCbC9Y&gid=1');
+	query.send(handleQueryResponse);
+	
+	https://docs.google.com/spreadsheets/d/1b3BqWUqIuTnu3miX-o9yQZjZg6bnhxAtbNMf2FCbC9Y/edit#gid=q48
+	var queryManuals = new google.visualization.Query('https://spreadsheets.google.com/a/bbva.com/tq?&tq=&key=1b3BqWUqIuTnu3miX-o9yQZjZg6bnhxAtbNMf2FCbC9Y&gid=48');
+	queryManuals.send(handleQueryResponseManuals);
+	
+	https://docs.google.com/spreadsheets/d/1b3BqWUqIuTnu3miX-o9yQZjZg6bnhxAtbNMf2FCbC9Y/edit#gid=1441491815
+	var queryGAPS = new google.visualization.Query('https://spreadsheets.google.com/a/bbva.com/tq?&tq=&key=1b3BqWUqIuTnu3miX-o9yQZjZg6bnhxAtbNMf2FCbC9Y&gid=1441491815');
+	queryGAPS.send(handleQueryResponseGAPS);
+	*/
+	
+	/* Hojas de QA
+	https://docs.google.com/spreadsheets/d/16kNl18Wy9un0MOGz9Z0EYx7M3GEMscpmDlz7Pb0bzCU/edit#gid=1
+	var query = new google.visualization.Query('https://spreadsheets.google.com/a/bbva.com/tq?&tq=&key=16kNl18Wy9un0MOGz9Z0EYx7M3GEMscpmDlz7Pb0bzCU&gid=1');
+	query.send(handleQueryResponse);
+	
+	https://docs.google.com/spreadsheets/d/16kNl18Wy9un0MOGz9Z0EYx7M3GEMscpmDlz7Pb0bzCU/edit#gid=48
+	var queryManuals = new google.visualization.Query('https://spreadsheets.google.com/a/bbva.com/tq?&tq=&key=16kNl18Wy9un0MOGz9Z0EYx7M3GEMscpmDlz7Pb0bzCU&gid=48');
+	queryManuals.send(handleQueryResponseManuals);
+	
+	https://docs.google.com/spreadsheets/d/16kNl18Wy9un0MOGz9Z0EYx7M3GEMscpmDlz7Pb0bzCU/edit#gid=1441491815
+	var queryGAPS = new google.visualization.Query('https://spreadsheets.google.com/a/bbva.com/tq?&tq=&key=16kNl18Wy9un0MOGz9Z0EYx7M3GEMscpmDlz7Pb0bzCU&gid=1441491815');
+	queryGAPS.send(handleQueryResponseGAPS);
+	*/
+	
+	/* Hojas de PRODUCCIÓN 
+	https://docs.google.com/spreadsheets/d/1ZwQT7o5AyTIPJV4kG-nuLVqU3xghzKOsiF6xFcURHiM/edit#gid=1
+	*/
 	var query = new google.visualization.Query('https://spreadsheets.google.com/a/bbva.com/tq?&tq=&key=1ZwQT7o5AyTIPJV4kG-nuLVqU3xghzKOsiF6xFcURHiM&gid=1');
 	query.send(handleQueryResponse);
+	
+	/* https://docs.google.com/spreadsheets/d/1ZwQT7o5AyTIPJV4kG-nuLVqU3xghzKOsiF6xFcURHiM/edit#gid=48 */
 	var queryManuals = new google.visualization.Query('https://spreadsheets.google.com/a/bbva.com/tq?&tq=&key=1ZwQT7o5AyTIPJV4kG-nuLVqU3xghzKOsiF6xFcURHiM&gid=48');
 	queryManuals.send(handleQueryResponseManuals);
+	
+	/* https://docs.google.com/spreadsheets/d/1ZwQT7o5AyTIPJV4kG-nuLVqU3xghzKOsiF6xFcURHiM/edit#gid=1441491815 */
 	var queryGAPS = new google.visualization.Query('https://spreadsheets.google.com/a/bbva.com/tq?&tq=&key=1ZwQT7o5AyTIPJV4kG-nuLVqU3xghzKOsiF6xFcURHiM&gid=1441491815');
 	queryGAPS.send(handleQueryResponseGAPS);
+	
+	/* */
+	
+	
 }
 function handleQueryResponseGAPS(response) {
 	if (response.isError()) {
@@ -483,7 +522,7 @@ function mostrarocultardetalle() {
 	}
 	cadena = $("#id_header04")[0].className;
 	if (cadena.search("ui-state-active") != -1) {
-		$("#id_header04").trigger('click'); 
+		$("#id_header04").trigger('click');
 	}
 	
 }
