@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<Module>
+	<ModulePrefs title="index_liberaciones.xml" /> 
+	<Content type="html">
+		<![CDATA[
+				<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+                <link href="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/colorbox.css" rel="stylesheet">
+                <link href="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/perfect-scrollbar.css" rel="stylesheet">
+				<link href="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/common_styles01.css" rel="stylesheet">
+                <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+                <script src="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/index_liberaciones.js"></script>
+                <script src="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/jquery-1.10.2.min.js"></script>
+                <script src="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/jquery.mousewheel.js"></script>
+                <script src="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/perfect-scrollbar.js"></script>
+                <script src="https://rawgit.com/itambbvacom/site-itam-qa/master/lib/jquery.colorbox.js"></script>
+				
+                <div id="dashboard">
+					<table width="100%">
+						<tr>
+							<td colspan="9" style="text-align:right;padding-right: 5px;" class="filtros_style">
+								<table align="right">
+									<tr>
+										<td style="text-align:right;">
+											<a href="#" onclick="seleccionar(document.getElementById('select_table'));">
+												<img src="https://rawgit.com/itambbvacom/site-itam-qa/master/img/btnSelecciona2.png">
+											</a>
+										</td>
+										<td>
+											<a class="inline" href="#form_content" onclick="llenarTodosContrls()"><button>Nuevo</button></a>
+										</td>
+										<td>
+											<a href="https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=1GfcOXHs56_oSGSoQlkYUgnwNLPRc7QkpzwLT9pwTJWQ&usp=drive_web#gid=0"><button>Editar</button></a>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td width="8%" height="50px" style="text-align:right;" class="filtros_style">CRQ:</td>
+							<td width="13%" height="50px" class="filtros_style"><div id="filtro1"></div></td>
+							<td width="8%" height="50px" style="text-align:right;" class="filtros_style">L&iacuteder:</td>
+							<td width="13%" height="50px" class="filtros_style"><div id="filtro2"></div></td>
+							<td width="8%" height="50px" style="text-align:right;" class="filtros_style">Fecha Instalaci&oacuten:</td>
+							<td width="13%" height="50px" class="filtros_style"><div id="filtro3"></div></td>
+							<td width="8%" height="50px" style="text-align:right;" class="filtros_style">Mes:</td>
+							<td width="13%" height="50px" class="filtros_style"><div id="filtro4"></div></td>
+							<td width="8%" height="50px" style="text-align:right;" class="filtros_style">a&ntildeo:</td>
+							<td width="13%" height="50px" class="filtros_style"><div id="filtro5"></div></td>
+						</tr>
+						<tr>
+							<td colspan="11">
+								<div id="select_table">
+									<table id="headers_table"  width="100%" height="35px" class="filtros_style">
+										<tr>
+											<td id="h1" class="header_style"><input id="w1" type="hidden" value="101"/>CRQ</td>
+											<td id="h2" class="header_style"><input id="w2" type="hidden" value="101"/>L&iacuteder</td>
+											<td id="h3" class="header_style"><input id="w3" type="hidden" value="101"/>Fecha Instalaci&oacuten</td>
+											<td id="h4" class="header_style"><input id="w4" type="hidden" value="70"/>Nombre del Cambio</td>
+											<td id="h5" class="header_style"><input id="w5" type="hidden" value="55"/>Aplicaci&oacuten</td>
+											<td id="h6" class="header_style"><input id="w6" type="hidden" value="40"/>Tipo de Plan</td>
+											<td id="h7" class="header_style"><input id="w7" type="hidden" value="110"/>Tipo de Proyecto</td>
+											<td id="h8" class="header_style"><input id="w8" type="hidden" value="160"/>Fecha Producci&oacuten</td>
+											<td id="h9" class="header_style"><input id="w9" type="hidden" value="40"/>Mes</td>
+											<td id="h10" class="header_style"><input id="w10" type="hidden" value="40"/>A&ntildeo</td>
+										</tr>
+									</table>
+									<div id="contenido_tabla" style="height:500px;overflow:hidden;position:relative;">
+										<table width="100%">
+											<tr>
+												<td><div id="table"></div></td>
+											</tr>
+										</table>
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="9" style="text-align:right;padding-right: 5px;">
+								<a href="https://docs.google.com/a/bbva.com/spreadsheet/fm?key=1GfcOXHs56_oSGSoQlkYUgnwNLPRc7QkpzwLT9pwTJWQ&fmcmd=420">
+									<img src="https://rawgit.com/itambbvacom/site-itam-qa/master/img/btnDescarga2.png">
+								</a>
+							</td>
+						</tr>
+					</table>
+                </div>
+
+				<div style="display:none">
+					<div id="inline_content" style="padding:10px; background:#fff;">
+						<table id="consltRegstr" border = 1 width="300%">
+							<tr>
+								<td class="header_style">Nivel 1 Sistemas</td>
+								<td class="header_style">Nivel 2 Sistemas</td>
+								<td class="header_style">Nivel 3 Sistemas</td>
+								<td class="header_style">L&iacuteder Promotor</td>
+								<td class="header_style">Aplicaci&oacuten</td>
+								<td class="header_style">Nombre del Cambio</td>
+								<td class="header_style">Objetivo</td>
+								<td class="header_style">Plataforma</td>
+								<td class="header_style">Tipo de Cambio</td>
+								<td class="header_style">No. de Cambio (CRQ)</td>
+								<td class="header_style">Ventana de Congelamiento</td>
+								<td class="header_style">Inicio instalaci&oacuten</td>
+								<td class="header_style">C&oacutedigo Plan de Trabajo</td>
+								<td class="header_style">Plan de Trabajo</td>
+								<td class="header_style">Fecha Fin Plan de Trabajo</td>
+								<td class="header_style">Fecha Producci&oacuten</td>
+								<td class="header_style">Tipo de Plan</td>
+								<td class="header_style">Tipo de Proyecto</td>
+								<td class="header_style">Sem&aacuteforo</td>
+								<td class="header_style">Comentarios a FU</td>
+								<td class="header_style">No. de Componentes</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+				<div style="display:none">
+					<div id="form_content" style="padding:10px; background:#fff;">
+						<br>
+						<table id="consltRegstr" width="100%" border=1 cellpadding="4%">
+							<tr>
+								<td>
+									<table width="100%">
+										<tr>
+											<td width="25%" class="header_style">Nivel 1 Sistemas</td>
+											<td width="25%" class="header_style">Nivel 2 Sistemas</td>
+											<td width="25%" class="header_style">Nivel 3 Sistemas</td>
+											<td width="25%" class="header_style">L&iacuteder Promotor</td>
+										</tr>
+										<tr>
+											<td width="25%" align="center" class="cell_style"><select name="nivl1Sistms" id="nivl1Sistms"></td>
+											<td width="25%" align="center" class="cell_style"><select name="nivl2Sistms" id="nivl2Sistms"></td>
+											<td width="25%" align="center" class="cell_style"><select name="nivl3Sistms" id="nivl3Sistms"></td>
+											<td width="25%" align="center" class="cell_style"><select name="lidrPromtr" id="lidrPromtr"></td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<table width="100%">
+										<tr>
+											<td width="25%" class="header_style">Aplicaci&oacuten</td>
+											<td width="25%" class="header_style">Nombre del Cambio</td>
+											<td width="25%" class="header_style">Objetivo</td>
+											<td width="25%" class="header_style">Plataforma</td>
+										</tr>
+										<tr>
+											<td width="25%" align="center" class="cell_style"><select name="aplccn" id="aplccn"></td>
+											<td width="25%" align="center" class="cell_style"><input type="text" name="nombrCamb" id="nombrCamb"></td>
+											<td width="25%" align="center" class="cell_style"><input type="text" name="objetivo" id="objetivo"></td>
+											<td width="25%" align="center" class="cell_style"><select name="platfrm" id="platfrm"></td>
+										</tr>	
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<table width="100%">
+										<tr>
+											<td width="25%" class="header_style">Tipo de Cambio</td>
+											<td width="25%" class="header_style">No. de Cambio (CRQ)</td>
+											<td width="25%" class="header_style">Ventana de Congelamiento</td>
+											<td width="25%" class="header_style">Fecha Inicio de Instalaci&oacuten</td>
+										</tr>
+										<tr>
+											<td width="25%" align="center" class="cell_style"><select name="tipoCamb" id="tipoCamb"></td>
+											<td width="25%" align="center" class="cell_style"><input type="text" name="CRQ" id="CRQ"></td>
+											<td width="25%" align="center" class="cell_style">
+												<input type="radio" name="ventnConRadio" id="ventnConRadioSi" value="Si" onclick="insrtValr(this)">Si<br>
+												<input type="radio" name="ventnConRadio" id="ventnConRadioNo" value="No" onclick="insrtValr(this)">No
+												<input type="hidden" name="ventnCon" id="ventnCon">
+											</td>
+											<td width="25%" align="center" class="cell_style">
+												<table>
+													<tr>
+														<td>D&iacutea</td>
+														<td>Mes</td>
+														<td>A&ntildeo</td>
+													</tr>
+													<tr>
+														<td><select name="fchIniInst01" id="fchIniInst01"></select></td>
+														<td><select name="fchIniInst02" id="fchIniInst02"></select></td>
+														<td><select name="fchIniInst03" id="fchIniInst03"></select></td>
+													</tr>
+												</table>
+											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<table width="100%">
+										<tr>
+											<td width="25%" class="header_style">C&oacutedigo plan de trabajo</td>
+											<td width="25%" class="header_style">Plan de trabajo</td>
+											<td width="25%" class="header_style">Fecha fin de Plan de Trabajo</td>
+											<td width="25%" class="header_style">Fecha Puesta en producci&oacuten</td>
+										</tr>
+										<tr>
+											<td width="25%" align="center" class="cell_style"><input type="text" name="cdgPlnTrabj" id="cdgPlnTrabj"></td>
+											<td width="25%" align="center" class="cell_style"><input type="text" name="planTrbj" id="planTrbj"></td>
+											<td width="25%" align="center" class="cell_style">
+												<table>
+													<tr>
+														<td>D&iacutea</td>
+														<td>Mes</td>
+														<td>A&ntildeo</td>
+													</tr>
+													<tr>
+														<td><select name="fchPlnTrbj01" id="fchPlnTrbj01"></select></td>
+														<td><select name="fchPlnTrbj02" id="fchPlnTrbj02"></select></td>
+														<td><select name="fchPlnTrbj03" id="fchPlnTrbj03"></select></td>
+													</tr>
+												</table>
+											</td>
+											<td width="25%" align="center" class="cell_style">
+												<table>
+													<tr>
+														<td>D&iacutea</td>
+														<td>Mes</td>
+														<td>A&ntildeo</td>
+													</tr>
+													<tr>
+														<td><select name="fchPstPrd01" id="fchPstPrd01"></select></td>
+														<td><select name="fchPstPrd02" id="fchPstPrd02"></select></td>
+														<td><select name="fchPstPrd03" id="fchPstPrd03"></select></td>
+													</tr>
+												</table>
+											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<table width="100%">
+										<tr>
+											<td width="25%" class="header_style">Tipo de Plan</td>
+											<td width="25%" class="header_style">Tipo de Proyecto</td>
+											<td width="25%" class="header_style">Comentarios a FU</td>
+											<td width="25%" class="header_style">N&uacutemero de componentes</td>
+										</tr>
+										<tr>
+											<td width="25%" align="center" class="cell_style"><select name="tipoPlan" id="tipoPlan"></td>
+											<td width="25%" align="center" class="cell_style"><select name="tipProyct" id="tipProyct"></td>
+											<td width="25%" align="center" class="cell_style"><input type="text" name="comntrsFU" id="comntrsFU"></td>
+											<td width="25%" align="center" class="cell_style"><input type="text" name="numrCompnnts" id="numrCompnnts"></td>
+										</tr>
+									</table>
+									<input type="hidden" name="anhoProcs" id="anhoProcs">
+									<input type="hidden" name="mesProcs" id="mesProcs">
+								</td>
+							</tr>
+						</table>
+						<p>
+						<table width="100%">
+							<tr>
+								<td align="right">
+									<input type="button" name="submitNuevo" id="submitNuevo" value="Aceptar" onclick="enviaDatosAForm()">
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+]]>
+	</Content> 
+</Module>
