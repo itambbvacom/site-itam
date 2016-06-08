@@ -92,17 +92,17 @@ function getdata() {
 	/* */
 	
 	/* Hojas de PRODUCCIÓN 
-	https://docs.google.com/spreadsheets/d/1ZwQT7o5AyTIPJV4kG-nuLVqU3xghzKOsiF6xFcURHiM/edit#gid=1
+	https://docs.google.com/spreadsheets/d/10goxooWZh8lZhSVaOU7WSfBTcuDsE3RgP6pZCKBhyv0/edit#gid=1
 	*/
-	var query = new google.visualization.Query('https://spreadsheets.google.com/a/bbva.com/tq?&tq=&key=1ZwQT7o5AyTIPJV4kG-nuLVqU3xghzKOsiF6xFcURHiM&gid=1');
+	var query = new google.visualization.Query('https://spreadsheets.google.com/a/bbva.com/tq?&tq=&key=10goxooWZh8lZhSVaOU7WSfBTcuDsE3RgP6pZCKBhyv0&gid=1');
 	query.send(handleQueryResponse);
 	
-	/* https://docs.google.com/spreadsheets/d/1ZwQT7o5AyTIPJV4kG-nuLVqU3xghzKOsiF6xFcURHiM/edit#gid=48 */
-	var queryManuals = new google.visualization.Query('https://spreadsheets.google.com/a/bbva.com/tq?&tq=&key=1ZwQT7o5AyTIPJV4kG-nuLVqU3xghzKOsiF6xFcURHiM&gid=48');
+	/* https://docs.google.com/spreadsheets/d/10goxooWZh8lZhSVaOU7WSfBTcuDsE3RgP6pZCKBhyv0/edit#gid=48 */
+	var queryManuals = new google.visualization.Query('https://spreadsheets.google.com/a/bbva.com/tq?&tq=&key=10goxooWZh8lZhSVaOU7WSfBTcuDsE3RgP6pZCKBhyv0&gid=48');
 	queryManuals.send(handleQueryResponseManuals);
 	
-	/* https://docs.google.com/spreadsheets/d/1ZwQT7o5AyTIPJV4kG-nuLVqU3xghzKOsiF6xFcURHiM/edit#gid=1441491815 */
-	var queryGAPS = new google.visualization.Query('https://spreadsheets.google.com/a/bbva.com/tq?&tq=&key=1ZwQT7o5AyTIPJV4kG-nuLVqU3xghzKOsiF6xFcURHiM&gid=1441491815');
+	/* https://docs.google.com/spreadsheets/d/10goxooWZh8lZhSVaOU7WSfBTcuDsE3RgP6pZCKBhyv0/edit#gid=1441491815 */
+	var queryGAPS = new google.visualization.Query('https://spreadsheets.google.com/a/bbva.com/tq?&tq=&key=10goxooWZh8lZhSVaOU7WSfBTcuDsE3RgP6pZCKBhyv0&gid=1441491815');
 	queryGAPS.send(handleQueryResponseGAPS);
 	
 	/* */
