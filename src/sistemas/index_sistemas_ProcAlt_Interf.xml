@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<Module>
+	<ModulePrefs title="index_sistemas_ProcAlt_Interf.xml" /> 
+	<Content type="html">
+        <![CDATA[				
+			<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+			<link href="https://rawgit.com/itambbvacom/site-itam/master/lib/colorbox.css" rel="stylesheet">
+			<link href="https://rawgit.com/itambbvacom/site-itam/master/src/sistemas/index_sistemas.css" rel="stylesheet">
+			<link href="https://rawgit.com/itambbvacom/site-itam/master/lib/jquery-ui.css" rel="stylesheet">
+			<link href="https://rawgit.com/itambbvacom/site-itam/master/lib/tabs.css" rel="stylesheet">
+			<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+			<script src="https://rawgit.com/itambbvacom/site-itam/master/src/sistemas/index_sistemas_ProcAlt_Interf.js"></script>
+			<script src="https://rawgit.com/itambbvacom/site-itam/master/lib/jquery-1.10.2.min.js"></script>
+			<script src="https://rawgit.com/itambbvacom/site-itam/master/lib/jquery-ui.js"></script>
+			<script src="https://rawgit.com/itambbvacom/site-itam/master/lib/jquery.multi-accordion-1.5.3.js"></script>
+			<script src="https://rawgit.com/itambbvacom/site-itam/master/lib/jquery.colorbox.js"></script>
+				<table width="100%">
+					<tr>
+						<td style="text-align:right;padding-right: 5px;">
+							<a href="#" onclick="mostrarocultar();">
+								<img src="https://rawgit.com/itambbvacom/site-itam/master/img/btnMostrarOcultar2.png" width="10%">
+							</a>
+						</td>
+					</tr>
+				</table>
+				</br>
+				<div id="column1" class="column"></div>
+				<div id="column2" class="column"></div>
+				<div id="column3" class="column"></div>
+				
+				<div style="display:none">
+					<div id="inline_content" style="padding:10px; background:#fff;">
+						<table width="100%">
+							<tr>
+								<td width="50%" style="vertical-align:middle;">
+									<label style="color:#006EC1;font-size:2em;font-weight:bold;" id="id_aplicativo">Titulo</label>
+								</td>
+								<td width="50%">
+								</td>
+							</tr>
+							<tr>
+								<td width="50%" style="align:left;">
+									<a href="#" onclick="mostrarocultardetalle();" id="btn_detalle">
+										<img src="https://rawgit.com/itambbvacom/site-itam/master/img/btnArrows02.png" height="20%" width="5%">
+									</a>
+								</td>
+								<td width="50%">
+									<div align="right" style="color:#006EC1;">
+										<label style="color:#006EC1;font-size:1.4em;font-weight:bold;">Entorno: </label>
+										<a href="#" id="id_pr" onclick="load_data('PR')" style="font-weight:bold;font-size:1.6em;">PR</a>
+										<a href="#" id="id_qa" onclick="load_data('QA')" style="font-weight:normal;font-size:1.4em;">QA</a>
+									</div>
+								</td>
+							</tr>
+						</table>
+						<div id="multiAccordion">
+							<h3 id="id_header01">Funcionalidad</h3>
+							<div id="id_content01">
+								<p id="id_funcionalidad" style="font-weight:normal;font-size:1.3em;"></p>
+							</div>
+							<h3 id="id_header02">Cobertura Funcional</h3>
+							<div id="id_content02">
+								<table width="100%">
+									<tr>
+										<td><h4 style="color:#006EC1;" align="center">Tipolog&iacutea Carteras Gestionadas</h4></td>
+										<td><h4 style="color:#006EC1;" align="center">Mercado</h4></td>
+									</tr>
+									<tr>
+										<td class="border_right" width="50%">
+											
+											<table width="100%">
+												<tr>
+													<td><input type="checkbox" disabled id="id_fondosmutuos"><label id="id_fondosmutuosl">Fondos Mutuos</label></td>
+													<td><input type="checkbox" disabled id="id_terceros"><label id="id_tercerosl">Terceros</label></td>
+												</tr>
+												<tr>
+													<td><input type="checkbox" disabled id="id_porvenir"><label id="id_porvenirl">Porvenir</label></td>
+													<td><input type="checkbox" disabled id="id_fideicomisos"><label  id="id_fideicomisosl">Fideicomisos</label></td>
+												</tr>
+												<tr>
+													<td><input type="checkbox" disabled id="id_seguros"><label id="id_segurosl">Seguros</label></td>
+													<td><input type="checkbox" disabled id="id_prevision"><label id="id_previsionl">Fondos Previsión Social</label></td>
+												</tr>
+											</table>
+										</td>
+										<td width="50%">
+											<table width="100%">
+												<tr>
+													<td><input type="checkbox" disabled id="id_fija"><label id="id_fijal">Renta Fija</label></td>
+													<td><input type="checkbox" disabled id="id_listados"><label id="id_listadosl">Derivados Listados</label></td>
+												</tr>
+												<tr>
+													<td><input type="checkbox" disabled id="id_variable"><label id="id_variablel">Renta Variable</label></td>
+													<td><input type="checkbox" disabled id="id_otc"><label id="id_otcl">Derivados OTC</label></td>
+												</tr>
+												<tr>
+													<td><input type="checkbox" disabled id="id_fondofondos"><label id="id_fondofondosl">Fondos de Fondos</label></td>
+													<td></td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+									<tr height="20">
+									</tr>
+									<tr>
+										<td><h4 style="color:#006EC1;" align="center">&Aacutembito Negocio</h4></td>
+										<td><h4 style="color:#006EC1;" align="center">Principales Procesos y Funcionalidades de Negocio</h4></td>
+									</tr>
+									<tr>
+										<td class="border_right" width="50%">
+											<table width="100%">
+												<tr>
+													<td><input type="checkbox" disabled id="id_front"><label id="id_frontl">Front Office</label></td>
+												</tr>
+												<tr>
+													<td><input type="checkbox" disabled id="id_ejecucion"><label id="id_ejecucionl">Ejecuci&oacuten</label></td>
+												</tr>
+												<tr>
+													<td><input type="checkbox" disabled id="id_middle"><label id="id_middlel">Middle Office</label></td>
+												</tr>
+												<tr>
+													<td><input type="checkbox" disabled id="id_producto"><label id="id_productol">Producto</label></td>
+												</tr>
+												<tr>
+													<td><input type="checkbox" disabled id="id_riesgos"><label id="id_riesgosl">Riesgos</label></td>
+												</tr>
+												<tr>
+													<td><input type="checkbox" disabled id="id_ics"><label id="id_icsl">I & C Sales</label></td>
+												</tr>
+												<tr>
+													<td><input type="checkbox" disabled id="id_back"><label id="id_backl">Back Office (COVAF)</label></td>
+												</tr>
+												<tr>
+													<td><input type="checkbox" disabled id="id_control"><label id="id_controll">Control de Gesti&oacuten</label></td>
+												</tr>
+											</table>
+										</td>
+										<td width="50%" style="vertical-align:text-top;">
+											<table width="100%">
+												<tr>
+													<td id="id_funcionalidades" class="cell_style_justify"></td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+								</table>
+							</div>
+							
+							<h3 id="id_header03">Caracter&iacutesticas T&eacutecnicas</h3>
+							<div id="id_content03">
+								<table width="100%">
+									<tr>
+										<td width="20%" style="color:white;background-color:009EE5;font-weight: bold;">Proveedor</td>
+										<td width="30%" class="border_bottom" id="id_proveedor"></td>
+										<td width="20%" style="color:white;background-color:009EE5;font-weight: bold;">Versi&oacuten Producto</td>
+										<td width="30%" class="border_bottom" id="id_version"></td>
+									</tr>
+									<tr>
+										<td width="20%" style="color:white;background-color:009EE5;font-weight: bold;">Equipo / IP</td>
+										<td width="30%" class="border_bottom" id="id_equipo"></td>
+										<td width="20%" style="color:white;background-color:009EE5;font-weight: bold;">Ubicaci&oacuten Equipo</td>
+										<td width="30%" class="border_bottom" id="id_ubicacioneq"></td>
+									</tr>
+									<tr>
+										<td width="20%" style="color:white;background-color:009EE5;font-weight: bold;">Sistema Operativo</td>
+										<td width="30%" class="border_bottom" id="id_sistema"></td>
+										<td width="20%" style="color:white;background-color:009EE5;font-weight: bold;">Lenguajes Desarrollo</td>
+										<td width="30%" class="border_bottom" id="id_lenguaje"></br></td>
+									</tr>
+									<tr>
+										<td width="20%" style="color:white;background-color:009EE5;font-weight: bold;">BBDD</td>
+										<td width="30%" class="border_bottom" id="id_basedatos"></td>
+										<td width="20%" style="color:white;background-color:009EE5;font-weight: bold;">Cliente BBDD</td>
+										<td width="30%" class="border_bottom" id="id_clientebd"></td>
+									</tr>
+									<tr>
+										<td width="20%" style="color:white;background-color:009EE5;font-weight: bold;">Licencia SW</td>
+										<td width="30%" class="border_bottom" id="id_licenciasw"></td>
+										<td width="20%" style="color:white;background-color:009EE5;font-weight: bold;">Licencia BBDD</td>
+										<td width="30%" class="border_bottom" id="id_licenciabd"></td>
+									</tr>
+								</table>
+								</br>
+								<table width="100%">
+									<tr>
+										<td><input type="checkbox" disabled id="id_equipovir"><label id="id_equipovirl">Equipo Virtual</label></td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" disabled id="id_citrix"><label id="id_citrixl">Citrix</label></td>
+									</tr>
+								</table>
+								
+							</div>
+							<h3 id="id_header04">Mapa de Integraci&oacuten</h3>
+							<div id="id_content04">
+								<div id="id_content04_mapa">
+								</div>
+							</div>
+						</div>
+						<table width="100%">
+							<tr>
+								<td height="30"></td>
+							</tr>
+						</table>
+						<ul id="tabs">
+							<li><a href="#" name="#tab1">Manuales Funcionales</a></li>
+							<li><a href="#" name="#tab2">Manuales T&eacutecnicos</a></li>
+							<li><a href="#" name="#tab3">RUTAS</a></li>
+							<li><a href="#" name="#tab4">GAPS</a></li>
+						</ul>
+						<div id="content">
+							<div id="tab1"><div id="content-tab1"></div></div>
+							<div id="tab2"><div id="content-tab2"></div></div>
+							<div id="tab3"><div id="content-tab3"></div></div>
+							<div id="tab4"><div id="content-tab4">
+								<table width="100%">
+									<tr>
+										<td><h4 style="color:#006EC1;" align="center">Funcionales</h4></td>
+										<td><h4 style="color:#006EC1;" align="center">T&eacutecnicos</h4></td>
+									</tr>
+									<tr>
+										<td class="border_right" width="50%" style="vertical-align:text-top;">
+											<div id="content-tab4-gapf">
+												<div id="content-tab4-gapf-det"></div>
+											</div>
+										</td>
+										<td width="50%" style="vertical-align:text-top;">
+											<div id="content-tab4-gapt">
+												<div id="content-tab4-gapt-det"></div>
+											</div>
+										</td>
+									</tr>
+									
+								</table>
+							</div></div>
+						</div>
+					</div>
+				</div>
+				]]>
+	</Content> 
+</Module>
+
+
