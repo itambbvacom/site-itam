@@ -511,3 +511,4 @@ function limpiar() {
 	$("#sFolio").val('');
 	loadDataTable();
 }
+
